@@ -1,0 +1,2 @@
+class WhatController < ApplicationController
+end
