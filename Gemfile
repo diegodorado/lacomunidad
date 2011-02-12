@@ -12,6 +12,7 @@ gem "haml"
 gem "compass", ">= 0.10.5"
 
 gem "RedCloth"
+gem "rdiscount"
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -326,10 +326,11 @@ body .loud {
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
+  text-align: left;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-/* line 30, ../../app/stylesheets/screen.sass */
+/* line 31, ../../app/stylesheets/screen.sass */
 #inner-container #footer {
   width: 950px;
   margin: 0 auto;
