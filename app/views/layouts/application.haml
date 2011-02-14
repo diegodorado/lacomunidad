@@ -24,7 +24,22 @@
             %a{:href => "/documentos"} Documentos
           %li
             %a{:href => "/como-participar"} Como Participar
+        #user-nav
+          - if user_signed_in?
+            =image_tag current_user.avatar.url(:thumb) 
+            Signed in as 
+            =current_user.email
+            , not you?
+            =link_to "Sign out", destroy_user_session_path
+          -else
+            =link_to "Sign up", new_user_registration_path
+            or
+            =link_to "Sign in", new_user_session_path
       #content
+        %p.notice
+          = notice
+        %p.alert
+          = alert
         = yield
       #footer
         %span La Comunidad para el desarrollo humano

@@ -1,7 +1,3 @@
-:plain
-  Muro
+= render :partial => "form" if user_signed_in?
 
-
-    - Publicaciones de los usuarios
-    - comentarios
-
+= render :partial => "posts_list", :locals => { :posts => @posts }
