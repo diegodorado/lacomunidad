@@ -1,0 +1,3 @@
+%ul#posts_list
+  - @posts.each do |p|
+    = render :partial => "post", :locals => { :post => p }

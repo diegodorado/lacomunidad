@@ -1,0 +1,7 @@
+- if @user.avatar.exists? then
+  = image_tag @user.avatar.url(:medium) 
+
+
+= form_for(@user,:url=> profile_path, :html => { :multipart => true }) do |f|
+  =f.file_field :avatar
+  =f.submit

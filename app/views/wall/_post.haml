@@ -1,0 +1,14 @@
+%li.post
+  .avatar
+    =image_tag post.user.avatar.url(:thumb)
+  .content
+    .name
+      =post.user.email
+    .body
+      = post.body
+    .foot
+      Hace
+      = distance_of_time_in_words_to_now(post.created_at)
+    .comments
+      
+
