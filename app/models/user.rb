@@ -1,5 +1,10 @@
 class User < ActiveRecord::Base
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "75x75#" }
+  has_attached_file :avatar, 
+      :styles => { :medium => "300x300>", :thumb => "75x75#" },
+      :storage => :s3,
+      :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+      :path => "/user_avatars/:style/:id/:filename"
+      
   has_many :posts
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

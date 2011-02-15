@@ -25,6 +25,7 @@ gem "RedCloth", ">= 4.2.7"
 gem "devise"
 
 gem "paperclip"
+gem 'aws-s3'
 
 group :development do
   gem "faker"

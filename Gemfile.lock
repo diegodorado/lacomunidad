@@ -30,6 +30,10 @@ GEM
       activesupport (= 3.0.4)
     activesupport (3.0.4)
     arel (2.0.8)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     compass (0.10.6)
@@ -80,12 +84,14 @@ GEM
     tzinfo (0.3.24)
     warden (1.0.3)
       rack (>= 1.0.0)
+    xml-simple (1.0.14)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   RedCloth (>= 4.2.7)
+  aws-s3
   compass (>= 0.10.5)
   devise
   faker

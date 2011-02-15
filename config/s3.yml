@@ -1,0 +1,13 @@
+development:
+  bucket: cooph_lacomunidad
+  access_key_id: AKIAI2MU7NNEQ4IBHLOQ
+  secret_access_key: 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
+test:
+  bucket: cooph_lacomunidad
+  access_key_id: AKIAI2MU7NNEQ4IBHLOQ
+  secret_access_key: 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
+production:
+  bucket: cooph_lacomunidad
+  access_key_id: AKIAI2MU7NNEQ4IBHLOQ
+  secret_access_key: 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
+
