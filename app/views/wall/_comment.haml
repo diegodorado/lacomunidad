@@ -1,0 +1,11 @@
+%li.comment
+  .avatar
+    =image_tag comment.user.avatar.url(:icon)
+  .content
+    %span.name
+      =comment.user.email
+    %span.comment
+      = comment.comment
+    .foot
+      Hace
+      = distance_of_time_in_words_to_now(comment.created_at)

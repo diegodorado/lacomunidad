@@ -1,0 +1,6 @@
+#publicar
+  - form_for Post.new, :url => new_post_path, :remote => true  do |f|
+    #publicar_body
+      = f.text_area :body
+    #publicar_submit
+      = f.submit 'Compartir'
