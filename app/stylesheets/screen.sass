@@ -1,6 +1,7 @@
 @import "blueprint/reset"
 @import "partials/base"
 @import "blueprint"
+@import "partials/wall"
 
 body
   +blueprint-typography(true)
@@ -28,54 +29,7 @@ body
     text-align: left
     padding-top: 10px
     padding-bottom: 10px
-    #posts_list
-      +prepend(2)
-      +column(12,true)
-      +append(10)
-      list-style: none
-      li.post
-        overflow: hidden
-        border-bottom: 1px solid #aaa
-        margin-bottom: 14px
-        .avatar
-          +column(2)
-        .content
-          +column(10,true)
-          .name
-            color: #000066
-            font-weight: bold
-          .body
-          .foot
-            color: #777
-          .comments
-
-    #publicar
-      overflow: hidden
-      #new_post
-        #publicar_body
-          +prepend(2)
-          +column(12,true)
-          +append(10)
-          #post_body
-            border: 1px solid #ccc
-            height: 80px
-            margin: 0
-            width: 100%
-        #publicar_submit
-          +prepend(10)
-          +column(4,true)
-          +append(10)
-          #post_submit
-            background: #aaa
-            border: 1px solid #ccc
-            color: #fff
-            cursor: pointer
-            font-weight: bold
-            height: 30px
-            outline: 0
-            width: 100%
 
   #footer
     +container
     color: #777
-  

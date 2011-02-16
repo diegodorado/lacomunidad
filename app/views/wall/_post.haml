@@ -1,4 +1,4 @@
-%li.post
+%li.post[post]
   .avatar
     =image_tag post.user.avatar.url(:thumb)
   .content
@@ -9,6 +9,10 @@
     .foot
       Hace
       = distance_of_time_in_words_to_now(post.created_at)
-    .comments
-      
+    %ul.comments
+      - comments = post.comments.recent.limit(10).all
+      - comments.each do |c|
+        = render :partial => "comment", :locals => { :comment => c }
+    %ul.controls
+      = render :partial => "comment_form", :locals => { :post => post } if user_signed_in?
 

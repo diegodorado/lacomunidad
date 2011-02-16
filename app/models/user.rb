@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_attached_file :avatar, 
-      :styles => { :medium => "300x300>", :thumb => "75x75#" },
+      :styles => { :medium => "300x300>", :thumb => "50x50#" , :icon => "32x32#" },
       :storage => :s3,
       :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
       :path => "/user_avatars/:style/:id/:filename"

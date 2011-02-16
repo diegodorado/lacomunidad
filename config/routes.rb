@@ -8,7 +8,8 @@ Lacomunidad::Application.routes.draw do
 
   match '/que-es' => 'what#index'
   match '/muro' => 'wall#index'
-  match '/publicar' => 'wall#create', :as => 'new_post'
+  match '/publicar' => 'wall#create_post', :as => 'new_post'
+  match '/comentar/:post_id' => 'wall#create_comment', :as => 'new_comment'
   match '/noticias' => 'news#index'
   match '/documentos' => 'docs#index'
   match '/como-participar' => 'participate#index'
