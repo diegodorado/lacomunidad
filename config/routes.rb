@@ -1,4 +1,7 @@
 Lacomunidad::Application.routes.draw do
+  resources :authentications
+  match '/auth/:provider/callback' => 'authentication#create'
+
   devise_for :users
 
   # The priority is based upon order of creation:

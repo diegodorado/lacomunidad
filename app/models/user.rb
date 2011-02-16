@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
       :path => "/user_avatars/:style/:id/:filename"
       
   has_many :posts
+  has_many :authentications
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,

@@ -24,6 +24,8 @@ gem 'aws-s3'
 gem 'acts_as_commentable'
 
 group :development do
+  gem "nifty-generators"
   gem "faker"
   gem "populator"
 end
+gem "mocha", :group => :test
