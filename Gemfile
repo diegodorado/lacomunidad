@@ -25,9 +25,11 @@ gem 'acts_as_commentable'
 
 group :development do
   gem "nifty-generators"
-  gem "faker"
-  gem "populator"
 end
+
+gem "faker"
+gem "populator"
+
 gem "mocha", :group => :test
 
 gem "mongrel", "1.2.0.pre2"
