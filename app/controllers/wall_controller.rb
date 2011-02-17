@@ -1,5 +1,5 @@
 class WallController < ApplicationController
-  before_filter :authenticate_user!, :except =>[:index,:view_more]
+  before_filter :authenticate_user!, :except =>[:index,:view_more_posts]
   respond_to :html, :js
   def index
     @posts = Post.order('created_at desc').limit(10)
