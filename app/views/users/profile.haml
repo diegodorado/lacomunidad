@@ -1,7 +1,77 @@
 - if @user.avatar.exists? then
-  = image_tag @user.avatar.url(:medium) 
-
+  = image_tag @user.avatar.url(:thumb) 
 
 = form_for(@user,:url=> profile_path, :html => { :multipart => true }) do |f|
   =f.file_field :avatar
   =f.submit
+
+- if @authentications
+  - unless @authentications.empty?
+    %p
+      %strong You can sign in to this account using:
+    .authentications
+      - for authentication in @authentications
+        .authentication
+          = image_tag "social/#{authentication.provider}_32.png", :size => "32x32"
+          .provider
+            = authentication.provider_name
+          .uid
+            = authentication.uid
+          = link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove"
+
+  %p
+    %strong Add another service to sign in with:
+- else
+  %p
+    %strong Sign in through one of these services:
+
+= render :partial => "users/authentications"
+  
+:css
+  .authentications {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  .authentication {
+    width: 130px;
+    float: left;
+    background-color: #EEE;
+    border: solid 1px #999;
+    padding: 5px 10px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    position: relative;
+    margin-right: 10px;
+  }
+
+  .authentication .remove {
+    text-decoration: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: #333;
+    padding: 2px 4px;
+    font-size: 10px;
+  }
+
+  .authentication .remove:hover {
+    color: #CCC;
+    background-color: #777;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+  }
+
+  .authentication img {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .authentication .provider {
+    font-weight: bold;
+  }
+
+  .authentication .uid {
+    color: #666;
+    font-size: 11px;
+  }  

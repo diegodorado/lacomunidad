@@ -1,8 +1,7 @@
 !!! 5
 %html
   %head
-    %title
-      App name
+    %title La Comunidad para el desarrollo humano
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
     /[if lt IE 8]
@@ -14,6 +13,14 @@
   %body
     #inner-container
       #header
+        %ul#user-nav      
+          - if user_signed_in?
+            %li #{current_user.email}
+            %li #{link_to "Perfil", profile_path}
+            %li #{link_to "Salir", destroy_user_session_path}
+          -else
+            %li #{link_to "Registrarse", new_user_registration_path}
+            %li #{link_to "Ingresar", new_user_session_path}
         %ul#main-nav
           %li
             %a{:href => "/que-es"} Que es la comunidad
@@ -23,25 +30,11 @@
             %a{:href => "/noticias"} Noticias
           %li
             %a{:href => "/documentos"} Documentos
-          %li
+          %li.last
             %a{:href => "/como-participar"} Como Participar
-        #user-nav
-          - if user_signed_in?
-            =image_tag current_user.avatar.url(:icon) 
-            Signed in as 
-            =current_user.email
-            , not you?
-            =link_to "Sign out", destroy_user_session_path
-          -else
-            =link_to "Sign up", new_user_registration_path
-            or
-            =link_to "Sign in", new_user_session_path
       #content
-        %p.notice
-          = notice
-        %p.alert
-          = alert
+        %p.notice #{notice}
+        %p.alert #{alert}
         = yield
       #footer
         %span La Comunidad para el desarrollo humano
-

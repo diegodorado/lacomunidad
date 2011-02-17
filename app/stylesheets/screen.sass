@@ -1,6 +1,7 @@
 @import "blueprint/reset"
 @import "partials/base"
 @import "blueprint"
+@import "partials/header"
 @import "partials/wall"
 
 body
@@ -8,21 +9,10 @@ body
   
 #inner-container
   +container
-  margin-top: 10px
-  margin-bottom: 20px
-  background: #eee
+  background: #Ffefc8
   #header
     +container
-    ul#main-nav
-      +prepend(2)
-      background: #aaa
-      margin: 0
-      overflow: hidden
-      list-style: none
-      li
-        a
-          +column(4)
-          color: #fff
+    background: #f2421b  url(/images/logo.png) no-repeat
           
   #content
     +container
@@ -32,4 +22,6 @@ body
 
   #footer
     +container
-    color: #777
+    color: #fff
+    background: #f2421b
+    

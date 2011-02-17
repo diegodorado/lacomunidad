@@ -2,7 +2,8 @@
   = javascript_include_tag "jquery.elastic.js"
 
 = render :partial => "post_form" if user_signed_in?
-= render :partial => "posts_list", :locals => { :posts => @posts }
+%ul#posts_list
+  = render :partial => "posts_list", :locals => { :posts => @posts, :@offset => 10 }
 
 :javascript
   $(function(){$('textarea').elastic();});	

@@ -29,3 +29,5 @@ group :development do
   gem "populator"
 end
 gem "mocha", :group => :test
+
+gem "mongrel", "1.2.0.pre2"

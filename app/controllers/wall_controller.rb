@@ -1,8 +1,18 @@
 class WallController < ApplicationController
-  before_filter :authenticate_user!, :except =>[:index]
+  before_filter :authenticate_user!, :except =>[:index,:view_more]
   respond_to :html, :js
   def index
-    @posts = Post.order('created_at desc').all
+    @posts = Post.order('created_at desc').limit(10)
+    @view_more_offset = 10
+  end
+
+  def view_more_posts
+    @offset = params['offset'].to_i
+    @view_more_offset = @offset + 10
+    @posts = Post.order('created_at desc').limit(10).offset(@offset)
+    respond_to do |format| #      respond_with(@post) do |format|
+      format.js   { render :layout => false }
+    end
   end
 
   def create_post

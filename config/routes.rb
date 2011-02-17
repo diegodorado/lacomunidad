@@ -1,8 +1,8 @@
 Lacomunidad::Application.routes.draw do
   resources :authentications
-  match '/auth/:provider/callback' => 'authentication#create'
+  match '/auth/:provider/callback' => 'authentications#create'
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => 'registrations'}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -10,6 +10,7 @@ Lacomunidad::Application.routes.draw do
   root :to => "home#index"
 
   match '/que-es' => 'what#index'
+  match '/muro/mas/:offset' => 'wall#view_more_posts', :as => 'wall_view_more_posts'
   match '/muro' => 'wall#index'
   match '/publicar' => 'wall#create_post', :as => 'new_post'
   match '/comentar/:post_id' => 'wall#create_comment', :as => 'new_comment'

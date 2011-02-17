@@ -1,0 +1,27 @@
+#inner-container
+  #header
+    ul#user-nav
+      margin: 0
+      padding: 0
+      overflow: hidden
+      list-style: none
+      float: right
+      li
+        float: left
+        padding: 3px 10px
+        color: #fff
+        a
+          color: inherit
+    ul#main-nav
+      +prepend(2)
+      +append(2)
+      margin: 45px 0 5px
+      overflow: hidden
+      list-style: none
+      li
+        +column(4)
+        &.last
+          +column(4,true)
+        a
+          color: #fff
+          display: block
