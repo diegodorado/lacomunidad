@@ -40,7 +40,7 @@ class AuthenticationsController < ApplicationController
   def parse_omniauth(omniauth)
   
     if omniauth['provider'] == 'facebook'
-      omniauth['email'] = omniauth['extra']['user_hash']['email']
+      omniauth['email'] = (omniauth['extra']['user_hash']['email'] rescue '')
       omniauth['image'] = 'https://graph.facebook.com/'+omniauth['uid']+'/picture?type=large'
     else
       omniauth['email'] = omniauth['user_info']['email']
@@ -48,9 +48,9 @@ class AuthenticationsController < ApplicationController
     end
 
     omniauth['name'] = omniauth['user_info']['name']
-    omniauth['nickname'] = omniauth['user_info']['nickname']
-    omniauth['token'] = omniauth['credentials']['token']
-    omniauth['secret'] = omniauth['credentials']['secret']
+    omniauth['nickname'] = (omniauth['user_info']['nickname'] rescue '')
+    omniauth['token'] = (omniauth['credentials']['token'] rescue '')
+    omniauth['secret'] = (omniauth['credentials']['secret'] rescue '')
     
     omniauth.delete('user_info')
     omniauth.delete('credentials')
