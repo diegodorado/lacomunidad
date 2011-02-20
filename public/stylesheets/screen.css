@@ -809,4 +809,5 @@ body #logger .event {
   *zoom: 1;
   color: white;
   background: #f2421b;
+  text-align: center;
 }
