@@ -1,6 +1,53 @@
+#post_og(style="display:none;")
+  .image_holder
+    .image_wrapper
+      .image
+      .waiting
+        =image_tag 'loading.gif'      
+  .content
+    .title ...
+    .url
+    .description ...
+  %a.hide(href ="#") X
+
 #publicar
-  - form_for Post.new, :url => new_post_path, :remote => true  do |f|
+  -@post = Post.new
+  -@post.build_attachement
+  - form_for @post, :url => new_post_path, :remote => true, :html => {:autocomplete => "off"}  do |f|
+    = f.fields_for :attachement do |af|
+      = af.hidden_field :title
+      = af.hidden_field :url
+      = af.hidden_field :description
+      = af.hidden_field :image
+      = af.hidden_field :video
     #publicar_body
       = f.text_area :body
     #publicar_submit
       = f.submit 'Compartir'
+:javascript
+  $("#post_og a.hide").click(function(ev){
+    $('input[id^="post_attachement_attributes"]').val('');
+    $("#post_og").fadeOut();
+    return false;
+  });
+
+  $("#post_og .content .title").editInPlace(
+    {
+      callback: function(oe, html, ori){
+        html = html ? html : ori;
+        $('#post_attachement_attributes_title').val(html);
+        return html;
+      }
+    }
+  );
+  
+  $("#post_og .content .description").editInPlace(
+    {
+      field_type:'textarea',
+      callback: function(oe, html, ori){
+        html = html ? html : ori;
+        $('#post_attachement_attributes_description').val(html);
+        return html;
+      }
+    }
+  );

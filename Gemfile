@@ -21,6 +21,9 @@ gem "omniauth"
 gem "paperclip"
 gem 'aws-s3'
 
+gem 'opengraph'
+
+
 gem 'acts_as_commentable'
 
 group :development do

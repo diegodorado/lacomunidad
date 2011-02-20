@@ -1,9 +1,25 @@
 - content_for :javascript_includes do
   = javascript_include_tag "jquery.elastic.js"
+  = javascript_include_tag "jquery.editinplace.js"
+  = javascript_include_tag "jquery.special.edit.js"
 
-= render :partial => "post_form" if user_signed_in?
-%ul#posts_list
-  = render :partial => "posts_list", :locals => { :posts => @posts, :@offset => 10 }
+.left_column
+  = render :partial => "post_form" if user_signed_in?
+  %ul#posts_list
+    = render :partial => "posts_list", :locals => { :posts => @posts, :@offset => 10 }
 
 :javascript
-  $(function(){$('textarea').elastic();});	
+  $(function () {
+
+    $('textarea').elastic();
+
+    $('#post_body').bind('edit', function (e) {
+      var el = $(e.target);
+      var url = parseUri(el.val());
+      if (url && (el.data('url')===undefined || url!==el.data('url'))) {
+        el.data('url', url);
+        $.ajax({ url: "#{create_post_og_path}", type: 'POST', data: {url: url} });
+      }
+    });
+
+  });

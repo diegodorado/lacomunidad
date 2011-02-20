@@ -12,6 +12,9 @@ Lacomunidad::Application.routes.draw do
   match '/que-es' => 'what#index'
   match '/muro/mas/:offset' => 'wall#view_more_posts', :as => 'wall_view_more_posts'
   match '/muro' => 'wall#index'
+
+  match '/create_post_og' => 'wall#create_post_og', :as => 'create_post_og'
+
   match '/publicar' => 'wall#create_post', :as => 'new_post'
   match '/comentar/:post_id' => 'wall#create_comment', :as => 'new_comment'
   match '/noticias' => 'news#index'

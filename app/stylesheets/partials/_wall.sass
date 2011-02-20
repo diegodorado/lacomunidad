@@ -1,97 +1,12 @@
+@import "wall/post_og"
+@import "wall/publicar"
+@import "wall/post_list"
+
 #inner-container
   #content
-  
-    ul#posts_list
+    .left_column  
       +prepend(2)
       +column(12,true)
       +append(10)
-      list-style: none
-      li.post
-        overflow: hidden
-        border-bottom: 1px solid #aaa
-        margin-bottom: 14px
-        .avatar
-          +column(2)
-        .content
-          +column(10,true)
-          .name
-            color: #000066
-            font-weight: bold
-          .body
-          .foot
-            color: #777
-          ul.comments
-            list-style: none
-            background: #e7e7e7
-            padding: 0
-            margin: 10px 0
-            li.comment
-              overflow: hidden
-              border-bottom: 1px solid #fff
-              padding: 5px 0
-              .avatar
-                +column(1)
-              .content
-                +column(9,true)
-                .name
-                  color: #000066
-                  font-weight: bold
-                  margin-right: 8px
-                .comment
-                .foot
-                  color: #777
-          ul.controls
-            list-style: none
-            background: #ccf
-            padding: 0
-            margin: 10px 0
-            li.comment_form
-              overflow: hidden
-              padding: 5px 0
-              .avatar
-                +column(1)
-              .comment
-                +column(9,true)
-                textarea
-                  border: 1px solid #ccc
-                  height: 20px
-                  margin: 0
-                  width: 90%
-              .submit 
-                input
-                  background: #aaa
-                  border: 1px solid #ccc
-                  color: #fff
-                  cursor: pointer
-                  font-weight: bold
-                  height: 25px
-                  outline: 0
-                  float: right
-
-
-    #publicar
-      overflow: hidden
-      #new_post
-        #publicar_body
-          +prepend(2)
-          +column(12,true)
-          +append(10)
-          #post_body
-            border: 1px solid #ccc
-            height: 50px
-            margin: 0
-            width: 100%
-        #publicar_submit
-          +prepend(10)
-          +column(4,true)
-          +append(10)
-          #post_submit
-            background: #aaa
-            border: 1px solid #ccc
-            color: #fff
-            cursor: pointer
-            font-weight: bold
-            height: 30px
-            outline: 0
-            width: 100%
+    
 

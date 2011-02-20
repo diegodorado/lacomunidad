@@ -2,8 +2,7 @@
   .avatar
     =image_tag comment.user.avatar.url(:icon)
   .content
-    %span.name
-      =comment.user.name
+    =link_to comment.user.name, '#', :class => 'name'
     %span.comment
       = comment.comment
     .foot

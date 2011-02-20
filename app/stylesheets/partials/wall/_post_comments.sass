@@ -1,0 +1,28 @@
+#posts_list
+  li.post
+    .content
+      ul.comments
+        background: #e7e7e7
+        margin: 10px 0
+        li.comment
+          overflow: hidden
+          border-bottom: 1px solid #fff
+          padding: 5px 0
+          .avatar
+            +column(1)
+          .content
+            +column(9,true)
+            .name
+              color: #F2421B
+              font-weight: bold
+              margin-right: 8px
+            .comment
+            .foot
+              color: #777
+        li.more
+          a.comments_count
+            padding: 3px 0
+            text-align: center
+            display: block
+            &:hover
+              background: #ddd
