@@ -1,0 +1,3 @@
+$('#post_<%= @post.id %> .content .foot .thumbs_up').text("<%= @post.votes_for%>");
+$('#post_<%= @post.id %> .content .foot .thumbs_down').text("<%= @post.votes_against%>");
+$('#notice').text('has votado...(no me digas!)').fadeOut(2000);

@@ -23,8 +23,11 @@ gem 'aws-s3'
 
 gem 'opengraph'
 
+gem "irwi"
 
 gem 'acts_as_commentable'
+
+gem 'thumbs_up'
 
 group :development do
   gem "nifty-generators"

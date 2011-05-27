@@ -1,28 +1,29 @@
 #posts_list
   li.post
     .content
-      ul.comment_form
-        background: #ccf
+      .comment_form
+        background: #E7E7E7
         margin: 10px 0
-        li.comment_form
-          overflow: hidden
-          padding: 5px 0
-          .avatar
-            +column(1)
-          .comment
-            +column(9,true)
-            textarea
-              border: 1px solid #ccc
-              height: 20px
-              margin: 0
-              width: 90%
-          .submit 
-            input
-              background: #aaa
-              border: 1px solid #ccc
-              color: #fff
-              cursor: pointer
-              font-weight: bold
-              height: 25px
-              outline: 0
-              float: right
+        overflow: hidden
+        padding: 5px 0 3px
+        .avatar
+          +column(1)
+        .comment
+          padding-left: 50px
+          width: 340px
+          textarea
+            border: 1px solid #ccc
+            height: 18px
+            margin: 0
+            color: #999
+            padding: 2px 10px
+        .submit 
+          input
+            background: #aaa
+            border: 1px solid #ccc
+            color: #fff
+            cursor: pointer
+            font-weight: bold
+            height: 25px
+            outline: 0
+            float: right

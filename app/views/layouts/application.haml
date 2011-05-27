@@ -13,30 +13,10 @@
     %ul#logger{:style => "display:none;"}
     #ajax-indicator{:style => "display:none;"}
       =image_tag 'loading.gif'
-    #inner-container
-      #header
-        %ul#user-nav      
-          - if user_signed_in?
-            %li #{current_user.email}
-            %li #{link_to "Perfil", profile_path}
-            %li #{link_to "Salir", destroy_user_session_path}
-          -else
-            %li #{link_to "Registrarse", new_user_registration_path}
-            %li #{link_to "Ingresar", new_user_session_path}
-        %ul#main-nav
-          %li
-            %a{:href => "/que-es"} Que es la comunidad
-          %li
-            %a{:href => "/muro"} Muro
-          %li
-            %a{:href => "/noticias"} Noticias
-          %li
-            %a{:href => "/documentos"} Documentos
-          %li.last
-            %a{:href => "/como-participar"} Como Participar
+    #ic
+      =render :partial => "partials/header"
       #content
         #notice #{notice}
         #alert #{alert}
         = yield
-      #footer
-        %span La Comunidad para el desarrollo humano
+      =render :partial => "partials/footer"

@@ -21,8 +21,8 @@
       = af.hidden_field :image
       = af.hidden_field :video
     #publicar_body
-      = f.text_area :body
-    #publicar_submit
+      = f.text_area :body, :value => 'Qué huevada estás pensando?',:spellcheck=>false
+    #publicar_submit(style='display:none;')
       = f.submit 'Compartir'
 :javascript
   $("#post_og a.hide").click(function(ev){

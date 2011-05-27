@@ -23,11 +23,22 @@ end
 Post.populate(60..80) do |p|
   p.body = Faker::Lorem.sentences.join(' ')
   p.user_id = User.all.collect(&:id).sort_by{rand}.first
-  Comment.populate(0..10) do |comment|
-    comment.commentable_id = p.id
-    comment.commentable_type = 'Post'
-    comment.user_id = User.all.collect(&:id).sort_by{rand}.first
-    comment.comment = Faker::Lorem.sentence
+  Comment.populate(0..10) do |c|
+    c.commentable_id = p.id
+    c.commentable_type = 'Post'
+    c.user_id = User.all.collect(&:id).sort_by{rand}.first
+    c.comment = Faker::Lorem.sentence
   end
   
 end
+
+
+#random votes
+Post.all.each do |p|
+  User.all.each do |u|
+    if rand(2)
+      rand(2) ? u.vote_for(p) : u.vote_against(p)
+    end
+  end
+end
+

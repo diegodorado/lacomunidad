@@ -1,80 +1,18 @@
-@import "blueprint/reset"
 @import "partials/base"
-@import "blueprint"
+@import "partials/reset"
+@import "partials/messages"
 @import "partials/header"
+@import "partials/footer"
 @import "partials/wall"
 
-body
-    
-  +blueprint-typography(true)
-
-  *
-    outline: 0
-
-  a
-    text-decoration: none
-    color: inherit
-    &:hover,&:visited
-      text-decoration: underline
-      color: inherit
-
-  ul
-    list-style: none
-    margin: 0
-    padding: 0
-
-
-  #notice,#alert
-    color: #444444
-    line-height: 24px
-    margin: 0 80px
-    text-align: center
-  #notice
-    background: yellow
-  #alert
-    background: red
-      
-  #ajax-indicator
-    left: 10px
-    position: fixed
-    top: 10px
-
-  #logger
-    border: 1px dashed #444
-    border-right: 0
-    right: 10px
-    position: fixed
-    top: 10px
-    background: #fff
-    height: 500px
-    list-style: none outside none
-    overflow-y: scroll
-    padding: 10px  
-    .info
-      background: #FBFF6F
-      margin-bottom: 4px
-      padding: 3px 5px   
-    .event
-      background: #D1F0F5
-      margin-bottom: 4px
-      padding: 3px 5px   
-    
-#inner-container
+#ic
   +container
-  background: #Ffefc8
-  #header
-    +container
-    background: #f2421b  url(/images/logo.png) no-repeat
+  margin-top: 10px
+  margin-bottom: 50px
+  background: #fff
           
   #content
     +container
     text-align: left
-    padding-top: 10px
-    padding-bottom: 10px
-
-  #footer
-    +container
-    color: #fff
-    background: #f2421b
-    text-align: center
-    
+    padding-top: 20px
+    padding-bottom: 40px

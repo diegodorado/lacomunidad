@@ -5,16 +5,24 @@
 
 #posts_list
   li.post
+    border-top: 1px solid #fff
+    margin: 25px 0
     overflow: hidden
-    border-bottom: 1px solid #aaa
-    margin-bottom: 14px
     .avatar
       +column(2)
     .content
       +column(10,true)
       .name
-        color: #F2421B
+        color: $red
         font-weight: bold
         text-decoration: none
       .body
         margin: 0
+  li.more
+    a.more_posts
+      background: #e7e7e7
+      padding: 3px 0
+      text-align: center
+      display: block
+      &:hover
+        background: #ddd     

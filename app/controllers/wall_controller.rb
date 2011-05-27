@@ -1,5 +1,5 @@
 class WallController < ApplicationController
-  before_filter :authenticate_user!, :except =>[:index,:view_more_posts]
+  before_filter :authenticate_user!, :except =>[:index,:view_more_posts,:view_post_comments]
   respond_to :html, :js
   def index
     @posts = Post.order('created_at desc').limit(10)
@@ -23,6 +23,13 @@ class WallController < ApplicationController
     end
   end
 
+  def vote_post
+    @post = Post.find(params['post_id'])
+    current_user.vote(@post, { :direction => params['direction'], :exclusive => current_user.voted_on?(@post) })
+    render :layout => false
+  end
+
+  
   def create_comment
     @post = Post.find(params['post_id'])
     @comment = @post.comments.build(params['comment'])
@@ -32,6 +39,12 @@ class WallController < ApplicationController
     else
       render :text => "$('#alert').text('no se pudo grabar el comentario').fadeOut(2000)"
     end
+  end
+  
+  def view_post_comments
+    @post = Post.find(params['post_id'])
+    @comments = @post.comments.offset(3)
+    render :layout => false
   end
   
   def create_post_og

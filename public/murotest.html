@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>La Comunidad para el desarrollo humano</title>
+    <link href="/stylesheets/screen.css?1297997957" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/jquery.js?1297632862" type="text/javascript"></script>
+    <script src="/javascripts/jquery-ujs.js?1297631672" type="text/javascript"></script>
+    <script src="/javascripts/application.js?1297999790" type="text/javascript"></script>
+    <script src="/javascripts/jquery.elastic.js?1297186644" type="text/javascript"></script>
+    <script src="/javascripts/jquery.editinplace.js?1297186644" type="text/javascript"></script>
+    <meta name="csrf-param" content="authenticity_token"/>
+    <meta name="csrf-token" content="8Jc09EQZ7ADvBnO+dbQIfxJJZUFYyji4SBnFa0qOylc="/>
+  </head>
+  <body>
+    <div id='ajax-indicator' style='display:none;'>
+      <img alt="Loading" src="/images/loading.gif?1297998589" />
+    </div>
+    <div id='inner-container'>
+      <div id='content'>
+        <p class='notice'></p>
+        <p class='alert'></p>
+        <div id='publicar'>
+        <form accept-charset="UTF-8" action="/publicar" class="new_post" data-remote="true" id="new_post" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8Jc09EQZ7ADvBnO+dbQIfxJJZUFYyji4SBnFa0qOylc=" /></div>
+          <div id='publicar_body'>
+            <textarea cols="40" id="post_body" name="post[body]" rows="20"></textarea>
+          </div>
+          <ul id='publicar_attachements'>
+          </ul>
+          <div id='publicar_submit'>
+            <input id="post_submit" name="commit" type="submit" value="Compartir" />
+          </div>
+        </form>
+        </div>
+
+            <p class="editme4"> 
+                Edit me now!
+            </p> 
+ 
+
+        
+        <script type='text/javascript'>
+          //<![CDATA[
+            $(function(){$('textarea').elastic();});
+            
+
+    // Using a callback function to update 2 divs
+    $(".editme4").editInPlace({
+        callback: function(original_element, html, original){
+            console.log("The original html was: " + original);
+            console.log("The updated text is: " + html);
+            return(html);
+        }
+    });
+            
+            
+          //]]>
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

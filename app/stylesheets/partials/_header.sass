@@ -1,28 +1,47 @@
-#inner-container
-  #header
-    ul#user-nav
-      margin: 0
-      padding: 0
-      overflow: hidden
-      list-style: none
-      float: right
-      li
-        float: left
-        padding: 3px 10px
+@import "partials/base"
+
+#header
+  +container
+  background: $red
+  .top
+    +container
+    margin-top: 15px
+    .logo
+      +prepend(1)
+      +column(12)
+    #user-nav
+      +column(10,true)
+      +append(1)
+      text-align: right
+      a, span
         color: #fff
-        a
-          color: inherit
+        font-size: 13px
+        font-weight: bold      
+        padding-right: 10px
+  .bottom
+    +container
+    border-bottom: 10px solid $light_red
+    margin-top: 15px
     ul#main-nav
-      +prepend(2)
-      +append(2)
-      margin: 45px 0 5px
-      overflow: hidden
-      list-style: none
+      +prepend(1)
+      +append(1)
       li
-        +column(4)
+        text-align: center
+        height: 36px
+        line-height: 36px
+        float: left
+        margin-right: 40px
         &.last
-          +column(4,true)
+          margin-right: 0
         a
-          color: #fff
+          +border-top-radius(10px)
+          background: #fff
+          color: $red
+          font-size: 16px
+          font-weight: bold
+          padding: 0 20px
           display: block
-          text-align: center
+          &:hover, &.active
+            background: $light_red
+            color: #fff
+            text-decoration: none

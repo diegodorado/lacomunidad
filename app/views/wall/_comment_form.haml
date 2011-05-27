@@ -1,8 +1,8 @@
-%li.comment_form
-  - form_for [post, post.comments.build], :url => new_comment_path(post.id), :remote => true, :html => { :id => 'new_comment_for_' + post.id.to_s } do |f|
-    .avatar
+.comment_form
+  - form_for [post, post.comments.build], :url => new_comment_path(post.id), :remote => true, :html => { :id => 'new_comment_for_' + post.id.to_s,:autocomplete => "off" } do |f|
+    .avatar(style='display:none;')
       =image_tag current_user.avatar.url(:icon)
     .comment
-      = f.text_area :comment, :id => 'comment_comment_for_' + post.id.to_s
-    .submit
+      = f.text_area :comment, :id => 'comment_comment_for_' + post.id.to_s, :value=>'Escribe un comentario',:spellcheck=>false
+    .submit(style='display:none;')
       = f.submit 'Comentar', :id => 'comment_submit_for_' + post.id.to_s

@@ -1,4 +1,6 @@
 Lacomunidad::Application.routes.draw do
+  wiki_root '/wiki'
+
   resources :authentications
   match '/auth/:provider/callback' => 'authentications#create'
 
@@ -9,7 +11,11 @@ Lacomunidad::Application.routes.draw do
 
   root :to => "home#index"
 
-  match '/que-es' => 'what#index'
+  match '/que-es' => 'what#index', :as => 'what'
+  match '/noticias' => 'news#index'
+  match '/documentos' => 'docs#index'
+  match '/como-participar' => 'participate#index', :as => 'participate'
+
   match '/muro/mas/:offset' => 'wall#view_more_posts', :as => 'wall_view_more_posts'
   match '/muro' => 'wall#index'
 
@@ -17,9 +23,9 @@ Lacomunidad::Application.routes.draw do
 
   match '/publicar' => 'wall#create_post', :as => 'new_post'
   match '/comentar/:post_id' => 'wall#create_comment', :as => 'new_comment'
-  match '/noticias' => 'news#index'
-  match '/documentos' => 'docs#index'
-  match '/como-participar' => 'participate#index'
+  match '/view_post_comments/:post_id' => 'wall#view_post_comments', :as => 'wall_view_post_comments'
+  match '/vote_post/:post_id/:direction' => 'wall#vote_post', :as => 'wall_vote_post'
+
   match '/profile' => 'users#profile', :as => 'profile'
   
   resources :posts
