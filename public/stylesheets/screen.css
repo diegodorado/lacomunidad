@@ -776,11 +776,12 @@ body ul {
 #posts_list li.post .content .comment_form .comment textarea {
   border: 1px solid #cccccc;
   height: 18px;
+  width: 290px;
   margin: 0;
   color: #999999;
   padding: 2px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comment_form\.sass}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comment_form\.sass}line{font-family:\0000322}}
 #posts_list li.post .content .comment_form .submit input {
   background: #aaaaaa;
   border: 1px solid #cccccc;
