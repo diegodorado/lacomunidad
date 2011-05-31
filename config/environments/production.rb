@@ -1,4 +1,7 @@
 Lacomunidad::Application.configure do
+
+  Sass::Plugin.options[:never_update] = true
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # The production environment is meant for finished, "live" apps.
