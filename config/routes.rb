@@ -1,5 +1,4 @@
 Lacomunidad::Application.routes.draw do
-  wiki_root '/wiki'
 
   resources :authentications
   match '/auth/:provider/callback' => 'authentications#create'
@@ -29,6 +28,10 @@ Lacomunidad::Application.routes.draw do
   match '/profile' => 'users#profile', :as => 'profile'
   
   resources :posts
+
+  #pages
+  resources :pages
+ 
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
