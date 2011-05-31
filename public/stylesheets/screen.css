@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\000034}}
+/* line 4, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 html, body {
   margin: 0;
   padding: 0;
@@ -10,12 +10,12 @@ html, body {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\000036}}
+/* line 6, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 html {
   font-size: 100.01%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000316}}
+/* line 16, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
 pre, a, abbr, acronym, address, code, del, dfn, em, img,
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
@@ -29,7 +29,7 @@ dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, th
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000318}}
+/* line 18, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 blockquote, q {
   margin: 0;
   padding: 0;
@@ -41,12 +41,12 @@ blockquote, q {
   vertical-align: baseline;
   quotes: "" "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000345}}
+/* line 45, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000320}}
+/* line 20, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 th, td, caption {
   margin: 0;
   padding: 0;
@@ -61,7 +61,7 @@ th, td, caption {
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000322}}
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 table {
   margin: 0;
   padding: 0;
@@ -76,12 +76,12 @@ table {
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000324}}
+/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_reset\.sass}line{font-family:\000035}}
+/* line 5, ../../app/stylesheets/partials/_reset.sass */
 body {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -89,226 +89,226 @@ body {
   font-size: 75%;
   background: #e7e7e7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000365}}
+/* line 65, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h1, body h2, body h3, body h4, body h5, body h6 {
   font-weight: normal;
   color: #222222;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000366}}
+/* line 66, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h1 img, body h2 img, body h3 img, body h4 img, body h5 img, body h6 img {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000367}}
+/* line 67, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h1 {
   font-size: 3em;
   line-height: 1;
   margin-bottom: 0.50em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000368}}
+/* line 68, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h2 {
   font-size: 2em;
   margin-bottom: 0.75em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000369}}
+/* line 69, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h3 {
   font-size: 1.5em;
   line-height: 1;
   margin-bottom: 1.00em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000370}}
+/* line 70, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h4 {
   font-size: 1.2em;
   line-height: 1.25;
   margin-bottom: 1.25em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000371}}
+/* line 71, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h5 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1.50em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000372}}
+/* line 72, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h6 {
   font-size: 1em;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000373}}
+/* line 73, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body p {
   margin: 0 0 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000374}}
+/* line 74, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body p img.left {
   display: inline;
   float: left;
   margin: 1.5em 1.5em 1.5em 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000375}}
+/* line 75, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body p img.right {
   display: inline;
   float: right;
   margin: 1.5em 0 1.5em 1.5em;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000377}}
+/* line 77, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body a {
   text-decoration: underline;
   color: #000099;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/compass\/stylesheets\/compass\/utilities\/links\/_link-colors\.scss}line{font-family:\0000318}}
+/* line 18, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
 body a:visited {
   color: #000066;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/compass\/stylesheets\/compass\/utilities\/links\/_link-colors\.scss}line{font-family:\0000321}}
+/* line 21, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
 body a:focus {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/compass\/stylesheets\/compass\/utilities\/links\/_link-colors\.scss}line{font-family:\0000324}}
+/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
 body a:hover {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/compass\/stylesheets\/compass\/utilities\/links\/_link-colors\.scss}line{font-family:\0000327}}
+/* line 27, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
 body a:active {
   color: #cc0099;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000378}}
+/* line 78, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body blockquote {
   margin: 1.5em;
   color: #666666;
   font-style: italic;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000379}}
+/* line 79, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body strong {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000380}}
+/* line 80, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body em {
   font-style: italic;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000381}}
+/* line 81, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body dfn {
   font-style: italic;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000382}}
+/* line 82, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body sup, body sub {
   line-height: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000383}}
+/* line 83, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body abbr, body acronym {
   border-bottom: 1px dotted #666666;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000384}}
+/* line 84, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body address {
   margin: 0 0 1.5em;
   font-style: italic;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000385}}
+/* line 85, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body del {
   color: #666666;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000386}}
+/* line 86, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body pre {
   margin: 1.5em 0;
   white-space: pre;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000387}}
+/* line 87, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body pre, body code, body tt {
   font: 1em "andale mono", "lucida console", monospace;
   line-height: 1.5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000388}}
+/* line 88, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body li ul, body li ol {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000389}}
+/* line 89, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body ul, body ol {
   margin: 0 1.5em 1.5em 0;
   padding-left: 3.333em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000390}}
+/* line 90, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body ul {
   list-style-type: disc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000391}}
+/* line 91, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body ol {
   list-style-type: decimal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000392}}
+/* line 92, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body dl {
   margin: 0 0 1.5em 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000393}}
+/* line 93, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body dl dt {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000394}}
+/* line 94, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body dd {
   margin-left: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000395}}
+/* line 95, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body table {
   margin-bottom: 1.4em;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000396}}
+/* line 96, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body th {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000397}}
+/* line 97, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body thead th {
   background: #c3d9ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000398}}
+/* line 98, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body th, body td, body caption {
   padding: 4px 10px 4px 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\0000399}}
+/* line 99, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body tr.even td {
   background: #e5ecf9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\00003100}}
+/* line 100, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body tfoot {
   font-style: italic;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\00003101}}
+/* line 101, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body caption {
   background: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\00003102}}
+/* line 102, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body .quiet {
   color: #666666;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_typography\.scss}line{font-family:\00003103}}
+/* line 103, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body .loud {
   color: #111111;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_reset\.sass}line{font-family:\000039}}
+/* line 9, ../../app/stylesheets/partials/_reset.sass */
 body * {
   outline: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_reset\.sass}line{font-family:\0000312}}
+/* line 12, ../../app/stylesheets/partials/_reset.sass */
 body a {
   text-decoration: none;
   color: inherit;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_reset\.sass}line{font-family:\0000315}}
+/* line 15, ../../app/stylesheets/partials/_reset.sass */
 body a:hover {
   text-decoration: underline;
   color: inherit;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_reset\.sass}line{font-family:\0000318}}
+/* line 18, ../../app/stylesheets/partials/_reset.sass */
 body a:visited {
   color: inherit;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_reset\.sass}line{font-family:\0000321}}
+/* line 21, ../../app/stylesheets/partials/_reset.sass */
 body ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_messages\.sass}line{font-family:\000033}}
+/* line 3, ../../app/stylesheets/partials/_messages.sass */
 #notice, #alert {
   color: #444444;
   line-height: 24px;
@@ -316,24 +316,24 @@ body ul {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_messages\.sass}line{font-family:\000038}}
+/* line 8, ../../app/stylesheets/partials/_messages.sass */
 #notice {
   background: yellow;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_messages\.sass}line{font-family:\0000310}}
+/* line 10, ../../app/stylesheets/partials/_messages.sass */
 #alert {
   background: red;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_messages\.sass}line{font-family:\0000313}}
+/* line 13, ../../app/stylesheets/partials/_messages.sass */
 #ajax-indicator {
   left: 10px;
   position: fixed;
   top: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_messages\.sass}line{font-family:\0000318}}
+/* line 18, ../../app/stylesheets/partials/_messages.sass */
 #logger {
   border: 1px dashed #444444;
   border-right: 0;
@@ -346,20 +346,20 @@ body ul {
   overflow-y: scroll;
   padding: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_messages\.sass}line{font-family:\0000329}}
+/* line 29, ../../app/stylesheets/partials/_messages.sass */
 #logger .info {
   background: #fbff6f;
   margin-bottom: 4px;
   padding: 3px 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_messages\.sass}line{font-family:\0000333}}
+/* line 33, ../../app/stylesheets/partials/_messages.sass */
 #logger .event {
   background: #d1f0f5;
   margin-bottom: 4px;
   padding: 3px 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\000033}}
+/* line 3, ../../app/stylesheets/partials/_header.sass */
 #header {
   width: 950px;
   margin: 0 auto;
@@ -367,15 +367,15 @@ body ul {
   *zoom: 1;
   background: #e33326;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\000036}}
+/* line 6, ../../app/stylesheets/partials/_header.sass */
 #header .top {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
-  margin-top: 15px;
+  margin-top: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\000039}}
+/* line 9, ../../app/stylesheets/partials/_header.sass */
 #header .top .logo {
   padding-left: 40px;
   display: inline;
@@ -383,11 +383,11 @@ body ul {
   margin-right: 10px;
   width: 470px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #header .top .logo {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\0000312}}
+/* line 12, ../../app/stylesheets/partials/_header.sass */
 #header .top #user-nav {
   display: inline;
   float: left;
@@ -396,18 +396,18 @@ body ul {
   padding-right: 40px;
   text-align: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #header .top #user-nav {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\0000316}}
+/* line 16, ../../app/stylesheets/partials/_header.sass */
 #header .top #user-nav a, #header .top #user-nav span {
   color: white;
   font-size: 13px;
   font-weight: bold;
   padding-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\0000321}}
+/* line 21, ../../app/stylesheets/partials/_header.sass */
 #header .bottom {
   width: 950px;
   margin: 0 auto;
@@ -416,12 +416,12 @@ body ul {
   border-bottom: 10px solid #e38a62;
   margin-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\0000325}}
+/* line 25, ../../app/stylesheets/partials/_header.sass */
 #header .bottom ul#main-nav {
   padding-left: 40px;
   padding-right: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\0000328}}
+/* line 28, ../../app/stylesheets/partials/_header.sass */
 #header .bottom ul#main-nav li {
   text-align: center;
   height: 36px;
@@ -429,11 +429,11 @@ body ul {
   float: left;
   margin-right: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\0000334}}
+/* line 34, ../../app/stylesheets/partials/_header.sass */
 #header .bottom ul#main-nav li.last {
   margin-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\0000336}}
+/* line 36, ../../app/stylesheets/partials/_header.sass */
 #header .bottom ul#main-nav li a {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -454,14 +454,14 @@ body ul {
   padding: 0 20px;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_header\.sass}line{font-family:\0000344}}
+/* line 44, ../../app/stylesheets/partials/_header.sass */
 #header .bottom ul#main-nav li a:hover, #header .bottom ul#main-nav li a.active {
   background: #e38a62;
   color: white;
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_footer\.sass}line{font-family:\000033}}
+/* line 3, ../../app/stylesheets/partials/_footer.sass */
 #footer {
   width: 950px;
   margin: 0 auto;
@@ -473,13 +473,13 @@ body ul {
   height: 34px;
   line-height: 34px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_footer\.sass}line{font-family:\0000310}}
+/* line 10, ../../app/stylesheets/partials/_footer.sass */
 #footer span {
   font-size: 12px;
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\000031}}
+/* line 1, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og {
   background: white;
   border: 1px solid #cccccc;
@@ -488,7 +488,7 @@ body ul {
   position: relative;
   padding: 12px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\000038}}
+/* line 8, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og a.hide {
   border: 1px dashed #aaaaaa;
   color: #999999;
@@ -505,13 +505,13 @@ body ul {
   top: 3px;
   width: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000323}}
+/* line 23, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og a.hide:hover {
   color: white;
   background: #f2421b;
   border-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000328}}
+/* line 28, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .image_holder {
   display: inline;
   float: left;
@@ -519,11 +519,11 @@ body ul {
   width: 150px;
   margin-right: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #post_og .image_holder {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000331}}
+/* line 31, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .image_holder .image_wrapper {
   background: #f2421b;
   border: 1px solid white;
@@ -531,12 +531,12 @@ body ul {
   margin: 0 12px;
   padding: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000337}}
+/* line 37, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .image_holder .image_wrapper .image {
   background: white;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000340}}
+/* line 40, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .image_holder .image_wrapper .waiting {
   background: white;
   height: 75px;
@@ -545,45 +545,45 @@ body ul {
   text-align: center;
   width: 120px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000348}}
+/* line 48, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .content {
   display: inline;
   float: left;
   margin-right: 0;
   width: 310px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #post_og .content {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000350}}
+/* line 50, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .content .title {
   color: #f2421b;
   margin-right: 28px;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000354}}
+/* line 54, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .content .title input {
   border: 1px solid #cccccc;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000357}}
+/* line 57, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .content .url {
   font-size: 0.9em;
   color: #444444;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000360}}
+/* line 60, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .content .description {
   margin: 5px 10px 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_og\.sass}line{font-family:\0000362}}
+/* line 62, ../../app/stylesheets/partials/wall/_post_og.sass */
 #post_og .content .description textarea {
   height: 60px;
   border: 1px solid #cccccc;
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_publicar\.sass}line{font-family:\000031}}
+/* line 1, ../../app/stylesheets/partials/wall/_publicar.sass */
 #publicar {
   overflow: hidden;
   padding: 5px 10px;
@@ -592,11 +592,11 @@ body ul {
   border: 1px solid #cccccc;
   border-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_publicar\.sass}line{font-family:\000038}}
+/* line 8, ../../app/stylesheets/partials/wall/_publicar.sass */
 #publicar #new_post {
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_publicar\.sass}line{font-family:\0000311}}
+/* line 11, ../../app/stylesheets/partials/wall/_publicar.sass */
 #publicar #new_post #publicar_body #post_body {
   border: 1px solid #cccccc;
   height: 20px;
@@ -606,7 +606,7 @@ body ul {
   color: #999999;
   padding: 2px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_publicar\.sass}line{font-family:\0000320}}
+/* line 20, ../../app/stylesheets/partials/wall/_publicar.sass */
 #publicar #new_post #publicar_submit {
   display: inline;
   float: left;
@@ -614,11 +614,11 @@ body ul {
   width: 150px;
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #publicar #new_post #publicar_submit {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_publicar\.sass}line{font-family:\0000323}}
+/* line 23, ../../app/stylesheets/partials/wall/_publicar.sass */
 #publicar #new_post #publicar_submit #post_submit {
   background: #f2421b;
   border: 1px solid #cccccc;
@@ -630,13 +630,13 @@ body ul {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_attachement\.sass}line{font-family:\000033}}
+/* line 3, ../../app/stylesheets/partials/wall/_post_attachement.sass */
 #posts_list li.post .attachement {
   background: #fcfcfc;
   overflow: hidden;
   padding: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_attachement\.sass}line{font-family:\000037}}
+/* line 7, ../../app/stylesheets/partials/wall/_post_attachement.sass */
 #posts_list li.post .attachement .image_holder {
   display: inline;
   float: left;
@@ -644,16 +644,16 @@ body ul {
   width: 150px;
   width: 120px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #posts_list li.post .attachement .image_holder {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_attachement\.sass}line{font-family:\0000310}}
+/* line 10, ../../app/stylesheets/partials/wall/_post_attachement.sass */
 #posts_list li.post .attachement .image_holder .image {
   overflow: hidden;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_attachement\.sass}line{font-family:\0000314}}
+/* line 14, ../../app/stylesheets/partials/wall/_post_attachement.sass */
 #posts_list li.post .attachement .content {
   display: inline;
   float: left;
@@ -661,77 +661,77 @@ body ul {
   width: 230px;
   width: 240px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #posts_list li.post .attachement .content {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_attachement\.sass}line{font-family:\0000317}}
+/* line 17, ../../app/stylesheets/partials/wall/_post_attachement.sass */
 #posts_list li.post .attachement .content .title a {
   font-weight: bold;
   text-decoration: none;
   color: #e33326;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comments\.sass}line{font-family:\000034}}
+/* line 4, ../../app/stylesheets/partials/wall/_post_comments.sass */
 #posts_list li.post .content ul.comments {
   background: #e7e7e7;
   margin: 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comments\.sass}line{font-family:\000037}}
+/* line 7, ../../app/stylesheets/partials/wall/_post_comments.sass */
 #posts_list li.post .content ul.comments li.comment {
   overflow: hidden;
   border-bottom: 1px solid white;
   padding: 5px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comments\.sass}line{font-family:\0000311}}
+/* line 11, ../../app/stylesheets/partials/wall/_post_comments.sass */
 #posts_list li.post .content ul.comments li.comment .avatar {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #posts_list li.post .content ul.comments li.comment .avatar {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comments\.sass}line{font-family:\0000313}}
+/* line 13, ../../app/stylesheets/partials/wall/_post_comments.sass */
 #posts_list li.post .content ul.comments li.comment .content {
   display: inline;
   float: left;
   margin-right: 0;
   width: 350px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #posts_list li.post .content ul.comments li.comment .content {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comments\.sass}line{font-family:\0000315}}
+/* line 15, ../../app/stylesheets/partials/wall/_post_comments.sass */
 #posts_list li.post .content ul.comments li.comment .content .name {
   color: #e33326;
   font-weight: bold;
   margin-right: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comments\.sass}line{font-family:\0000320}}
+/* line 20, ../../app/stylesheets/partials/wall/_post_comments.sass */
 #posts_list li.post .content ul.comments li.comment .content .foot {
   color: #777777;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comments\.sass}line{font-family:\0000323}}
+/* line 23, ../../app/stylesheets/partials/wall/_post_comments.sass */
 #posts_list li.post .content ul.comments li.more a {
   padding: 3px 0;
   text-align: center;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comments\.sass}line{font-family:\0000327}}
+/* line 27, ../../app/stylesheets/partials/wall/_post_comments.sass */
 #posts_list li.post .content ul.comments li.more a:hover {
   background: #dddddd;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_foot\.sass}line{font-family:\000034}}
+/* line 4, ../../app/stylesheets/partials/wall/_post_foot.sass */
 #posts_list li.post .content .foot {
   color: #777777;
   margin: 5px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_foot\.sass}line{font-family:\000037}}
+/* line 7, ../../app/stylesheets/partials/wall/_post_foot.sass */
 #posts_list li.post .content .foot .comments_count, #posts_list li.post .content .foot .thumbs_up, #posts_list li.post .content .foot .thumbs_down {
   background: url('/images/icons.gif?1298231273') no-repeat;
   height: 16px;
@@ -740,39 +740,39 @@ body ul {
   overflow: hidden;
   padding-left: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_foot\.sass}line{font-family:\0000314}}
+/* line 14, ../../app/stylesheets/partials/wall/_post_foot.sass */
 #posts_list li.post .content .foot .thumbs_up {
   background-position: 0 -16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_foot\.sass}line{font-family:\0000316}}
+/* line 16, ../../app/stylesheets/partials/wall/_post_foot.sass */
 #posts_list li.post .content .foot .thumbs_down {
   background-position: 0 -32px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comment_form\.sass}line{font-family:\000034}}
+/* line 4, ../../app/stylesheets/partials/wall/_post_comment_form.sass */
 #posts_list li.post .content .comment_form {
   background: #e7e7e7;
   margin: 10px 0;
   overflow: hidden;
   padding: 5px 0 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comment_form\.sass}line{font-family:\000039}}
+/* line 9, ../../app/stylesheets/partials/wall/_post_comment_form.sass */
 #posts_list li.post .content .comment_form .avatar {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #posts_list li.post .content .comment_form .avatar {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comment_form\.sass}line{font-family:\0000311}}
+/* line 11, ../../app/stylesheets/partials/wall/_post_comment_form.sass */
 #posts_list li.post .content .comment_form .comment {
   padding-left: 50px;
   width: 340px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comment_form\.sass}line{font-family:\0000314}}
+/* line 14, ../../app/stylesheets/partials/wall/_post_comment_form.sass */
 #posts_list li.post .content .comment_form .comment textarea {
   border: 1px solid #cccccc;
   height: 18px;
@@ -781,7 +781,7 @@ body ul {
   color: #999999;
   padding: 2px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_comment_form\.sass}line{font-family:\0000322}}
+/* line 22, ../../app/stylesheets/partials/wall/_post_comment_form.sass */
 #posts_list li.post .content .comment_form .submit input {
   background: #aaaaaa;
   border: 1px solid #cccccc;
@@ -793,57 +793,57 @@ body ul {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_list\.sass}line{font-family:\000037}}
+/* line 7, ../../app/stylesheets/partials/wall/_post_list.sass */
 #posts_list li.post {
   border-top: 1px solid white;
   margin: 25px 0;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_list\.sass}line{font-family:\0000311}}
+/* line 11, ../../app/stylesheets/partials/wall/_post_list.sass */
 #posts_list li.post .avatar {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 70px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #posts_list li.post .avatar {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_list\.sass}line{font-family:\0000313}}
+/* line 13, ../../app/stylesheets/partials/wall/_post_list.sass */
 #posts_list li.post .content {
   display: inline;
   float: left;
   margin-right: 0;
   width: 390px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #posts_list li.post .content {
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_list\.sass}line{font-family:\0000315}}
+/* line 15, ../../app/stylesheets/partials/wall/_post_list.sass */
 #posts_list li.post .content .name {
   color: #e33326;
   font-weight: bold;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_list\.sass}line{font-family:\0000319}}
+/* line 19, ../../app/stylesheets/partials/wall/_post_list.sass */
 #posts_list li.post .content .body {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_list\.sass}line{font-family:\0000322}}
+/* line 22, ../../app/stylesheets/partials/wall/_post_list.sass */
 #posts_list li.more a.more_posts {
   background: #e7e7e7;
   padding: 3px 0;
   text-align: center;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/wall\/_post_list\.sass}line{font-family:\0000327}}
+/* line 27, ../../app/stylesheets/partials/wall/_post_list.sass */
 #posts_list li.more a.more_posts:hover {
   background: #dddddd;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/partials\/_wall\.sass}line{font-family:\000037}}
+/* line 7, ../../app/stylesheets/partials/_wall.sass */
 #ic #content .left_column {
   padding-left: 80px;
   display: inline;
@@ -852,12 +852,12 @@ body ul {
   width: 470px;
   padding-right: 400px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/\.rvm\/gems\/ruby-1\.9\.2-p136\/gems\/compass-0\.10\.6\/frameworks\/blueprint\/stylesheets\/blueprint\/_grid\.scss}line{font-family:\00003138}}
+/* line 138, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #ic #content .left_column {
   overflow-x: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/screen\.sass}line{font-family:\000038}}
+/* line 8, ../../app/stylesheets/screen.sass */
 #ic {
   width: 950px;
   margin: 0 auto;
@@ -867,7 +867,7 @@ body ul {
   margin-bottom: 50px;
   background: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/diego\/proyectos\/lacomunidad\/app\/stylesheets\/screen\.sass}line{font-family:\0000314}}
+/* line 14, ../../app/stylesheets/screen.sass */
 #ic #content {
   width: 950px;
   margin: 0 auto;
