@@ -3,45 +3,40 @@
 #header
   +container
   background: $red
-  .top
-    +container
-    margin-top: 10px
-    .logo
-      +prepend(1)
-      +column(12)
-    #user-nav
-      +column(10,true)
-      +append(1)
-      text-align: right
-      a, span
-        color: #fff
-        font-size: 13px
-        font-weight: bold      
-        padding-right: 10px
-  .bottom
-    +container
-    border-bottom: 10px solid $light_red
+  padding-top: 10px
+  border-bottom: 3px solid $light_red
+  .logo
+    +prepend(1)
+    +column(8)
+  #user-nav, #main-nav
+    +column(14,true)
+    +append(1)
+  #user-nav
+    text-align: right
+    a, span
+      color: #fff
+      font-size: 12px
+      font-weight: bold      
+      padding-right: 10px
+  #main-nav
     margin-top: 15px
-    ul#main-nav
-      +prepend(1)
-      +append(1)
-      li
-        text-align: center
-        height: 36px
-        line-height: 36px
-        float: left
-        margin-right: 40px
-        &.last
-          margin-right: 0
-        a
-          +border-top-radius(10px)
-          background: #fff
-          color: $red
-          font-size: 16px
-          font-weight: bold
-          padding: 0 20px
-          display: block
-          &:hover, &.active
-            background: $light_red
-            color: #fff
-            text-decoration: none
+    li
+      text-align: center
+      height: 24px
+      line-height: 24px
+      float: left
+      margin-right: 10px
+      &.last
+        margin-right: 0
+      a
+        +border-top-radius(5px)
+        background: #fff
+        color: $red
+        font-size: 13px
+        font-weight: bold
+        padding: 0 10px
+        display: block
+        &:hover, &.active
+          background: $light_red
+          color: #fff
+          text-decoration: none

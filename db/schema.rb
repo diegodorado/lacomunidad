@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110531225154) do
+ActiveRecord::Schema.define(:version => 20110601081524) do
 
   create_table "attachements", :force => true do |t|
     t.string    "title"
@@ -56,7 +56,10 @@ ActiveRecord::Schema.define(:version => 20110531225154) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
   end
+
+  add_index "pages", ["cached_slug"], :name => "index_pages_on_cached_slug", :unique => true
 
   create_table "posts", :force => true do |t|
     t.string    "body",       :null => false
@@ -64,6 +67,18 @@ ActiveRecord::Schema.define(:version => 20110531225154) do
     t.timestamp "updated_at"
     t.integer   "user_id"
   end
+
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "users", :force => true do |t|
     t.string    "email",                               :default => "", :null => false

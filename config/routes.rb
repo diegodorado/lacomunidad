@@ -30,8 +30,9 @@ Lacomunidad::Application.routes.draw do
   resources :posts
 
   #pages
-  resources :pages
- 
+  resources :pages , :except => [:show, :new]
+  get '/page/:path' => 'pages#show', :as => 'show_page'
+  get '/new_page/:path' => 'pages#new', :as => 'new_page'
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

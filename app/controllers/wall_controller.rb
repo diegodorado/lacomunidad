@@ -4,6 +4,13 @@ class WallController < ApplicationController
   def index
     @posts = Post.order('created_at desc').limit(10)
     @view_more_offset = 10
+
+@popular_posts = Post.tally(
+  {  :start_at => 80.weeks.ago,
+      :limit => 10,
+      :order => "vote_count DESC"
+  })
+    
   end
 
   def view_more_posts

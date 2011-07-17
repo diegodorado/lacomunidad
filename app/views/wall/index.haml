@@ -5,9 +5,14 @@
 
 .left_column
   = render :partial => "post_form" if user_signed_in?
-  %ul#posts_list
+  %ul#posts_list.posts_list
     = render :partial => "posts_list", :locals => { :posts => @posts, :@offset => 10 }
 
+.right_column
+  %ul.posts_list
+    - @popular_posts.each do |p|
+      %li.post
+        = render :partial => "post", :locals => { :post => p }
 :javascript
   $(function () {
 

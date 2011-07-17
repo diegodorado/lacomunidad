@@ -25,6 +25,8 @@ gem 'opengraph'
 
 gem "irwi"
 
+gem "friendly_id"
+
 gem 'acts_as_commentable'
 
 gem 'thumbs_up'
