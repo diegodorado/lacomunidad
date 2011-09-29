@@ -1,5 +1,5 @@
 .comment_form
-  - form_for [post, post.comments.build], :url => new_comment_path(post.id), :remote => true, :html => { :id => 'new_comment_for_' + post.id.to_s,:autocomplete => "off" } do |f|
+  = form_for [post, post.comments.build], :url => new_comment_path(post.id), :remote => true, :html => { :id => 'new_comment_for_' + post.id.to_s,:autocomplete => "off" } do |f|
     .avatar(style='display:none;')
       =image_tag current_user.avatar.url(:icon)
     .comment

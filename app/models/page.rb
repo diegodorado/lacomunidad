@@ -13,3 +13,9 @@ class Page < ActiveRecord::Base
   end
 
 end
+
+class NewsPage < Page
+end
+
+class WhatPage < Page
+end

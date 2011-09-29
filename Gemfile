@@ -1,19 +1,23 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.4'
+gem 'rails', '3.1.0'
 
 gem 'sqlite3'
 
+
+group :assets do
+  gem 'sass-rails', "~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+  gem "compass", "~> 0.12.alpha.0"
+end
+
+gem "jquery-rails"
+
 gem "haml"
-gem "compass", ">= 0.10.5"
 gem "RedCloth", ">= 4.2.7"
 #gem "rdiscount"
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19'
 
 gem "devise"
 gem "omniauth"
@@ -40,4 +44,4 @@ gem "populator"
 
 gem "mocha", :group => :test
 
-gem "mongrel", "1.2.0.pre2"
+

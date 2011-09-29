@@ -13,7 +13,7 @@
 #publicar
   -@post = Post.new
   -@post.build_attachement
-  - form_for @post, :url => new_post_path, :remote => true, :html => {:autocomplete => "off"}  do |f|
+  = form_for @post, :url => new_post_path, :remote => true, :html => {:autocomplete => "off"}  do |f|
     = f.fields_for :attachement do |af|
       = af.hidden_field :title
       = af.hidden_field :url
@@ -24,30 +24,3 @@
       = f.text_area :body, :value => 'Qué huevada estás pensando?',:spellcheck=>false
     #publicar_submit(style='display:none;')
       = f.submit 'Compartir'
-:javascript
-  $("#post_og a.hide").click(function(ev){
-    $('input[id^="post_attachement_attributes"]').val('');
-    $("#post_og").fadeOut();
-    return false;
-  });
-
-  $("#post_og .content .title").editInPlace(
-    {
-      callback: function(oe, html, ori){
-        html = html ? html : ori;
-        $('#post_attachement_attributes_title').val(html);
-        return html;
-      }
-    }
-  );
-  
-  $("#post_og .content .description").editInPlace(
-    {
-      field_type:'textarea',
-      callback: function(oe, html, ori){
-        html = html ? html : ori;
-        $('#post_attachement_attributes_description').val(html);
-        return html;
-      }
-    }
-  );

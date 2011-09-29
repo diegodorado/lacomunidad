@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   #has_karma(:posts, :as => :submitter)
   
   if Rails.env.production? || true
-    @options = { :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+    @options = { :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml",
                  :path => "/user_avatars/:style/:id/:filename" }
   else
     @options = {:storage => :filesystem}
