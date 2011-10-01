@@ -215,10 +215,6 @@
 // new_page => /new_page/:path(.:format)
   new_page_path: function(_path, options) {
   return Utils.build_path(2, ["/new_page/"], arguments)
-  },
-// rails_info_properties => /rails/info/properties(.:format)
-  rails_info_properties_path: function(options) {
-  return Utils.build_path(1, ["/rails/info/properties"], arguments)
   }}
 ;
   
