@@ -2,14 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-gem 'sqlite3'
-
 gem "jquery-rails"
 
 gem "haml"
 gem "RedCloth", ">= 4.2.7"
 #gem "rdiscount"
-
 
 gem "devise"
 gem "omniauth"
@@ -37,6 +34,7 @@ end
 
 group :development do
   gem 'rspec-rails'
+  gem 'sqlite3'
   gem 'sqlite3-ruby'
   gem "nifty-generators"
   gem "faker"
