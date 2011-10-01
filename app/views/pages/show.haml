@@ -1,0 +1,12 @@
+%h1 #{link_to_page @page.title}
+
+
+%ul
+  %li
+    =link_to( 'Editar', edit_page_path(@page)) if has_perms?
+  %li
+    =link_to 'Eliminar',  page_path(@page), :method => :delete, :confirm => "Estas seguro?" if has_perms?
+
+
+.content
+  = wikify(@page.content)

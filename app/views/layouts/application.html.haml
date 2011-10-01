@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    %title La Comunidad para el desarrollo humano
+    = stylesheet_link_tag 'application', :media => 'screen, projection'
+    = stylesheet_link_tag 'print', :media => 'print'
+    /[if IE]
+      = stylesheet_link_tag 'ie', :media => 'screen, projection'    
+    = javascript_include_tag 'application'
+    = yield :javascript_includes
+    = csrf_meta_tag
+  %body{:class => body_classes.join(' ')}
+    %ul#logger{:style => "display:none;"}
+    #ajax-indicator{:style => "display:none;"}
+      =image_tag 'loading.gif'
+    #ic
+      =render :partial => "partials/header"
+      #content
+        #notice #{notice}
+        #alert #{alert}
+        = yield
+      =render :partial => "partials/footer"

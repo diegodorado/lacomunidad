@@ -5,11 +5,11 @@ class WallController < ApplicationController
     @posts = Post.order('created_at desc').limit(10)
     @view_more_offset = 10
 
-@popular_posts = Post.tally(
-  {  :start_at => 80.weeks.ago,
-      :limit => 10,
-      :order => "vote_count DESC"
-  })
+    @popular_posts = Post.tally(
+      {  :start_at => 80.weeks.ago,
+          :limit => 5,
+          :order => "vote_count DESC"
+      })
     
   end
 
@@ -60,7 +60,9 @@ class WallController < ApplicationController
       render :layout => false
     else
       #todo: log details 
-      render :text => "$('#alert').text('no es una url valida').fadeOut(2000);"
+      #todo: enhance parseUri 
+      
+      return render :text => "$('#alert').text('no es una url valida').fadeOut(2000);"
     end
     
     

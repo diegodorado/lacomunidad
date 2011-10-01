@@ -1,5 +1,12 @@
+.sass-cache
 .bundle
-db/*.sqlite3
+db/*.sqlite3*
 log/*.log
-tmp/
-public/system/
+*.log
+tmp/**/*
+tmp/*
+doc/api
+doc/app
+*.swp
+* ̃
+

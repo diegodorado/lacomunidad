@@ -1,0 +1,7 @@
+%h1 #{@page.title}
+
+= form_for @page, :method=> 'put' do |f|
+  = f.hidden_field :id
+  = f.hidden_field :title
+  = f.text_area :content, :spellcheck=>false
+  = f.submit 'Editar'

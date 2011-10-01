@@ -31,7 +31,9 @@ module OpenGraph
     images = []
     doc.css('img').each do |m|
       if m.attribute('src')
-        images << m.attribute('src').to_s.strip
+        image = m.attribute('src').to_s.strip.sub(/^\//, '')
+        image.insert(0, page['uri'].sub(/\/$/, '') + '/')  unless image.starts_with?('http')
+        images << image
       end
     end
 

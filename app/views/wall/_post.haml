@@ -1,29 +1,30 @@
-.avatar
-  =image_tag post.user.avatar.url(:thumb)
-.content
-  =link_to post.user.name, '#', :class => 'name'
-  %p.body
-    = post.body
-  = render :partial => "attachement", :locals => { :attachement => post.attachement } if post.attachement
-  .foot
-    %span.when Hace #{distance_of_time_in_words_to_now(post.created_at)}
-    -if user_signed_in?
-      =link_to post.comments.count, '#', :class=>'comments_count'
-      =link_to post.votes_for, wall_vote_post_path(post.id, :up), :remote => true, :class=>'thumbs_up'
-      =link_to post.votes_against, wall_vote_post_path(post.id, :down), :remote => true, :class=>'thumbs_down'
-    -else
-      %span.comments_count #{post.comments.count}
-      %span.thumbs_up #{post.votes_for}
-      %span.thumbs_down #{post.votes_against}
-  %ul.comments
-    - comments = post.comments.limit(3).all
-    - comments.each do |c|
-      = render :partial => "comment", :locals => { :comment => c }
-    -if post.comments.count>3
-      %li.more
-        -link_to wall_view_post_comments_path(post.id), :remote => true do
-          Ver los 
-          %span.comments_count #{post.comments.count}
-          comentarios
-  = render :partial => "comment_form", :locals => { :post => post } if user_signed_in?
+%li.post[p]
+  .avatar
+    =image_tag post.user.avatar.url(:thumb)
+  .content
+    =link_to post.user.name, '#', :class => 'name'
+    %p.body
+      = post.body
+    = render :partial => "attachement", :locals => { :attachement => post.attachement } if post.attachement
+    .foot
+      %span.when Hace #{distance_of_time_in_words_to_now(post.created_at)}
+      -if user_signed_in?
+        =link_to post.comments.count, '#', :class=>'comments_count'
+        =link_to post.votes_for, wall_vote_post_path(post.id, :up), :remote => true, :class=>'thumbs_up'
+        =link_to post.votes_against, wall_vote_post_path(post.id, :down), :remote => true, :class=>'thumbs_down'
+      -else
+        %span.comments_count #{post.comments.count}
+        %span.thumbs_up #{post.votes_for}
+        %span.thumbs_down #{post.votes_against}
+    %ul.comments
+      - comments = post.comments.limit(3).all
+      - comments.each do |c|
+        = render :partial => "comment", :locals => { :comment => c }
+      -if post.comments.count>3
+        %li.more
+          -link_to wall_view_post_comments_path(post.id), :remote => true do
+            Ver los 
+            %span.comments_count #{post.comments.count}
+            comentarios
+    = render :partial => "comment_form", :locals => { :post => post } if user_signed_in?
 

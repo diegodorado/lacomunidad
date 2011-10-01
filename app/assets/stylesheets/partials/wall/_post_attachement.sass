@@ -1,0 +1,22 @@
+.posts_list
+  li.post
+    .attachement
+      background: #FCFCFC
+      overflow: hidden
+      padding: 10px
+      .image_holder
+        +column(4)
+        width: 120px
+        .image
+          overflow: hidden
+          display: block
+          img
+      .content
+        +column(6,true)
+        width: 240px
+        .title a
+          font-weight: bold
+          text-decoration: none
+          color: $red
+        .description
+
