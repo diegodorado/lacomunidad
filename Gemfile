@@ -24,7 +24,7 @@ group :assets do
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
   gem "compass", "~> 0.12.alpha.0"
-  gem "js-routes" 
+  gem "js-routes"
 end
 
 
