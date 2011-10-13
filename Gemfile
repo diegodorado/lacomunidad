@@ -13,8 +13,7 @@ gem "omniauth"
 gem "paperclip"
 gem 'aws-s3'
 gem 'opengraph'
-gem "irwi"
-gem "friendly_id"
+gem "friendly_id", "~> 4.0.0.beta8"
 gem 'acts_as_commentable'
 gem 'thumbs_up'
 
@@ -34,11 +33,12 @@ end
 
 group :development do
   gem 'rspec-rails'
+  gem "annotate"
   gem 'sqlite3'
   gem 'sqlite3-ruby'
   gem "nifty-generators"
   gem "faker"
-  gem "populator"  
+  gem "populator"
 end
 
 group :test do

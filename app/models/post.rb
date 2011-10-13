@@ -9,3 +9,16 @@ class Post < ActiveRecord::Base
   validates :user, :presence => true  
 
 end
+
+
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer         not null, primary key
+#  body       :string(255)     not null
+#  created_at :datetime
+#  updated_at :datetime
+#  user_id    :integer
+#
+

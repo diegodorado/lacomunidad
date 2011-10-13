@@ -2,48 +2,37 @@ class PagesController < ApplicationController
 
   helper_method :has_perms?
 
-  def index
-    @pages = Page.order('title')
-  end
-
   def show
-    @page = Page.find_by_path_or_new( params[:path] )
-    render ( @page.new_record? ? 'empty' : 'show' )
+    @page = Page.find params[:id]
+    redirect_to root_path, :alert =>  "La pagina '#{params[:id]}' no existe" unless @page
   end
 
   def new
-    @page = Page.find_by_path_or_new( params[:path] )
-    return not_allowed unless has_perms?
+    @page = Page.new
   end
 
   def edit
-    return not_allowed unless has_perms?
+    #return not_allowed unless has_perms?
     @page = Page.find( params[:id])
   end
 
   def create
-    return not_allowed unless has_perms?
     page = Page.new(params['page'])
     page.save
-    redirect_to show_page_path( page.path)
+    redirect_to page
   end
 
   def update
-    return not_allowed unless has_perms?
-    page = Page.find(params[:id])
+    page = Page.find params[:id]
     page.update_attributes(params[:page])
     page.save
-    redirect_to show_page_path( page.path)
+    redirect_to page
   end
 
   def destroy
-    return not_allowed unless has_perms?
-    page = Page.find( params[:id])
+    page = Page.find params[:id]
     page.destroy
-    redirect_to url_for( :action => :index )
-  end
-
-  def not_allowed
+    redirect_to root_path, :alert =>  "La pagina '#{params[:id]}' se elimino"
   end
 
   protected

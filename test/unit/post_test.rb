@@ -6,3 +6,16 @@ class PostTest < ActiveSupport::TestCase
     assert true
   end
 end
+
+
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer         not null, primary key
+#  body       :string(255)     not null
+#  created_at :datetime
+#  updated_at :datetime
+#  user_id    :integer
+#
+

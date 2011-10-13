@@ -84,6 +84,10 @@
   };
 
   window.Routes = {
+// root => /
+  root_path: function(options) {
+  return Utils.build_path(1, ["/"], arguments)
+  },
 // authentications => /authentications(.:format)
   authentications_path: function(options) {
   return Utils.build_path(1, ["/authentications"], arguments)
@@ -139,10 +143,6 @@
 // edit_user_registration => /users/edit(.:format)
   edit_user_registration_path: function(options) {
   return Utils.build_path(1, ["/users/edit"], arguments)
-  },
-// root => /
-  root_path: function(options) {
-  return Utils.build_path(1, ["/"], arguments)
   },
 // what => /que-es(.:format)
   what_path: function(options) {
@@ -200,6 +200,10 @@
   pages_path: function(options) {
   return Utils.build_path(1, ["/pages"], arguments)
   },
+// new_page => /pages/new(.:format)
+  new_page_path: function(options) {
+  return Utils.build_path(1, ["/pages/new"], arguments)
+  },
 // edit_page => /pages/:id/edit(.:format)
   edit_page_path: function(_id, options) {
   return Utils.build_path(2, ["/pages/", "/edit"], arguments)
@@ -207,14 +211,6 @@
 // page => /pages/:id(.:format)
   page_path: function(_id, options) {
   return Utils.build_path(2, ["/pages/"], arguments)
-  },
-// show_page => /page/:path(.:format)
-  show_page_path: function(_path, options) {
-  return Utils.build_path(2, ["/page/"], arguments)
-  },
-// new_page => /new_page/:path(.:format)
-  new_page_path: function(_path, options) {
-  return Utils.build_path(2, ["/new_page/"], arguments)
   }}
 ;
   
