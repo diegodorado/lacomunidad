@@ -88,6 +88,22 @@
   root_path: function(options) {
   return Utils.build_path(1, ["/"], arguments)
   },
+// what => /que-es(.:format)
+  what_path: function(options) {
+  return Utils.build_path(1, ["/que-es"], arguments)
+  },
+// noticias => /noticias(.:format)
+  noticias_path: function(options) {
+  return Utils.build_path(1, ["/noticias"], arguments)
+  },
+// documentos => /documentos(.:format)
+  documentos_path: function(options) {
+  return Utils.build_path(1, ["/documentos"], arguments)
+  },
+// participate => /como-participar(.:format)
+  participate_path: function(options) {
+  return Utils.build_path(1, ["/como-participar"], arguments)
+  },
 // authentications => /authentications(.:format)
   authentications_path: function(options) {
   return Utils.build_path(1, ["/authentications"], arguments)
@@ -144,25 +160,9 @@
   edit_user_registration_path: function(options) {
   return Utils.build_path(1, ["/users/edit"], arguments)
   },
-// what => /que-es(.:format)
-  what_path: function(options) {
-  return Utils.build_path(1, ["/que-es"], arguments)
-  },
-// noticias => /noticias(.:format)
-  noticias_path: function(options) {
-  return Utils.build_path(1, ["/noticias"], arguments)
-  },
-// show_news => /noticias/:path(.:format)
-  show_news_path: function(_path, options) {
-  return Utils.build_path(2, ["/noticias/"], arguments)
-  },
-// documentos => /documentos(.:format)
-  documentos_path: function(options) {
-  return Utils.build_path(1, ["/documentos"], arguments)
-  },
-// participate => /como-participar(.:format)
-  participate_path: function(options) {
-  return Utils.build_path(1, ["/como-participar"], arguments)
+// profile => /profile(.:format)
+  profile_path: function(options) {
+  return Utils.build_path(1, ["/profile"], arguments)
   },
 // wall_view_more_posts => /muro/mas/:offset(.:format)
   wall_view_more_posts_path: function(_offset, options) {
@@ -191,10 +191,6 @@
 // wall_vote_post => /vote_post/:post_id/:direction(.:format)
   wall_vote_post_path: function(_post_id, _direction, options) {
   return Utils.build_path(3, ["/vote_post/", "/"], arguments)
-  },
-// profile => /profile(.:format)
-  profile_path: function(options) {
-  return Utils.build_path(1, ["/profile"], arguments)
   },
 // pages => /pages(.:format)
   pages_path: function(options) {
