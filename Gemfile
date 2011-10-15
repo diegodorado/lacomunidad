@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
 gem "jquery-rails"
 
@@ -19,8 +19,8 @@ gem 'thumbs_up'
 
 
 group :assets do
-  gem 'sass-rails', "~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
   gem "compass", "~> 0.12.alpha.0"
   gem "js-routes"
@@ -43,7 +43,7 @@ end
 
 group :test do
   gem 'rspec'
-  gem 'webrat', '0.7.1'
+  gem 'webrat'
 end
 
 
