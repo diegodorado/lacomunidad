@@ -8,6 +8,9 @@ gem "haml"
 gem "RedCloth", ">= 4.2.7"
 #gem "rdiscount"
 
+#avoids:  warning: already initialized constant WFKV_
+gem 'rack' , '1.3.3'
+
 gem "devise"
 gem "omniauth"
 gem "paperclip"

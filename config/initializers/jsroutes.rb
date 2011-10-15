@@ -1,4 +1,4 @@
-#require 'jsroutes'
+require 'js-routes'
 JsRoutes.generate!({
  #options
 })
