@@ -1,9 +1,9 @@
-.left_column
+.span7
   = render :partial => "post_form" if user_signed_in?
   %ul#posts_list.posts_list
     = render :partial => "posts_list", :locals => { :posts => @posts, :@offset => 10 }
 
-.right_column
+.span6.offset1
   %ul.posts_list
     - @popular_posts.each do |p|
       %li.post

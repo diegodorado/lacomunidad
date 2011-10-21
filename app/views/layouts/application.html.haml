@@ -19,5 +19,6 @@
           .alert-message.error(data-alert)
             %a.close(href="#") &times;
             %p #{alert}
-        = yield
+        .span14.offset1
+          = yield
       =render :partial => "partials/footer"
