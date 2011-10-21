@@ -3,8 +3,12 @@
 //= require jquery.elastic
 //= require jquery.special.edit
 //= require jquery.editinplace
+//= require bootstrap-modal
+//= require bootstrap-alerts
 //= require utils
 //= require routes
 //= require app
+//= require pages
+//= require wall
 //= require main
-
+//= require markdown-editor

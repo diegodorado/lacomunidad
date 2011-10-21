@@ -1,25 +1,17 @@
-@import "partials/base"
-
 #header
-  +container
   background: $red
   padding-top: 10px
   border-bottom: 3px solid $light_red
-  .logo
-    +prepend(1)
-    +column(8)
-  #user-nav, #main-nav
-    +column(14,true)
-    +append(1)
   #user-nav
     text-align: right
     a, span
       color: #fff
       font-size: 12px
-      font-weight: bold      
+      font-weight: bold
       padding-right: 10px
   #main-nav
     margin-top: 15px
+    list-style: none
     li
       text-align: center
       height: 24px

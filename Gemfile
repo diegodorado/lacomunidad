@@ -5,11 +5,10 @@ gem 'rails', '3.1.1'
 gem "jquery-rails"
 
 gem "haml"
-gem "RedCloth", ">= 4.2.7"
-#gem "rdiscount"
+gem "redcarpet"
 
-#avoids:  warning: already initialized constant WFKV_
-gem 'rack' , '1.3.3'
+#gem "rails31-markdown-editor"
+
 
 gem "devise"
 gem "omniauth"
@@ -27,6 +26,7 @@ group :assets do
   gem 'uglifier'
   gem "compass", "~> 0.12.alpha.0"
   gem "js-routes"
+  gem 'less-rails-bootstrap'
 end
 
 
@@ -48,5 +48,3 @@ group :test do
   gem 'rspec'
   gem 'webrat'
 end
-
-

@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, :use => :slugged
-  validates_presence_of :title, :slug, :content
+  validates :title, :presence => true, :uniqueness => true
 
 end
 
@@ -16,4 +16,3 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #
-

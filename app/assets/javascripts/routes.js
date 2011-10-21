@@ -224,14 +224,6 @@
   wall_vote_post_path: function(_post_id, _direction, options) {
   return Utils.build_path(2, ["/vote_post/", "/"], ["format"], arguments)
   },
-// pages => /pages(.:format)
-  pages_path: function(options) {
-  return Utils.build_path(0, ["/pages"], ["format"], arguments)
-  },
-// new_page => /pages/new(.:format)
-  new_page_path: function(options) {
-  return Utils.build_path(0, ["/pages/new"], ["format"], arguments)
-  },
 // edit_page => /pages/:id/edit(.:format)
   edit_page_path: function(_id, options) {
   return Utils.build_path(1, ["/pages/", "/edit"], ["format"], arguments)
@@ -239,6 +231,10 @@
 // page => /pages/:id(.:format)
   page_path: function(_id, options) {
   return Utils.build_path(1, ["/pages/"], ["format"], arguments)
+  },
+// new_page => /pages/new(.:format)
+  new_page_path: function(options) {
+  return Utils.build_path(0, ["/pages/new"], ["format"], arguments)
   }}
 ;
   window.Routes.options = defaults;

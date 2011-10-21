@@ -127,6 +127,7 @@ es:
       update: 'Actualizar %{model}'
       submit: 'Guardar %{model}'
 
+
   errors:
       format: "%{attribute} %{message}"
 

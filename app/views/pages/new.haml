@@ -1,6 +1,0 @@
-%h1 #{@page.title}
-
-= form_for @page, :url => pages_path(@page) do |f|
-  = f.hidden_field :title
-  = f.text_area :content, :spellcheck=>false
-  = f.submit 'Crear'
