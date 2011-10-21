@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>My Google API Application</title>
+    <script src="https://www.google.com/jsapi?key=ABQIAAAAenVWMbenj9C-fLPEZJmP0RTJQa0g3IQ9GZqIMmInSLzwtGDKaBRaj0DfNvxnOe0UrRQJtXd_p8aFOg" type="text/javascript"></script>
+    <script language="Javascript" type="text/javascript">
+    //<![CDATA[
+
+			google.setOnLoadCallback(createPicker);
+			google.load("picker", "1",{"language":"es"});
+
+			function createPicker() {
+				var picker = new google.picker.PickerBuilder().
+					addView(google.picker.ViewId.IMAGE_SEARCH).
+					addView(google.picker.ViewId.PHOTO_UPLOAD).
+					addView(google.picker.ViewId.PHOTOS).
+					setCallback(pickerCallback).
+					build();
+				picker.setVisible(true);
+			}
+
+			function pickerCallback(data) {
+			console.log(data);
+				var message = "Escogiste: " +
+					((data.action == google.picker.Action.PICKED) ? data.docs[0].url : "nothing"); //thumbnails[1].url
+				document.getElementById("result").src = data.docs[0].thumbnails[4].url;
+			}
+
+
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <img id="result" scr="" />
+  </body>
+</html>
