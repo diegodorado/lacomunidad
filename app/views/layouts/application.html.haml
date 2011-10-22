@@ -9,7 +9,7 @@
     #ajax-indicator{:style => "display:none;"}
       =image_tag 'loading.gif'
     #ic.container
-      =render :partial => "partials/header"
+      =render :partial => "layouts/header"
       #content.row
         -if notice
           .alert-message.success(data-alert)
@@ -21,4 +21,4 @@
             %p #{alert}
         .span14.offset1
           = yield
-      =render :partial => "partials/footer"
+      =render :partial => "layouts/footer"

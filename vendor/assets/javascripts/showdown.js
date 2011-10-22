@@ -400,7 +400,7 @@ var _RunSpanGamut = function(text) {
     text = _DoImages(text);
 
     //do internal anchors
-    text = text.replace(/\[\[([\w,\!\?\.\s]*)\]\]/g,'<a href=\"#\">$1</a>');
+    text = text.replace(/\[\[([^\[\]]+)\]\]?/g,'<a href=\"#\">$1</a>');
 
     text = _DoAnchors(text);
 
