@@ -3,8 +3,8 @@
 //= require jquery.elastic
 //= require jquery.special.edit
 //= require jquery.editinplace
-//= require bootstrap-modal
-//= require bootstrap-alerts
+//= require twitter/bootstrap/modal
+//= require twitter/bootstrap/alerts
 //= require utils
 //= require routes
 //= require app

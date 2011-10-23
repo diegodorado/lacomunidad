@@ -6,7 +6,7 @@
     = javascript_include_tag 'application'
     = csrf_meta_tag
   %body{:class => body_classes.join(' ')}
-    #ajax-indicator{:style => "display:none;"}
+    #ajax-indicator(style = "display:none;")
       =image_tag 'loading.gif'
     #ic.container
       =render :partial => "layouts/header"

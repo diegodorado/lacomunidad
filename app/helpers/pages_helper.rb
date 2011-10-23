@@ -1,31 +1,31 @@
 module PagesHelper
 
   def wikify(content)
-    #markdown auto_link(linkify(content))
-    if has_perms?
-      markdown linkify_with_perms(content)
-    else
-      markdown linkify(content)
-    end
+    markdown linkify content
   end
 
   def linkify( str )
-    str.gsub /\[\[([^\[\]]+)\]\]?/xu do
-      title = $1
-      link_to title, :id => title.parameterize
-    end.html_safe
+    str.gsub! /\[\[([^\|\[\]]+)\]\]?/xu do
+      get_page_link $1, $1
+    end
+    str.gsub! /\[\[([^\[\|\]]+)\|([^\[\]]+)\]\]?/ do
+      get_page_link $2, $1
+    end
+    str
   end
 
-  def linkify_with_perms( str )
-    str.gsub /\[\[([^\[\]]+)\]\]?/xu do
-      title = $1
-      p = Page.find_by_title title
+  def get_page_link(title,page_title)
+    page_title.strip!
+    if has_perms?
+      p = Page.find_by_title page_title
       if p
         link_to title, p
       else
-        link_to title, new_page_path(:title=>title), :method=> :post, :class=> 'not-created', :title=>'Crear Pagina'
+        link_to title, new_page_path(:title=>page_title), :method=> :post, :class=> 'not-created'
       end
-    end.html_safe
+    else
+      link_to title, :id => page_title.parameterize
+    end
   end
 
 end
