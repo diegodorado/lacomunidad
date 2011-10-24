@@ -28,6 +28,7 @@ group :assets do
   gem "compass", "~> 0.12.alpha.0"
   gem "js-routes"
   gem 'less-rails-bootstrap'
+  gem "rails-backbone"
 end
 
 
@@ -43,7 +44,6 @@ group :development do
   gem "nifty-generators"
   gem "faker"
   gem "populator"
-  gem "rails-backbone"
 end
 
 group :test do
