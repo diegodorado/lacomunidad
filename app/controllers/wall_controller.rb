@@ -1,6 +1,19 @@
 class WallController < ApplicationController
-  before_filter :authenticate_user!, :except =>[:index,:view_more_posts,:view_post_comments]
+  before_filter :authenticate_user!, :except =>[:index,:index2,:view_more_posts,:view_post_comments]
   respond_to :html, :js
+
+  def index2
+    @pages = Page.all
+    @posts = Post.order('created_at desc').limit(10)
+    @view_more_offset = 10
+
+    @popular_posts = Post.tally(
+      {  :start_at => 80.weeks.ago,
+          :limit => 5,
+          :order => "vote_count DESC"
+      })
+  end
+
   def index
     @posts = Post.order('created_at desc').limit(10)
     @view_more_offset = 10
@@ -10,7 +23,7 @@ class WallController < ApplicationController
           :limit => 5,
           :order => "vote_count DESC"
       })
-    
+
   end
 
   def view_more_posts
@@ -36,7 +49,7 @@ class WallController < ApplicationController
     render :layout => false
   end
 
-  
+
   def create_comment
     @post = Post.find(params['post_id'])
     @comment = @post.comments.build(params['comment'])
@@ -47,26 +60,26 @@ class WallController < ApplicationController
       render :text => "$('#alert').text('no se pudo grabar el comentario').fadeOut(2000)"
     end
   end
-  
+
   def view_post_comments
     @post = Post.find(params['post_id'])
     @comments = @post.comments.offset(3)
     render :layout => false
   end
-  
+
   def create_post_og
     @og = OpenGraph.fetch(params['url'])
     if @og.valid?
       render :layout => false
     else
-      #todo: log details 
-      #todo: enhance parseUri 
-      
+      #todo: log details
+      #todo: enhance parseUri
+
       return render :text => "$('#alert').text('no es una url valida').fadeOut(2000);"
     end
-    
-    
-    
+
+
+
   end
-  
+
 end

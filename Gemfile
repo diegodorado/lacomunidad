@@ -21,6 +21,7 @@ gem 'thumbs_up'
 
 
 group :assets do
+  gem 'haml_assets'
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
@@ -42,6 +43,7 @@ group :development do
   gem "nifty-generators"
   gem "faker"
   gem "populator"
+  gem "rails-backbone"
 end
 
 group :test do

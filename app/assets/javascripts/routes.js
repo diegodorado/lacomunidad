@@ -196,13 +196,17 @@
   profile_path: function(options) {
   return Utils.build_path(0, ["/profile"], ["format"], arguments)
   },
-// wall_view_more_posts => /muro/mas/:offset(.:format)
-  wall_view_more_posts_path: function(_offset, options) {
-  return Utils.build_path(1, ["/muro/mas/"], ["format"], arguments)
+// wall2 => /wall2(.:format)
+  wall2_path: function(options) {
+  return Utils.build_path(0, ["/wall2"], ["format"], arguments)
   },
 // muro => /muro(.:format)
   muro_path: function(options) {
   return Utils.build_path(0, ["/muro"], ["format"], arguments)
+  },
+// wall_view_more_posts => /muro/mas/:offset(.:format)
+  wall_view_more_posts_path: function(_offset, options) {
+  return Utils.build_path(1, ["/muro/mas/"], ["format"], arguments)
   },
 // create_post_og => /create_post_og(.:format)
   create_post_og_path: function(options) {

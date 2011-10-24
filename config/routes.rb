@@ -14,8 +14,9 @@ Lacomunidad::Application.routes.draw do
   match '/profile' => 'users#profile', :as => 'profile'
 
   #wall
-  match '/muro/mas/:offset' => 'wall#view_more_posts', :as => 'wall_view_more_posts'
+  match '/wall2' => 'wall#index2'
   match '/muro' => 'wall#index'
+  match '/muro/mas/:offset' => 'wall#view_more_posts', :as => 'wall_view_more_posts'
   match '/create_post_og' => 'wall#create_post_og', :as => 'create_post_og'
   match '/publicar' => 'wall#create_post', :as => 'new_post'
   match '/comentar/:post_id' => 'wall#create_comment', :as => 'new_comment'

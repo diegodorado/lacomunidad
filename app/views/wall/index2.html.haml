@@ -1,0 +1,16 @@
+.span7
+  .row
+    #pages
+    #posts
+    #new_post
+
+.span6.offset1
+  .row
+    %ul.posts_list
+:javascript
+
+  $(function() {
+    //window.router = new Lacomunidad.Routers.PagesRouter({pages: #{@pages.to_json.html_safe}});
+    window.router = new Lacomunidad.Routers.PostsRouter({user: #{current_user.to_json.html_safe}, posts: #{@posts.to_json.html_safe}});
+    Backbone.history.start();
+  });    
