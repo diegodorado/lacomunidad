@@ -11,6 +11,7 @@ class StaticController < ApplicationController
   end
 
   def participate
+    redirect_to page_path('como-participar')
   end
 
   def what

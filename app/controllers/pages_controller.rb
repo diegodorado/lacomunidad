@@ -15,12 +15,13 @@ class PagesController < ApplicationController
   end
 
   def edit
-    #return not_allowed unless has_perms?
     @page = Page.find( params[:id])
+    redirect_to @page unless has_perms?
   end
 
   def update
     page = Page.find params[:id]
+    redirect_to page unless has_perms?
     page.update_attributes(params[:page])
     page.save
     redirect_to page
@@ -28,6 +29,7 @@ class PagesController < ApplicationController
 
   def destroy
     page = Page.find params[:id]
+    redirect_to page unless has_perms?
     page.destroy
     redirect_to root_path, :notice =>  "La pagina '#{params[:id]}' se elimino"
   end
@@ -36,7 +38,8 @@ class PagesController < ApplicationController
 
   def has_perms?
     return false unless user_signed_in?
-    current_user.email == 'diegodorado@gmail.com'
+    authorized = [ 'diegodorado@gmail.com', 'carlos@redhumanista.org', 'joseluismiranda@gmail.com','gabiyas@gmail.com' ]
+    authorized.include?(current_user.email)
   end
 
 
