@@ -38,7 +38,7 @@ class PagesController < ApplicationController
 
   def has_perms?
     return false unless user_signed_in?
-    authorized = [ 'diegodorado@gmail.com', 'carlos@redhumanista.org', 'joseluismiranda@gmail.com','gabiyas@gmail.com' ]
+    authorized = [ 'diegodorado@gmail.com', 'carlos@redhumanista.org', 'joseluismiranda@gmail.com','gabiyas@gmail.com', 'julietaspagnuolo@yahoo.com.ar' ]
     authorized.include?(current_user.email)
   end
 
