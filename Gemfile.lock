@@ -103,6 +103,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.11.0)
     polyglot (0.3.3)
     populator (1.0.0)
     rack (1.3.5)
@@ -207,6 +208,7 @@ DEPENDENCIES
   nifty-generators
   opengraph
   paperclip
+  pg
   populator
   rails (= 3.1.1)
   rails-backbone
