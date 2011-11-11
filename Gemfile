@@ -33,7 +33,7 @@ end
 
 
 group :production do
-#  gem 'pg'
+  gem 'pg'
 end
 
 group :development do
