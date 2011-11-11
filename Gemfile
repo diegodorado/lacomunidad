@@ -11,7 +11,7 @@ gem "redcarpet"
 
 
 gem "devise"
-gem "omniauth"
+#gem "omniauth",'~> 0.3.2'
 gem "paperclip"
 gem 'aws-s3'
 gem 'opengraph'
@@ -33,7 +33,7 @@ end
 
 
 group :production do
-  gem 'pg'
+#  gem 'pg'
 end
 
 group :development do

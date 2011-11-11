@@ -1,7 +1,7 @@
 module PagesHelper
 
   def wikify(content)
-    markdown linkify content
+    markdown linkify content unless content.nil?
   end
 
   def linkify( str )
