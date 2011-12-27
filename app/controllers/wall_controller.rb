@@ -1,5 +1,5 @@
 class WallController < ApplicationController
-  before_filter :authenticate_user!, :except =>[:index,:index2,:view_more_posts,:view_post_comments]
+  before_filter :authenticate_user!
   respond_to :html, :js
 
   def index2
@@ -7,7 +7,7 @@ class WallController < ApplicationController
   end
 
   def index
-    if Rails.env.production? return redirect_to root_path, :notice =>  "El muro esta en desarrollo. Pronto estara en funcionamiento."
+    return redirect_to root_path, :notice =>  "El muro esta en desarrollo. Pronto estara en funcionamiento." if Rails.env.production? 
 
     @posts = Post.order('created_at desc').limit(10)
     @view_more_offset = 10
