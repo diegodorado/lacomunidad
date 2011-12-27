@@ -15,7 +15,7 @@ class WallController < ApplicationController
   end
 
   def index
-    return redirect_to root_path, :notice =>  "El muro esta en desarrollo. Pronto estara en funcionamiento."
+    #return redirect_to root_path, :notice =>  "El muro esta en desarrollo. Pronto estara en funcionamiento."
 
     @posts = Post.order('created_at desc').limit(10)
     @view_more_offset = 10

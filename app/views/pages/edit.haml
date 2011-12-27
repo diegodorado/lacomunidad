@@ -1,10 +1,16 @@
-%h1 #{@page.title}
-
 = form_for @page, :method=> 'put' do |f|
   = f.hidden_field :id
-  = f.hidden_field :title
   %fieldset
-    = f.text_area :content, :spellcheck=>false, :rows=>5
+    .clearfix
+      %label(for="title") Titulo
+      .input
+        = f.text_field :title, {:class=>'xlarge'}
+    .clearfix
+      %label(for="slug") Slug
+      .input
+        = f.text_field :slug, {:class=>'xlarge'}
+  %fieldset
+    = f.text_area :content, :spellcheck=>false, :rows=>20
     .live-preview
   = f.submit 'Guardar', :class=>'btn primary'
 

@@ -24,7 +24,7 @@ Lacomunidad::Application.routes.draw do
   match '/vote_post/:post_id/:direction' => 'wall#vote_post', :as => 'wall_vote_post'
 
   #pages
-  resources :pages, :except => [:index, :new, :create]
+  resources :pages, :except => [:new, :create]
   post '/pages/new' => 'pages#new', :as => 'new_page'
 
 end

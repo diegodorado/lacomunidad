@@ -44,7 +44,7 @@ App.Pages =
 
   initMarkdownEditor: (selector) ->
     $(selector).markdownEditor()
-    $(selector).elastic()
+    #$(selector).elastic()
     $(".editor .function-image").bind "click", =>
       @callPicker()
 
@@ -73,8 +73,6 @@ App.Pages =
     @thumbChooser.modal 'show'
 
   thumbSelected: (event) ->
-    console.log event
-    console.log this
     event.preventDefault()
     @thumbChooser.modal 'hide'
     title =  event.target.title

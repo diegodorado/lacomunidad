@@ -24,7 +24,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :avatar, :name
   
-
+  def name
+    self.email.gsub(/@.*/, '')
+  end
+  
   def apply_omniauth(omniauth)
     self.email = omniauth['email'] if email.blank?
     self.name = omniauth['name'] if name.blank?    

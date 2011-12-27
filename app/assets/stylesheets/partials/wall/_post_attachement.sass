@@ -1,19 +1,22 @@
-.posts_list
-  li.post
-    .attachement
-      background: #FCFCFC
-      overflow: hidden
-      padding: 10px
+.post
+  .attachement
+    background: #F6F6F6
+    overflow: hidden
+    padding: 10px
+    .image
+      width: 120px
+      float: left
+      margin-right: 20px
       .image_holder
-        width: 120px
-        .image
-          overflow: hidden
-          display: block
-          img
-      .content
-        width: 240px
-        .title a
-          font-weight: bold
-          text-decoration: none
-          color: $red
-        .description
+        overflow: hidden
+        display: block
+        img
+          width: 100%
+    .text
+      width: 340px
+      float: left
+      .title a
+        font-weight: bold
+        text-decoration: none
+        color: $red
+      .description
