@@ -1,6 +1,7 @@
+= render :partial => "post_form"
+
 .span7
   .row
-    #pages
     #posts
     #new_post
 
@@ -10,7 +11,6 @@
 :javascript
 
   $(function() {
-    //window.router = new Lacomunidad.Routers.PagesRouter({pages: #{@pages.to_json.html_safe}});
     window.router = new Lacomunidad.Routers.PostsRouter({user: #{current_user.to_json.html_safe}, posts: #{@posts.to_json.html_safe}});
     Backbone.history.start();
   });    

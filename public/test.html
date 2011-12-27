@@ -1,37 +1,314 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>My Google API Application</title>
-    <script src="https://www.google.com/jsapi?key=ABQIAAAAenVWMbenj9C-fLPEZJmP0RTJQa0g3IQ9GZqIMmInSLzwtGDKaBRaj0DfNvxnOe0UrRQJtXd_p8aFOg" type="text/javascript"></script>
-    <script language="Javascript" type="text/javascript">
-    //<![CDATA[
+<!DOCTYPE html>
+<html><head>
+    <title>La Comunidad para el desarrollo humano</title>
+    <link href="/assets/twitter/bootstrap.css?body=1" media="screen" rel="stylesheet" type="text/css">
+    <link href="/assets/markdown-editor.css?body=1" media="screen" rel="stylesheet" type="text/css">
+    <link href="/assets/main.css?body=1" media="screen" rel="stylesheet" type="text/css">
+    <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery.elastic.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery.special.edit.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery.editinplace.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/modal.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/alerts.js?body=1" type="text/javascript"></script>
+    <script src="/assets/underscore.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone_rails_sync.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone_datalink.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/lacomunidad.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/pages/edit.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/pages/index.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/pages/new.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/pages/page.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/pages/show.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/posts/list.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/posts/post.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/posts/show.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/templates/posts/test.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/models/page.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/models/post.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/views/pages/edit_view.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/views/pages/index_view.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/views/pages/new_view.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/views/pages/page_view.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/views/pages/show_view.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/views/posts/list_view.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/views/posts/post_view.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/views/posts/show_view.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/routers/pages_router.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/routers/post_router.js?body=1" type="text/javascript"></script>
+    <script src="/assets/utils.js?body=1" type="text/javascript"></script>
+    <script src="/assets/routes.js?body=1" type="text/javascript"></script>
+    <script src="/assets/app.js?body=1" type="text/javascript"></script>
+    <script src="/assets/pages.js?body=1" type="text/javascript"></script>
+    <script src="/assets/wall.js?body=1" type="text/javascript"></script>
+    <script src="/assets/main.js?body=1" type="text/javascript"></script>
+    <script src="/assets/showdown.js?body=1" type="text/javascript"></script>
+    <script src="/assets/markdown-editor.js?body=1" type="text/javascript"></script>
+    <script src="/assets/application.js?body=1" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param">
+    <meta content="cDlga0RvYM9tlk3dRhsj/QEniFVM+IqNAotrN7wcQuw=" name="csrf-token">
+  <script type="text/javascript" src="http://www.monsterdivx.com/core/analytics/ga.js?localhost"></script></head>
+  <body class="wall">
+    <div id="ajax-indicator" style="display: none; ">
+      <img alt="Loading" src="/assets/loading.gif">
+    </div>
+    <div class="container" id="ic">
+      <div class="row" id="header">
+        <div class="span6">
+          <a href="/" class="logo"><img alt="Logo" src="/assets/logo.png"></a>
+        </div>
+        <div class="span10">
+          <div class="row">
+            <div id="user-nav">
+              <span>diegodorado@gmail.com</span>
+              <a href="/users/sign_out">Salir</a>
+            </div>
+            <ul id="main-nav">
+              <li class="first"><a href="/que-es">Que es La Comunidad</a></li>
+              <li><a href="/muro" class="active">Muro</a></li>
+              <li><a href="/noticias">Noticias</a></li>
+              <li><a href="/documentos">Documentos</a></li>
+              <li class="last"><a href="/como-participar">Como Participar</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="content">
+        <div class="span10 offset1">
+          <div id="post_og" style="display: block; ">
+            <div class="image_holder span3">
+              <div class="image_wrapper">
+                <div class="image" style="display: block; "><img src="http://i4.ytimg.com/vi/W4_vpS0-ZXU/hqdefault.jpg"></div>
+                <div class="waiting" style="display: none; ">
+                  <img alt="Loading" src="/assets/loading.gif">
+                </div>
+              </div>
+            </div>
+            <div class="content span7">
+              <div class="title" style="background-color: transparent; ">Inauguración CENTRO HUMANISTA INTEGRAL Y DE SALUD</div>
+              <div class="url">http://www.youtube.com/watch?v=W4_vpS0-ZXU</div>
+              <div class="description" style="background-color: transparent; ">facebook: humanistascomuna8 webpage: www.saludhumanista.org.ar Dirección del local de salud: Calle Batle Ordoñez Manzana 5 Casa 60, Barrio Fátima, Soldati</div>
+            </div>
+            <a class="hide" href="#">X</a>
+          </div>
+          <div id="publicar">
+            <form accept-charset="UTF-8" action="/publicar" autocomplete="off" class="new_post" data-remote="true" id="new_post" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="cDlga0RvYM9tlk3dRhsj/QEniFVM+IqNAotrN7wcQuw="></div>
+              <input id="post_attachement_attributes_title" name="post[attachement_attributes][title]" type="hidden" value="Inauguración CENTRO HUMANISTA INTEGRAL Y DE SALUD">
+              <input id="post_attachement_attributes_url" name="post[attachement_attributes][url]" type="hidden" value="http://www.youtube.com/watch?v=W4_vpS0-ZXU">
+              <input id="post_attachement_attributes_description" name="post[attachement_attributes][description]" type="hidden" value="facebook: humanistascomuna8 webpage: www.saludhumanista.org.ar Dirección del local de salud: Calle Batle Ordoñez Manzana 5 Casa 60, Barrio Fátima, Soldati">
+              <input id="post_attachement_attributes_image" name="post[attachement_attributes][image]" type="hidden" value="http://i4.ytimg.com/vi/W4_vpS0-ZXU/hqdefault.jpg">
+              <input id="post_attachement_attributes_video" name="post[attachement_attributes][video]" type="hidden" value="http://www.youtube.com/v/W4_vpS0-ZXU?version=3&amp;autohide=1">
+              <div id="publicar_body">
+                <textarea cols="40" id="post_body" name="post[body]" rows="20" spellcheck="false" style="height: 40px; overflow-x: hidden; overflow-y: hidden; ">Qué estás pensando?</textarea>
+              <div style="word-wrap: break-word; white-space: pre-wrap; border-left-color: rgb(204, 204, 204); border-left-style: solid; border-bottom-color: rgb(204, 204, 204); border-bottom-style: solid; border-right-color: rgb(204, 204, 204); border-right-style: solid; border-top-color: rgb(204, 204, 204); border-top-style: solid; border-left-width: 1px; border-bottom-width: 1px; border-right-width: 1px; border-top-width: 1px; font-weight: normal; width: 425px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 20px; font-size: 13px; padding-left: 10px; padding-bottom: 2px; padding-right: 10px; padding-top: 2px; position: absolute; display: none; ">http://www.youtube.com/watch?v=W4_vpS0-ZXU&amp;feature=g-all-esi&amp;context=G20984f3FAAAAAAAABAA&nbsp;</div></div>
+              <div id="publicar_submit" style="display: block; ">
+                <input name="commit" type="submit" value="Compartir">
+              </div>
+            </form>
+          </div>
+          <ul class="posts_list" id="posts_list"><li class="post">
+  <div class="avatar">
+    <img alt="Missing" src="/avatars/thumb/missing.png">
+  </div>
+  <div class="content">
+    <a href="#" class="name">diegodorado</a>
+    <p class="body">
+      http://chrome.angrybirds.com/
+    </p>
+    <div class="attachement">
+      <div class="image">
+        <a href="http://chrome.angrybirds.com" class="image_holder" target="new"><img alt="Chrome-icon" src="http://chrome.angrybirds.com/validate/chrome-icon.png"></a>
+      </div>
+      <div class="text">
+        <div class="title">
+          <a href="http://chrome.angrybirds.com" target="new">Angry Birds Chrome</a>
+        </div>
+        <div class="description">Play Angry Birds online in HD with Google Chrome</div>
+      </div>
+    </div>
+    <div class="foot">
+      <span class="when">Hace menos de 1 minuto</span>
+      <a href="#" class="comments_count">0</a>
+      <a href="/vote_post/5/up" class="thumbs_up" data-remote="true">0</a>
+      <a href="/vote_post/5/down" class="thumbs_down" data-remote="true">0</a>
+    </div>
+    <ul class="comments">
+    </ul>
+    <div class="comment_form">
+      <form accept-charset="UTF-8" action="/comentar/5" autocomplete="off" class="new_comment" data-remote="true" id="new_comment_for_5" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="cDlga0RvYM9tlk3dRhsj/QEniFVM+IqNAotrN7wcQuw="></div>
+        <div class="avatar" style="display:none;">
+          <img alt="Missing" src="/avatars/icon/missing.png">
+        </div>
+        <div class="comment">
+          <textarea cols="40" id="comment_comment_for_5" name="comment[comment]" rows="20" spellcheck="false">Escribe un comentario</textarea>
+        </div>
+        <div class="submit" style="display:none;">
+          <input id="comment_submit_for_5" name="commit" type="submit" value="Comentar">
+        </div>
+      </form>
+    </div>
+  </div>
+</li>
 
-			google.setOnLoadCallback(createPicker);
-			google.load("picker", "1",{"language":"es"});
+            <li class="post">
+              <div class="avatar">
+                <img alt="Missing" src="/avatars/thumb/missing.png">
+              </div>
+              <div class="content">
+                <a href="#" class="name">gabiyas</a>
+                <p class="body">
+                  que onda????
+                </p>
+                
+                <div class="foot">
+                  <span class="when">Hace cerca de 1 mes</span>
+                  <a href="#" class="comments_count">1</a>
+                  <a href="/vote_post/4/up" class="thumbs_up" data-remote="true">1</a>
+                  <a href="/vote_post/4/down" class="thumbs_down" data-remote="true">0</a>
+                </div>
+                <ul class="comments">
+                  <li class="comment">
+                    <div class="avatar">
+                      <img alt="Missing" src="/avatars/icon/missing.png">
+                    </div>
+                    <div class="content">
+                      <a href="#" class="name">diegodorado</a>
+                      <span class="comment">
+                        hola
+                      </span>
+                      <div class="foot">
+                        Hace
+                        menos de 1 minuto
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="comment_form">
+                  <form accept-charset="UTF-8" action="/comentar/4" autocomplete="off" class="new_comment" data-remote="true" id="new_comment_for_4" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="cDlga0RvYM9tlk3dRhsj/QEniFVM+IqNAotrN7wcQuw="></div>
+                    <div class="avatar" style="display:none;">
+                      <img alt="Missing" src="/avatars/icon/missing.png">
+                    </div>
+                    <div class="comment">
+                      <textarea cols="40" id="comment_comment_for_4" name="comment[comment]" rows="20" spellcheck="false">Escribe un comentario</textarea>
+                    </div>
+                    <div class="submit" style="display:none;">
+                      <input id="comment_submit_for_4" name="commit" type="submit" value="Comentar">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </li>
+            <li class="post">
+              <div class="avatar">
+                <img alt="Missing" src="/avatars/thumb/missing.png">
+              </div>
+              <div class="content">
+                <a href="#" class="name">gabiyas</a>
+                <p class="body">
+                  que onda????
+                </p>
+                
+                <div class="foot">
+                  <span class="when">Hace cerca de 1 mes</span>
+                  <a href="#" class="comments_count">0</a>
+                  <a href="/vote_post/3/up" class="thumbs_up" data-remote="true">0</a>
+                  <a href="/vote_post/3/down" class="thumbs_down" data-remote="true">0</a>
+                </div>
+                <ul class="comments">
+                </ul>
+                <div class="comment_form">
+                  <form accept-charset="UTF-8" action="/comentar/3" autocomplete="off" class="new_comment" data-remote="true" id="new_comment_for_3" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="cDlga0RvYM9tlk3dRhsj/QEniFVM+IqNAotrN7wcQuw="></div>
+                    <div class="avatar" style="display:none;">
+                      <img alt="Missing" src="/avatars/icon/missing.png">
+                    </div>
+                    <div class="comment">
+                      <textarea cols="40" id="comment_comment_for_3" name="comment[comment]" rows="20" spellcheck="false">Escribe un comentario</textarea>
+                    </div>
+                    <div class="submit" style="display:none;">
+                      <input id="comment_submit_for_3" name="commit" type="submit" value="Comentar">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </li>
+            <li class="post">
+              <div class="avatar">
+                <img alt="Missing" src="/avatars/thumb/missing.png">
+              </div>
+              <div class="content">
+                <a href="#" class="name">gabiyas</a>
+                <p class="body">
+                  que onda????
+                </p>
+                
+                <div class="foot">
+                  <span class="when">Hace cerca de 1 mes</span>
+                  <a href="#" class="comments_count">0</a>
+                  <a href="/vote_post/2/up" class="thumbs_up" data-remote="true">0</a>
+                  <a href="/vote_post/2/down" class="thumbs_down" data-remote="true">0</a>
+                </div>
+                <ul class="comments">
+                </ul>
+                <div class="comment_form">
+                  <form accept-charset="UTF-8" action="/comentar/2" autocomplete="off" class="new_comment" data-remote="true" id="new_comment_for_2" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="cDlga0RvYM9tlk3dRhsj/QEniFVM+IqNAotrN7wcQuw="></div>
+                    <div class="avatar" style="display:none;">
+                      <img alt="Missing" src="/avatars/icon/missing.png">
+                    </div>
+                    <div class="comment">
+                      <textarea cols="40" id="comment_comment_for_2" name="comment[comment]" rows="20" spellcheck="false">Escribe un comentario</textarea>
+                    </div>
+                    <div class="submit" style="display:none;">
+                      <input id="comment_submit_for_2" name="commit" type="submit" value="Comentar">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </li>
+            <li class="post">
+              <div class="avatar">
+                <img alt="Missing" src="/avatars/thumb/missing.png">
+              </div>
+              <div class="content">
+                <a href="#" class="name">diegodorado</a>
+                <p class="body">
+                  hola
+                </p>
+                
+                <div class="foot">
+                  <span class="when">Hace 2 meses</span>
+                  <a href="#" class="comments_count">0</a>
+                  <a href="/vote_post/1/up" class="thumbs_up" data-remote="true">0</a>
+                  <a href="/vote_post/1/down" class="thumbs_down" data-remote="true">0</a>
+                </div>
+                <ul class="comments">
+                </ul>
+                <div class="comment_form">
+                  <form accept-charset="UTF-8" action="/comentar/1" autocomplete="off" class="new_comment" data-remote="true" id="new_comment_for_1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="cDlga0RvYM9tlk3dRhsj/QEniFVM+IqNAotrN7wcQuw="></div>
+                    <div class="avatar" style="display:none;">
+                      <img alt="Missing" src="/avatars/icon/missing.png">
+                    </div>
+                    <div class="comment">
+                      <textarea cols="40" id="comment_comment_for_1" name="comment[comment]" rows="20" spellcheck="false">Escribe un comentario</textarea>
+                    </div>
+                    <div class="submit" style="display:none;">
+                      <input id="comment_submit_for_1" name="commit" type="submit" value="Comentar">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </li>
+            <li class="more">
+              <a href="/muro/mas/10" class="more_posts" data-remote="true">Ver más publicaciones</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row" id="footer">
+        <span>La Comunidad para el desarrollo humano - Organismo Social y Cultural del Movimiento Humanista</span>
+      </div>
+    </div>
+  
 
-			function createPicker() {
-				var picker = new google.picker.PickerBuilder().
-					addView(google.picker.ViewId.IMAGE_SEARCH).
-					addView(google.picker.ViewId.PHOTO_UPLOAD).
-					addView(google.picker.ViewId.PHOTOS).
-					setCallback(pickerCallback).
-					build();
-				picker.setVisible(true);
-			}
-
-			function pickerCallback(data) {
-			console.log(data);
-				var message = "Escogiste: " +
-					((data.action == google.picker.Action.PICKED) ? data.docs[0].url : "nothing"); //thumbnails[1].url
-				document.getElementById("result").src = data.docs[0].thumbnails[4].url;
-			}
-
-
-
-    //]]>
-    </script>
-  </head>
-  <body>
-    <img id="result" scr="" />
-  </body>
-</html>
+</body></html>

@@ -3,19 +3,11 @@ class WallController < ApplicationController
   respond_to :html, :js
 
   def index2
-    @pages = Page.all
     @posts = Post.order('created_at desc').limit(10)
-    @view_more_offset = 10
-
-    @popular_posts = Post.tally(
-      {  :start_at => 80.weeks.ago,
-          :limit => 5,
-          :order => "vote_count DESC"
-      })
   end
 
   def index
-    #return redirect_to root_path, :notice =>  "El muro esta en desarrollo. Pronto estara en funcionamiento."
+    if Rails.env.production? return redirect_to root_path, :notice =>  "El muro esta en desarrollo. Pronto estara en funcionamiento."
 
     @posts = Post.order('created_at desc').limit(10)
     @view_more_offset = 10
