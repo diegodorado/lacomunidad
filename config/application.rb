@@ -22,9 +22,9 @@ module Lacomunidad
       :address        => "smtp.sendgrid.net",
       :port           => "25",
       :authentication => :plain,
-      :user_name      => 'app1303449@heroku.com',
-      :password       => 'qwerpoiuh',
-      :domain         => 'lacomunidad.org.ar'
+      :user_name      => ENV['SENDGRID_USERNAME'],
+      :password       => ENV['SENDGRID_PASSWORD'],
+      :domain         => ENV['SENDGRID_DOMAIN']
     }
     
   end
