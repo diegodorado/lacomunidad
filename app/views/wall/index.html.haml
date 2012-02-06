@@ -1,0 +1,6 @@
+#wall_viewport
+
+:javascript
+  $(function() {
+    app.load({current_user_id: #{current_user.id}, users: #{@users.to_json}, posts: #{@posts.to_json}});
+  });    

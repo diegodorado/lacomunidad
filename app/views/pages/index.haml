@@ -1,0 +1,4 @@
+%ul.pages
+  - @pages.each do |p|
+    %li
+      =link_to "#{p.title} (#{p.slug})", p

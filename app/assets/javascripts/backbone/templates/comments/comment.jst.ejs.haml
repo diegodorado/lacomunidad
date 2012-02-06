@@ -1,0 +1,11 @@
+.avatar
+  %img{ src:'<%= user.avatar %>', width:30, height:30}
+.content
+  <%if (app.current_user.get('id')===user.id) {%>  
+  %a.delete &times;
+  <%}%>
+  %a.name <%= user.name %>
+  %span.comment
+    <%=comment%>
+  .foot
+    %time.when{ datetime:'<%= created_at %>'}

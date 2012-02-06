@@ -1,0 +1,6 @@
+%ul.comments
+.new_comment
+  .avatar
+    %img{ src:'<%=app.current_user.get("avatar_thumb_url")%>', width:30, height:30}
+  .comment
+    %textarea.new_comment_input{spellcheck:false, rows:20, cols:40, placeholder:'Escribe un comentario...'}
