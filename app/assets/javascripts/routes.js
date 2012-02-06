@@ -11,7 +11,16 @@
       if (obj === null) {return '';}
       var s = [];
       for (prop in obj){
-        s.push(prop + "=" + encodeURIComponent(obj[prop].toString()));
+        if (obj[prop]) {
+          if (obj[prop] instanceof Array) {
+            for (var i=0; i < obj[prop].length; i++) {
+              key = prop + encodeURIComponent("[]");
+              s.push(key + "=" + encodeURIComponent(obj[prop][i].toString()));
+            }
+          } else {
+            s.push(prop + "=" + encodeURIComponent(obj[prop].toString()));
+          }
+        }
       }
       if (s.length === 0) {
         return '';
@@ -143,22 +152,6 @@
   participate_path: function(options) {
   return Utils.build_path(0, ["/como-participar"], ["format"], arguments)
   },
-// authentications => /authentications(.:format)
-  authentications_path: function(options) {
-  return Utils.build_path(0, ["/authentications"], ["format"], arguments)
-  },
-// new_authentication => /authentications/new(.:format)
-  new_authentication_path: function(options) {
-  return Utils.build_path(0, ["/authentications/new"], ["format"], arguments)
-  },
-// edit_authentication => /authentications/:id/edit(.:format)
-  edit_authentication_path: function(_id, options) {
-  return Utils.build_path(1, ["/authentications/", "/edit"], ["format"], arguments)
-  },
-// authentication => /authentications/:id(.:format)
-  authentication_path: function(_id, options) {
-  return Utils.build_path(1, ["/authentications/"], ["format"], arguments)
-  },
 // new_user_session => /users/sign_in(.:format)
   new_user_session_path: function(options) {
   return Utils.build_path(0, ["/users/sign_in"], ["format"], arguments)
@@ -199,41 +192,73 @@
   edit_user_registration_path: function(options) {
   return Utils.build_path(0, ["/users/edit"], ["format"], arguments)
   },
+// user_confirmation => /users/confirmation(.:format)
+  user_confirmation_path: function(options) {
+  return Utils.build_path(0, ["/users/confirmation"], ["format"], arguments)
+  },
+// new_user_confirmation => /users/confirmation/new(.:format)
+  new_user_confirmation_path: function(options) {
+  return Utils.build_path(0, ["/users/confirmation/new"], ["format"], arguments)
+  },
+// users => /users(.:format)
+  users_path: function(options) {
+  return Utils.build_path(0, ["/users"], ["format"], arguments)
+  },
+// authentications => /authentications(.:format)
+  authentications_path: function(options) {
+  return Utils.build_path(0, ["/authentications"], ["format"], arguments)
+  },
+// new_authentication => /authentications/new(.:format)
+  new_authentication_path: function(options) {
+  return Utils.build_path(0, ["/authentications/new"], ["format"], arguments)
+  },
+// edit_authentication => /authentications/:id/edit(.:format)
+  edit_authentication_path: function(_id, options) {
+  return Utils.build_path(1, ["/authentications/", "/edit"], ["format"], arguments)
+  },
+// authentication => /authentications/:id(.:format)
+  authentication_path: function(_id, options) {
+  return Utils.build_path(1, ["/authentications/"], ["format"], arguments)
+  },
 // profile => /profile(.:format)
   profile_path: function(options) {
   return Utils.build_path(0, ["/profile"], ["format"], arguments)
   },
-// wall2 => /wall2(.:format)
-  wall2_path: function(options) {
-  return Utils.build_path(0, ["/wall2"], ["format"], arguments)
+// profile_pic => /profile_pic/:provider(.:format)
+  profile_pic_path: function(_provider, options) {
+  return Utils.build_path(1, ["/profile_pic/"], ["format"], arguments)
+  },
+// profile_name => /profile_name/:name(.:format)
+  profile_name_path: function(_name, options) {
+  return Utils.build_path(1, ["/profile_name/"], ["format"], arguments)
   },
 // muro => /muro(.:format)
   muro_path: function(options) {
   return Utils.build_path(0, ["/muro"], ["format"], arguments)
   },
-// wall_view_more_posts => /muro/mas/:offset(.:format)
-  wall_view_more_posts_path: function(_offset, options) {
-  return Utils.build_path(1, ["/muro/mas/"], ["format"], arguments)
+// post_comments => /posts/:post_id/comments(.:format)
+  post_comments_path: function(_post_id, options) {
+  return Utils.build_path(1, ["/posts/", "/comments"], ["format"], arguments)
   },
-// create_post_og => /create_post_og(.:format)
-  create_post_og_path: function(options) {
-  return Utils.build_path(0, ["/create_post_og"], ["format"], arguments)
+// post_comment => /posts/:post_id/comments/:id(.:format)
+  post_comment_path: function(_post_id, _id, options) {
+  return Utils.build_path(2, ["/posts/", "/comments/"], ["format"], arguments)
   },
-// new_post => /publicar(.:format)
-  new_post_path: function(options) {
-  return Utils.build_path(0, ["/publicar"], ["format"], arguments)
+// post_opengraph => /posts/:post_id/opengraph(.:format)
+  post_opengraph_path: function(_post_id, options) {
+  return Utils.build_path(1, ["/posts/", "/opengraph"], ["format"], arguments)
   },
-// new_comment => /comentar/:post_id(.:format)
-  new_comment_path: function(_post_id, options) {
-  return Utils.build_path(1, ["/comentar/"], ["format"], arguments)
+// vote_post => /posts/:id/vote(.:format)
+  vote_post_path: function(_id, options) {
+  return Utils.build_path(1, ["/posts/", "/vote"], ["format"], arguments)
   },
-// wall_view_post_comments => /view_post_comments/:post_id(.:format)
-  wall_view_post_comments_path: function(_post_id, options) {
-  return Utils.build_path(1, ["/view_post_comments/"], ["format"], arguments)
+// posts => /posts(.:format)
+  posts_path: function(options) {
+  return Utils.build_path(0, ["/posts"], ["format"], arguments)
   },
-// wall_vote_post => /vote_post/:post_id/:direction(.:format)
-  wall_vote_post_path: function(_post_id, _direction, options) {
-  return Utils.build_path(2, ["/vote_post/", "/"], ["format"], arguments)
+// post => /posts/:id(.:format)
+  post_path: function(_id, options) {
+  return Utils.build_path(1, ["/posts/"], ["format"], arguments)
   },
 // pages => /pages(.:format)
   pages_path: function(options) {

@@ -2,33 +2,35 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
-gem "jquery-rails"
+gem "jquery-rails",'1.0.19'
 
-gem "haml"
-gem "redcarpet"
+gem "haml",'3.1.4'
+gem "redcarpet",'2.1.0'
 
 #gem "rails31-markdown-editor"
 
 
-gem "devise"
-#gem "omniauth",'~> 0.3.2'
-gem "paperclip"
-gem 'aws-s3'
-gem 'opengraph'
+gem "devise", '2.0.0'
+gem "omniauth", '1.0.2'
+gem 'omniauth-facebook','1.2.0'
+gem 'omniauth-google-oauth2', '0.1.9'
+gem "paperclip", '2.5.2'
+gem 'aws-s3', '0.6.2'
+gem 'aws-sdk', '1.3.3'
 gem "friendly_id", "~> 4.0.0.beta8"
-gem 'acts_as_commentable'
-gem 'thumbs_up'
+gem 'acts_as_commentable', '3.0.1'
+gem 'thumbs_up','0.4.6'
 
 
 group :assets do
-  gem 'haml_assets'
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-  gem "compass", "~> 0.12.alpha.0"
-  gem "js-routes"
-  gem 'less-rails-bootstrap'
-  gem "rails-backbone"
+  gem 'haml_assets','0.0.5'
+  gem 'sass-rails', '3.1.4'
+  gem 'coffee-rails','3.1.1'
+  gem 'uglifier','1.2.3'
+  gem "compass", "0.12.alpha.0"
+  gem "js-routes", '0.7.4'
+  gem 'less-rails-bootstrap', '2.0.4'
+  gem "rails-backbone", '0.6.1' #0.5.4
 end
 
 

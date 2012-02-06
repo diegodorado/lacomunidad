@@ -1,77 +1,102 @@
-- if @user.avatar.exists? then
-  = image_tag @user.avatar.url(:thumb) 
+.row
+  .span6
+    .well
+      %h3 Tus Datos
+      %hr
+      %ul.thumbnails
+        %li.span1
+          .thumbnail
+            = image_tag( @user.avatar, :size => "50x50")
+        %li.span4
+          Tu nombre:
+          %strong#name= @user.name
+          %br
+          %br
+          Elige la imagen de perfil de gravatar, facebook o google.
+            
 
-= form_for(@user,:url=> profile_path, :html => { :multipart => true }) do |f|
-  =f.file_field :avatar
-  =f.submit
-
-- if @authentications
-  - unless @authentications.empty?
-    %p
-      %strong You can sign in to this account using:
-    .authentications
-      - for authentication in @authentications
-        .authentication
-          = image_tag "social/#{authentication.provider}_32.png", :size => "32x32"
-          .provider
-            = authentication.provider_name
-          .uid
-            = authentication.uid
-          = link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove"
-
-  %p
-    %strong Add another service to sign in with:
-- else
-  %p
-    %strong Sign in through one of these services:
-
-= render :partial => "users/authentications"
+  .span6
+    .well.service
+      %h3 
+        = image_tag "social/gravatar_32.png", :size => "32x32"
+        Gravatar
+      %hr
+      %ul.thumbnails
+        %li.span1
+          = link_to image_tag( @user.gravatar, :size => "50x50"), profile_pic_path(:gravatar), :class=>'profile_pic thumbnail'
+        %li.span4
+          :markdown
+            [Gravatar](https://es.gravatar.com/) asocia una imagen de perfil
+            a tu email.
+            
+            Si no tienes, [crea una cuenta](https://es.gravatar.com/). Es gratis.
+.row
+  .span6
+    .well.service
+      %h3 
+        = image_tag "social/facebook_32.png", :size => "32x32"
+        Facebook
+      %hr
+      - if a = @user.facebook_authentication
+        %ul.thumbnails
+          %li.span1
+            = link_to image_tag( a.image, :size => "50x50"), profile_pic_path(:facebook), :class=>'profile_pic thumbnail'
+          %li.span4
+            :markdown
+              La cuenta de #{a.name} ha sido vinculada.
+            = link_to "Quitar vínculo.", a, :confirm => 'Deseas eliminar este opcion de autentificacion?', :method => :delete
+      - else
+        %ul.thumbnails
+          %li.span1
+            = link_to image_tag( "social/facebook_64.png", :size => "50x50"), '/auth/facebook', :class=>'thumbnail'
+          %li.span4
+            :markdown
+              Si tienes una cuenta de [facebook](http://facebook.com), puedes 
+              [vincularla a tu cuenta](/auth/facebook)
+        
+  .span6
+    .well.service
+      %h3 
+        = image_tag "social/google_oauth2_32.png", :size => "32x32"
+        Google
+      %hr
+      - if a = @user.google_authentication
+        %ul.thumbnails
+          %li.span1
+            = link_to image_tag( a.image, :size => "50x50"), profile_pic_path(:google), :class=>'profile_pic thumbnail'
+          %li.span4
+            :markdown
+              La cuenta de #{a.name} ha sido vinculada.
+            = link_to "Quitar vínculo.", a, :confirm => 'Deseas eliminar este opcion de autentificacion?', :method => :delete
+      - else
+        %ul.thumbnails
+          %li.span1
+            = link_to image_tag( "social/google_oauth2_64.png", :size => "50x50"), '/auth/google_oauth2', :class=>'thumbnail'
+          %li.span4
+            :markdown
+              Si tienes una cuenta de [google](http://gmail.com), puedes 
+              [vincularla a tu cuenta](/auth/google_oauth2)
   
-:css
-  .authentications {
-    margin-bottom: 30px;
-    overflow: hidden;
-  }
+:javascript
 
-  .authentication {
-    width: 130px;
-    float: left;
-    background-color: #EEE;
-    border: solid 1px #999;
-    padding: 5px 10px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    position: relative;
-    margin-right: 10px;
-  }
+  $(window).on('load resize', function () {
+    $("a.profile_pic").each(function () {
+      $(this)
+        .tooltip({
+          placement: 'right',
+          title: 'usar como imagen de perfil'
+        });
+      });
+  });
+  
+  $("#name").editInPlace({
+    callback: function(oe, html, ori) {
+      html = html != null ? html : {
+        html: ori
+      };
+      window.location = Routes.profile_name_path(html);
+      return html;
+    }
+  });
 
-  .authentication .remove {
-    text-decoration: none;
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    color: #333;
-    padding: 2px 4px;
-    font-size: 10px;
-  }
 
-  .authentication .remove:hover {
-    color: #CCC;
-    background-color: #777;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-  }
-
-  .authentication img {
-    float: left;
-    margin-right: 10px;
-  }
-
-  .authentication .provider {
-    font-weight: bold;
-  }
-
-  .authentication .uid {
-    color: #666;
-    font-size: 11px;
-  }  

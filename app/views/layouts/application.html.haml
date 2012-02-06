@@ -8,17 +8,18 @@
   %body{:class => body_classes.join(' ')}
     #ajax-indicator(style = "display:none;")
       =image_tag 'loading.gif'
-    #ic.container
+    #ic
       =render :partial => "layouts/header"
-      #content.row
+      #content.container
         -if notice
-          .alert-message.success(data-alert)
-            %a.close(href="#") &times;
-            %p #{notice}
+          .alert.success
+            %a.close{:data => {:dismiss => "alert"}, :href=>"#"}
+              &times;
+            = notice
         -if alert
-          .alert-message.error(data-alert)
-            %a.close(href="#") &times;
-            %p #{alert}
-        .span14.offset1
-          = yield
+          .alert.error
+            %a.close{:data => {:dismiss => "alert"}, :href=>"#"}
+              &times;
+            = alert
+        = yield
       =render :partial => "layouts/footer"

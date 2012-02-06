@@ -1,10 +1,4 @@
 class StaticController < ApplicationController
-  def home
-  end
-
-  def docs
-    redirect_to page_path('documentos')
-  end
 
   def news
     redirect_to page_path('noticias')

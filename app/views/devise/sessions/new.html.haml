@@ -1,27 +1,33 @@
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %fieldset
-    %legend Ingresar
-    .clearfix
-      = f.label :email
-      .input
-        = f.text_field :email
-    .clearfix
-      = f.label :password
-      .input
-        = f.password_field :password
+.row
+  .span6
+    .well
+      %h3 Entrar en La Comunidad
+      %hr
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html=>{:class =>'form-horizontal'}) do |f|
+        %fieldset
+          .control-group
+            = f.label :email
+            .controls
+              = f.text_field :email
+          .control-group
+            = f.label :password
+            .controls
+              = f.password_field :password
+          - if devise_mapping.rememberable?
+            .control-group
+              .controls
+                %label
+                  = f.check_box :remember_me
+                  Recordarme
+          .form-actions
+            = f.submit "Entrar", :class => 'btn-primary btn-large'
+            &nbsp; o #{link_to "Registrate", new_registration_path(resource_name)}
+            %br 
+            %br
+            = link_to "Olvidaste tu contraseña?", new_password_path(resource_name)
 
-    - if devise_mapping.rememberable?
-      .clearfix
-        .input
-          %ul.inputs-list
-            %li
-              %label
-                = f.check_box :remember_me
-                %span Recordarme
-
-    .actions
-      = f.submit "Ingresar", :class => 'btn primary'
-
-
--#= render :partial => "users/authentications"
-= render :partial => "devise/shared/links"
+  .span5.offset1
+    %h3 Entrar utilizando:
+    Puedes entrar a través de estos servicios
+    = render :partial => "devise/shared/authentications"
+    = render :partial => "devise/shared/links"

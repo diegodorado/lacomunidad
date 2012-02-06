@@ -1,13 +1,5 @@
 .avatar
-  %img
+  %img{ src:'<%= user.avatar %>', width:50, height:50}
 .content
-  %a.name
+  %a.name <%= user.name %>
   %p.body <%= body %>
-  .attachement
-  .foot
-    %span.when Hace 2 horas
-    %span.comments_count 5
-    %span.thumbs_up 5
-    %span.thumbs_down 5
-  %ul.comments
-  .comment_form

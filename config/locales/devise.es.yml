@@ -7,8 +7,8 @@ es:
       not_locked: 'no está bloqueada'
       expired: "ha caducado, por favor pide uno nuevo"
       not_saved:
-        one: "1 error evitó guardar este %{resource}:"
-        other: "%{count} errores evitaron guardar este %{resource}:"
+        one: "Revisa este error:"
+        other: "Revisa estos %{count} errores:"
 
   devise:
     failure:
@@ -33,7 +33,9 @@ es:
       confirmed: 'Tu cuenta ha sido confirmada. Ya has accedido a tu cuenta.'
     registrations:
       signed_up: '¡Bienvenido! Te has registrado correctamente.'
-      inactive_signed_up: 'Te has registrado correctamente. Sin embargo, no estás conectado todavía porque tu cuenta está %{reason}.'
+      signed_up_but_unconfirmed: 'Te has registrado correctamente. Sin embargo, no estás conectado todavía porque tu cuenta no está confirmada.'
+      signed_up_but_inactive: 'Te has registrado correctamente. Sin embargo, no estás conectado todavía porque tu cuenta no está activada.'
+      signed_up_but_locked: 'Te has registrado correctamente. Sin embargo, no estás conectado todavía porque tu cuenta está bloqueada.'
       updated: 'Has actualizado tu cuenta correctamente.'
       destroyed: '!Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto.'
     unlocks:

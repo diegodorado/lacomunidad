@@ -8,8 +8,8 @@ App.Pages =
     $(@edit_form_selector).size() == 1
 
   initEditor: ->
-    @initMarkdownEditor 'textarea'
-    @initThumbChooser '#thumb_chooser'
+    @initMarkdownEditor()
+    @initThumbChooser()
     $.getScript "//google.com/jsapi?callback=App.Pages.jsapiLoaded"
 
   jsapiLoaded: ->
@@ -42,19 +42,14 @@ App.Pages =
       #remember that to show picker once built
       @pickerCalled= true
 
-  initMarkdownEditor: (selector) ->
-    $(selector).markdownEditor()
-    #$(selector).elastic()
+  initMarkdownEditor: ->
+    $('textarea').markdownEditor()
     $(".editor .function-image").bind "click", =>
       @callPicker()
 
-  initThumbChooser: (selector_id) ->
+  initThumbChooser: ->
     @thumbChooser = $('#thumb_chooser')
-    options =
-      keyboard: true
-      backdrop: 'static'
     @thumbChooser.find('.media-grid a').live 'click', (event) => @thumbSelected event
-    @thumbChooser.modal options
 
   pickerSelected: (data) ->
     if data.action is google.picker.Action.PICKED

@@ -15,6 +15,17 @@ module Lacomunidad
     config.filter_parameters += [:password]
     config.assets.enabled = true
     config.assets.version = '1.0'
-    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+    config.action_mailer.default_url_options = { :host => 'lacomunidad.org.ar' }
+    ActionMailer::Base.smtp_settings = {
+      :address        => "smtp.sendgrid.net",
+      :port           => "25",
+      :authentication => :plain,
+      :user_name      => 'app1303449@heroku.com',
+      :password       => 'qwerpoiuh',
+      :domain         => 'lacomunidad.org.ar'
+    }
+    
   end
 end

@@ -1,23 +1,25 @@
 = form_for @page, :method=> 'put' do |f|
   = f.hidden_field :id
   %fieldset
-    .clearfix
+    .control-group
       %label(for="title") Titulo
-      .input
+      .control
         = f.text_field :title, {:class=>'xlarge'}
-    .clearfix
+    .control-group
       %label(for="slug") Slug
-      .input
+      .control
         = f.text_field :slug, {:class=>'xlarge'}
   %fieldset
     = f.text_area :content, :spellcheck=>false, :rows=>20
     .live-preview
-  = f.submit 'Guardar', :class=>'btn primary'
+  .form-actions
+    = f.submit 'Guardar', :class=>'btn primary'
 
 
 #thumb_chooser.modal.hide.fade
   .modal-header
-    %a.close(href="#") &times;
+    %a.close{:href=>"#", :data=>{:dismiss=>"modal"}}
+      &times;
     %h3 Elige un tamaño
   .modal-body
     %ul.media-grid

@@ -173,3 +173,11 @@ es:
 
       full_messages:
         format: "%{attribute}%{message}"
+
+    models:
+      user: 'Usuario'
+    attributes:
+      user:
+        password: "Contraseña"
+        password_confirmation: "Confirmar Contraseña"
+        

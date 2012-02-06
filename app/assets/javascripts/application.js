@@ -1,10 +1,13 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.elastic
+//= require jquery.autogrow
 //= require jquery.special.edit
 //= require jquery.editinplace
+//= require jquery.timeago
+//= require jquery.timeago.es
 //= require twitter/bootstrap/modal
-//= require twitter/bootstrap/alerts
+//= require twitter/bootstrap/alert
+//= require twitter/bootstrap/tooltip
 
 //= require underscore
 //= require backbone

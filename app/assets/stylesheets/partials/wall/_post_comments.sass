@@ -8,10 +8,29 @@
           overflow: hidden
           border-bottom: 1px solid #fff
           padding: 5px 0
+          position: relative
+          .delete
+            border: 1px solid #CCCCCC
+            background: #e7e7e7
+            color: #AAAAAA
+            font-size: 15px
+            height: 15px
+            line-height: 15px
+            position: absolute
+            right: 7px
+            text-align: center
+            top: 7px
+            width: 15px
+            visibility: hidden
+            cursor: pointer
+            &:hover
+              background: #eee
+          &:hover .delete
+            visibility: visible
           .avatar
             //+column(1)
           .content
-            //+column(9,true)
+            width: 430px
             .name
               color: $red
               font-weight: bold

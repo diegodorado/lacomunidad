@@ -11,41 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110531225154) do
+ActiveRecord::Schema.define(:version => 20120206091751) do
 
   create_table "attachements", :force => true do |t|
-    t.string   "title"
-    t.string   "url"
-    t.string   "description"
-    t.string   "image"
-    t.string   "video"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "post_id"
+    t.string    "title"
+    t.string    "url"
+    t.string    "description"
+    t.string    "image"
+    t.string    "video"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "post_id"
   end
 
   create_table "authentications", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "email"
-    t.string   "nickname"
-    t.string   "image"
-    t.string   "token"
-    t.string   "secret"
+    t.integer   "user_id"
+    t.string    "provider"
+    t.string    "uid"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "name"
+    t.string    "email"
+    t.string    "nickname"
+    t.string    "image"
+    t.string    "token"
+    t.string    "secret"
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "title",            :limit => 50, :default => ""
-    t.text     "comment"
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title",            :limit => 50, :default => ""
+    t.text      "comment"
+    t.integer   "commentable_id"
+    t.string    "commentable_type"
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
@@ -53,53 +53,56 @@ ActiveRecord::Schema.define(:version => 20110531225154) do
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "pages", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.string   "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.text      "content"
+    t.string    "slug"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
 
   create_table "posts", :force => true do |t|
-    t.string   "body",       :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
+    t.string    "body",       :null => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "user_id"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count",                         :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "name"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "avatar"
+    t.datetime "reset_password_sent_at"
+    t.string   "unconfirmed_email"
   end
 
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "votes", :force => true do |t|
-    t.boolean  "vote",          :default => false
-    t.integer  "voteable_id",                      :null => false
-    t.string   "voteable_type",                    :null => false
-    t.integer  "voter_id"
-    t.string   "voter_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.boolean   "vote",          :default => false
+    t.integer   "voteable_id",                      :null => false
+    t.string    "voteable_type",                    :null => false
+    t.integer   "voter_id"
+    t.string    "voter_type"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "votes", ["voteable_id", "voteable_type"], :name => "index_votes_on_voteable_id_and_voteable_type"

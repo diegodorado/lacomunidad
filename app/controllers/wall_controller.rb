@@ -1,12 +1,12 @@
 class WallController < ApplicationController
   before_filter :authenticate_user!
   respond_to :html, :js
-
-  def index2
-    @posts = Post.order('created_at desc').limit(10)
+  
+  def index
+    @users = User.user_list
   end
 
-  def index
+  def index_old
     return redirect_to root_path, :notice =>  "El muro esta en desarrollo. Pronto estara en funcionamiento." if Rails.env.production? 
 
     @posts = Post.order('created_at desc').limit(10)

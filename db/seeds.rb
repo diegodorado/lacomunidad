@@ -36,9 +36,8 @@ end
 #random votes
 Post.all.each do |p|
   User.all.each do |u|
-    if rand(2)
-      rand(2) ? u.vote_for(p) : u.vote_against(p)
-    end
+    srand()
+    rand(2) ? u.vote_for(p) : u.vote_against(p)
   end
 end
 

@@ -1,16 +1,15 @@
-#header.row
-  .span6
-    #{link_to image_tag('logo.png'), root_path, :class=> 'logo'}
-  .span10
-    .row
+#header.container
+  .row
+    .span4
+      #{link_to image_tag('logo.png'), root_path, :class=> 'logo'}
+    .span8
       #user-nav
         - if user_signed_in?
-          %span #{current_user.email}
-          -#{link_to current_user.email, profile_path}
-          #{link_to "Salir", destroy_user_session_path}
+          =link_to current_user.name, profile_path
+          =link_to "Salir", destroy_user_session_path, :method => :delete 
         -else
           -#{link_to "Registrarse", new_user_registration_path}
-          #{link_to "Ingresar", new_user_session_path}
+          =link_to "Ingresar", new_user_session_path
       %ul#main-nav
         %li.first #{link_to "Que es La Comunidad", what_path, :class=> ('active' if current_page?(what_path))}
         %li #{link_to "Muro", muro_path, :class=> ('active' if current_page?(muro_path))}

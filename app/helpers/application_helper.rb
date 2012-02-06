@@ -3,6 +3,8 @@ module ApplicationHelper
     [controller.controller_name]
   end
   def markdown(text)  
-    Redcarpet.new(text).to_html.html_safe  
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+      :autolink => true)
+    markdown.render(text).html_safe
   end  
 end

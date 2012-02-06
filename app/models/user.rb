@@ -1,46 +1,43 @@
 class User < ActiveRecord::Base
   acts_as_voter
   #has_karma(:posts, :as => :submitter)
-  
-  if Rails.env.production? || true
-    @options = { :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml",
-                 :path => "/user_avatars/:style/:id/:filename" }
-  else
-    @options = {:storage => :filesystem}
-  end
-
-  has_attached_file :avatar, {
-      :styles => { :medium => "150x150>", :thumb => "50x50#" , :icon => "32x32#" }
-      }.merge(@options)
 
   has_many :posts
   has_many :authentications
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :registerable,
+  # :token_authenticatable, :lockable and :timeoutable
+  devise :database_authenticatable, :registerable, :confirmable ,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :avatar, :name
   
-  def name
-    self.email.gsub(/@.*/, '')
-  end
-  
-  def apply_omniauth(omniauth)
-    self.email = omniauth['email'] if email.blank?
-    self.name = omniauth['name'] if name.blank?    
-    authentications.build(omniauth)
+  def self.user_list
+    @users = User.select("id, avatar, email, name").all
+    @users.as_json({:only=>[:id, :name, :avatar]})
   end
 
+  def gravatar
+      gravatar_id = Digest::MD5::hexdigest(email).downcase  
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=50"
+  end
+
+  def facebook_authentication
+      authentications.select{|a| a.provider=='facebook'}.first
+  end
+
+  def google_authentication
+      authentications.select{|a| a.provider=='google_oauth2'}.first
+  end
+  
   def email_required?
     (authentications.empty? || !password.blank?)
   end
   
   def password_required?
     (authentications.empty? || !password.blank?) && super
-  end  
+  end
   
 end
 

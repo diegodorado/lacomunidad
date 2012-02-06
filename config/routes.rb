@@ -8,20 +8,25 @@ Lacomunidad::Application.routes.draw do
   match '/como-participar' => 'static#participate', :as => 'participate'
 
   #users
+  devise_for :users
+  resources :users, :only => [:index]
   resources :authentications
   match '/auth/:provider/callback' => 'authentications#create'
-  devise_for :users, :controllers => {:registrations => 'registrations'}
   match '/profile' => 'users#profile', :as => 'profile'
+  match '/profile_pic/:provider' => 'users#profile_pic', :as => 'profile_pic'
+  match '/profile_name/:name' => 'users#profile_name', :as => 'profile_name'
 
   #wall
-  match '/wall2' => 'wall#index2'
   match '/muro' => 'wall#index'
-  match '/muro/mas/:offset' => 'wall#view_more_posts', :as => 'wall_view_more_posts'
-  match '/create_post_og' => 'wall#create_post_og', :as => 'create_post_og'
-  match '/publicar' => 'wall#create_post', :as => 'new_post'
-  match '/comentar/:post_id' => 'wall#create_comment', :as => 'new_comment'
-  match '/view_post_comments/:post_id' => 'wall#view_post_comments', :as => 'wall_view_post_comments'
-  match '/vote_post/:post_id/:direction' => 'wall#vote_post', :as => 'wall_vote_post'
+
+  #posts
+  resources :posts, :only => [:index, :create, :destroy] do
+    resources :comments, :only => [:create, :destroy]
+    get 'opengraph'
+    member do
+      post 'vote'
+    end    
+  end
 
   #pages
   resources :pages, :except => [:new, :create]
