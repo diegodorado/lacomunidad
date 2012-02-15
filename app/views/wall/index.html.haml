@@ -1,6 +1,9 @@
-#wall_viewport
-
+.row
+  .span8
+    #wall_viewport
+  .span4
+    #chat_viewport
+  
 :javascript
-  $(function() {
-    app.load({current_user_id: #{current_user.id}, users: #{@users.to_json}, posts: #{@posts.to_json}});
-  });    
+  app.load({current_user_id: #{user_id}, users: #{@users.to_json}, posts: #{@posts.to_json}});
+

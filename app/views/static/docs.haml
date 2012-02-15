@@ -1,106 +1,11 @@
-%h3 Videos
-%hr
-%ul.thumbnails
-  %li.span4
-    .thumbnail{:data=>{:toggle=>"modal",:target=>"#curacion"}}
-      %img(src="http://i4.ytimg.com/vi/YqfnJE0HkLo/hqdefault.jpg")
-      .caption
-        %h4 La Curación del Sufrimiento
-  %li.span4
-    .thumbnail
-      %img(src="http://i4.ytimg.com/vi/dN6wFa_9e7U/hqdefault.jpg")
-      .caption
-        %h4 Acto Público en Madrid
-  %li.span4
-    .thumbnail
-      %img(src="http://i4.ytimg.com/vi/sfdQKBTKmwk/hqdefault.jpg")
-      .caption
-        %h4 Qué es el Movimiento Humanista?
-%ul.thumbnails
-  %li.span4
-    .thumbnail
-      %img(src="http://i4.ytimg.com/vi/oqEqjHqQF6E/hqdefault.jpg")
-      .caption
-        %h4 Historia de la No Violencia
-  %li.span4
-    .thumbnail
-      %img(src="http://i4.ytimg.com/vi/c6K1ZsShOzo/hqdefault.jpg")
-      .caption
-        %h4 El Humanismo
-  %li.span4
-    .thumbnail
-      %img(src="http://i4.ytimg.com/vi/kNF6TRlYnjw/hqdefault.jpg")
-      .caption
-        %h4 La Paz y la No-Violencia
-
-
-%div.btn{:data=>{:toggle=>"modal",:target=>"#curacion"}} Launch Modal
-
-#curacion.modal.fade.hide
-  .modal-header
-    %a.close{ :href=>"#", :data=>{:dismiss=>"modal"}} &times;
-    %h3 La Curación del Sufrimiento
-  .modal-body
-    <iframe width="420" height="315" src="https://www.youtube.com/v/YqfnJE0HkLo&fs=1&source=uds" frameborder="0" allowfullscreen></iframe>
-
-    %p
-      Primera intervención pública de Silo. En un envoltorio más o menos
-      poético se explica que el conocimiento más importante para la vida (“la real
-      sabiduría”), no coincide con el conocimiento de libros, sino que es una cuestión
-      de experiencia personal, íntima. El conocimiento más importante para la vida
-      está referido a la comprensión del sufrimiento y su superación. Esta arenga es
-      considerada como el acto fundacional del Movimiento Humanista.  
+#docs_viewport
 
 :markdown
-
-
-
-  ### **Acto Público en Madrid**
-  <iframe width="420" height="315" src="https://www.youtube.com/v/dN6wFa_9e7U&fs=1&source=uds" frameborder="0" allowfullscreen></iframe>
-
-  ***
-  Invitado por La Comunidad para el Desarrollo Humano de distintos
-  países, Silo emprendió una gira de difusión participando en varios eventos
-  públicos. El núcleo de las ideas presentadas por Silo en Madrid se repitió en
-  Barcelona, Reykjavik, Frankfurt, Copenhague, Milán, Colombo, París y Ciudad de
-  México.
-
-
-  ###  **¿Qué es el Movimiento Humanista?**
-  <iframe width="420" height="315" src="https://www.youtube.com/v/sfdQKBTKmwk&fs=1&source=uds" frameborder="0" allowfullscreen></iframe>
-
-  ***
-  Extracto de la reunión del Movimiento Humanista realizada en Buenos
-  Aires el 4 de enero de 1998. Su fundador, Silo, comenta qué es actualmente el MH.
-
-  ### **Historia de la No-violencia**
-  <iframe width="420" height="315" src="https://www.youtube.com/v/oqEqjHqQF6E&fs=1&source=uds" frameborder="0" allowfullscreen></iframe>
-
-  ***
-  Breve documental acerca de la "Historia de la No-Violencia Activa",
-  desde sus comienzos con el Jainismo, Tolstoy, Gandhi, M.L.King y finaliza con SILO,
-  su obra, su doctrina y su aplicación en lo social a través del Movimiento Humanista.
-
-  ### **El Humanismo**
-
-  <iframe width="420" height="315" src="https://www.youtube.com/v/c6K1ZsShOzo&fs=1&source=uds" frameborder="0" allowfullscreen></iframe>
-
-  ***
-  Comentarios de Silo a cerca de "El Humanismo", emitido desde el Centro de Estudios del Parque Punta de Vacas en Abril del 2008.
-
-
-
-  ### **El Significado de la Paz y la No-violencia en el Momento Actual (extracto)**
-
-  <iframe width="420" height="315" src="https://www.youtube.com/v/kNF6TRlYnjw&fs=1&source=uds" frameborder="0" allowfullscreen></iframe>
-
-  ***
-  Exposición de Silo en la 10ª Cumbre de los Nóbel por la Paz. A 40 años después de su primer discurso público, el fundador del Humanismo Universalista e inspirador de la Marcha Mundial por la Paz y la No Violencia, ha convencido de la posibilidad de construir la Nación Humana Universal fundada sobre una cultura de no violencia activa.
-
-
-
-  ***
-
   ### Libros
 
   ```Sección en construcción...```
+
+:javascript
+  $(function() {
+    app.load({videos: #{@videos.to_json}});
+  });

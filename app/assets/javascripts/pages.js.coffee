@@ -1,3 +1,5 @@
+#= require 'markdown-editor'
+
 App.Pages =
   init: ->
     if @is_edit_page() then @initEditor()

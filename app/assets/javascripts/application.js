@@ -21,4 +21,3 @@
 //= require pages
 //= require wall
 //= require main
-//= require markdown-editor

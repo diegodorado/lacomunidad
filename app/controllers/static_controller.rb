@@ -1,5 +1,9 @@
 class StaticController < ApplicationController
 
+  def docs
+    @videos = DOCS['videos']
+  end
+  
   def news
     redirect_to page_path('noticias')
   end

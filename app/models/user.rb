@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+  before_create :ensure_name
+
+  def ensure_name
+    #set email first part as name if no nae is set
+    self.name ||= self.email.gsub(/@.*/, '')
+  end
+
   acts_as_voter
   #has_karma(:posts, :as => :submitter)
 
@@ -31,9 +38,9 @@ class User < ActiveRecord::Base
       authentications.select{|a| a.provider=='google_oauth2'}.first
   end
   
-  def email_required?
-    (authentications.empty? || !password.blank?)
-  end
+#  def email_required?
+#    (authentications.empty? || !password.blank?)
+#  end
   
   def password_required?
     (authentications.empty? || !password.blank?) && super

@@ -1,0 +1,86 @@
+#chat_viewport
+  position: fixed
+  bottom: 0
+  right: 0
+  border: 1px solid #ccc
+  background: #fff
+  width: 300px
+  .chat_title
+    background: $red  
+    padding: 2px 3px
+    font-size: 10px
+    font-weight: bold
+    color: #fff
+    text-transform: uppercase  
+    cursor: pointer
+    text-align: center
+  #chat
+    .users, .messages, .send
+      display: none
+    .connecting
+      background: url(image_path('loading-more.gif')) center center no-repeat
+      height: 200px
+    &.connected
+      .users, .messages, .send
+        display: block
+      .connecting
+        display: none
+
+#chat
+  position: relative
+  .users
+    border-bottom: 1px solid #ccc
+    padding-bottom: 4px
+    .logged_users
+      padding: 3px
+      ul 
+        overflow: hidden
+        margin: 0
+        li
+          list-style: none
+          float: left
+          border: 1px solid #aaa
+          margin: 0 3px 0 0
+          img
+            display: block
+  .messages
+    max-height: 200px
+    overflow-y: auto
+    .message
+      &:nth-child(even)
+        background: #fafafa
+      p    
+        margin: 0
+    .sys_message
+      padding: 5px
+      p
+        font-style: italic
+        color: #777
+        font-size: 11px
+    .user_message
+      clear: both
+      overflow: hidden
+      background: #fff
+      img.avatar
+        float: left
+        width: 30px
+        height: 30px
+        display: block
+        padding: 5px
+      p    
+        padding: 5px 5px 5px 50px
+
+  .send
+    border-top: 1px solid #ccc
+    background: #fff
+    padding: 3px 3px 3px 5px
+    margin: 0
+    .icon-comment
+      margin: 5px
+    input
+      border-radius: 0
+      padding: 3px
+      width: 250px
+      margin: 0
+      &:focus 
+        outline: 0

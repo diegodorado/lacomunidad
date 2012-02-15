@@ -7,9 +7,6 @@ gem "jquery-rails",'1.0.19'
 gem "haml",'3.1.4'
 gem "redcarpet",'2.1.0'
 
-#gem "rails31-markdown-editor"
-
-
 gem "devise", '2.0.0'
 gem "omniauth", '1.0.2'
 gem 'omniauth-facebook','1.2.0'
@@ -27,7 +24,6 @@ group :assets do
   gem 'sass-rails', '3.1.4'
   gem 'coffee-rails','3.1.1'
   gem 'uglifier','1.2.3'
-  gem "compass", "0.12.alpha.0"
   gem "js-routes", '0.7.4'
   gem 'less-rails-bootstrap', '2.0.4'
   gem "rails-backbone", '0.6.1' #0.5.4

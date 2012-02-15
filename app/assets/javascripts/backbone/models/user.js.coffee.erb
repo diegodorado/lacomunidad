@@ -1,0 +1,14 @@
+class Lacomunidad.Models.User extends Backbone.Model
+  initialize: (attr)->
+    @set({avatar: '<%= asset_path 'default_avatar.png' %>'}) unless attr.avatar
+
+class Lacomunidad.Collections.UsersCollection extends Backbone.Collection
+  model: Lacomunidad.Models.User
+  url: ->
+    window.Routes.users_path()
+  user_or_guest: (id) ->
+    if id
+      return @get(id)    
+    else
+      return new Lacomunidad.Models.User {name:"Invitado"}
+  
