@@ -7,6 +7,11 @@ gem "jquery-rails",'1.0.19'
 gem "haml",'3.1.4'
 gem "redcarpet",'2.1.0'
 
+#for opengraph
+gem 'rest-client'
+gem 'nokogiri'
+
+
 gem "devise", '2.0.0'
 gem "omniauth", '1.0.2'
 gem 'omniauth-facebook','1.2.0'

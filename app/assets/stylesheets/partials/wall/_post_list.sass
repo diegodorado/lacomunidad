@@ -8,26 +8,30 @@
     border-top: 1px solid #fff
     margin: 25px 0
     overflow: hidden
-    .avatar
+    > .avatar
       width: 50px
       float: left
       margin-right: 20px
       min-height: 50px
-    .content
-      width: 500px
-      float: left
+    > .content
+      padding-left: 70px
       .name
         color: $red
         font-weight: bold
         text-decoration: none
       .body
-        margin: 0
-  li.more
-    a.more_posts
-      background: #e7e7e7
-      color: $red
-      padding: 3px 0
-      text-align: center
-      display: block
-      &:hover
-        background: #ddd     
+        margin: 0 0 10px
+
+li.post, li.comment
+  position: relative
+  > .close
+    position: absolute
+    right: 7px
+    top: 7px
+    visibility: hidden
+  &:hover > .close
+    visibility: visible
+
+
+
+        

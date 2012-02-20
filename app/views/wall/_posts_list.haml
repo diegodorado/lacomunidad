@@ -1,4 +1,0 @@
-- @posts.each do |p|
-  = render :partial => "post", :locals => { :post => p }
-%li.more
-  =link_to "Ver más publicaciones", wall_view_more_posts_path(:offset => @view_more_offset), :remote => true, :class=>'more_posts'

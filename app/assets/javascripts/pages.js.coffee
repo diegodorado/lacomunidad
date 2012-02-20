@@ -1,14 +1,7 @@
 #= require 'markdown-editor'
+window.App = {}
 
 App.Pages =
-  init: ->
-    if @is_edit_page() then @initEditor()
-
-  edit_form_selector: 'form.edit_page'
-
-  is_edit_page: ->
-    $(@edit_form_selector).size() == 1
-
   initEditor: ->
     @initMarkdownEditor()
     @initThumbChooser()

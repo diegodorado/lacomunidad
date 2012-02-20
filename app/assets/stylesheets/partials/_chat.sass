@@ -1,7 +1,7 @@
 #chat_viewport
   position: fixed
   bottom: 0
-  right: 0
+  right: 15px
   border: 1px solid #ccc
   background: #fff
   width: 300px
@@ -16,15 +16,21 @@
     text-align: center
   #chat
     .users, .messages, .send
-      display: none
+      visibility: hidden
     .connecting
       background: url(image_path('loading-more.gif')) center center no-repeat
-      height: 200px
+      height: 100%
+      width: 100%
+      visibility: visible
+      position: absolute
     &.connected
       .users, .messages, .send
-        display: block
+        visibility: visible
       .connecting
-        display: none
+        visibility: hidden
+  .swf-wrapper
+    display: none
+  
 
 #chat
   position: relative
@@ -80,7 +86,10 @@
     input
       border-radius: 0
       padding: 3px
-      width: 250px
+      width: 225px
       margin: 0
       &:focus 
         outline: 0
+    .icon-trash
+      margin: 5px
+      cursor: pointer

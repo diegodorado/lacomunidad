@@ -1,0 +1,11 @@
+.avatar
+  %img{ src:'<%= user.avatar %>', width:50, height:50}
+.content
+  %a.name <%= user.name %>
+  %p.body <%= app.utils.format(post.body) %>
+  .attach
+  .stats  
+  .comments
+<%if (app.user_id===user.id) {%>  
+%a.close.destroy_post &times;
+<%}%>

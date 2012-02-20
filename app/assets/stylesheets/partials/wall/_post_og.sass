@@ -1,64 +1,27 @@
 #post_og
   background: #fff
   border: 1px solid #ccc
-  border-bottom: 0
   overflow: hidden
   position: relative
-  padding: 12px 0
-  a.hide
-    border: 1px dashed #AAAAAA
-    color: #999999
-    cursor: pointer
-    display: block
-    font-family: Arial
-    font-size: 13px
-    height: 18px
-    line-height: 18px
+  padding: 10px
+  a.close
     position: absolute
     right: 3px
-    text-align: center
-    text-decoration: none
     top: 3px
-    width: 18px
-    &:hover
-      color: #fff
-      background: #F2421B
-      border-color: #fff
 
-  .image_holder
-    margin-right: 8px
-    .image_wrapper
-      background: #F2421B
-      border: 1px solid #fff
-      font-size: 0
-      margin: 0 12px
-      padding: 2px
-      img
-        width: 100%
-        display: block
-      .image
-        overflow: hidden
-        background: #FFF
-      .waiting
-        background: #FFF
-        height: 75px
-        padding-top: 15px
-        text-align: center
+  .image
+    height: 80px
+    &.loaded
+      height: auto
 
   .content
-    .title
-      color: #F2421B
-      margin-right: 28px
-      font-weight: bold
-      input
-        border: 1px solid #ccc
-        width: 100%
-    .url
-      font-size: 0.9em
-      color: #444
-    .description
-      margin: 5px 10px 0 0
-      textarea
-        height: 60px
-        border: 1px solid #ccc
-        width: 100%
+    .title, .description
+      border: 1px dashed #E7E7E7
+      padding: 2px 7px    
+    .title input
+      border: 1px solid #ccc
+      width: 100%
+    .description textarea
+      height: 60px
+      border: 1px solid #ccc
+      width: 100%

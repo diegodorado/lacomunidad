@@ -22,11 +22,11 @@ Lacomunidad::Application.routes.draw do
   #posts
   resources :posts, :only => [:index, :create, :destroy] do
     resources :comments, :only => [:create, :destroy]
-    get 'opengraph'
     member do
       post 'vote'
     end    
   end
+  post '/opengraph' => 'posts#opengraph', :as => 'opengraph'
 
   #pages
   resources :pages, :except => [:new, :create]

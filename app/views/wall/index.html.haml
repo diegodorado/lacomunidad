@@ -2,8 +2,11 @@
   .span8
     #wall_viewport
   .span4
-    #chat_viewport
+    .well
+      :markdown
+        Comparte escrbiendo algo o pegando el enlace de **[youtube](//youtube.com)**, 
+        **[vimeo](//vimeo.com)**, 
+        **[soundcloud](//soundcloud.com)**, 
+        **[picasa](//picasaweb.google.com)**, etc.
   
-:javascript
-  app.load({current_user_id: #{user_id}, users: #{@users.to_json}, posts: #{@posts.to_json}});
-
+= app_js_load :posts=> @posts

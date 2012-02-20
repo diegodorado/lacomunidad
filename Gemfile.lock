@@ -161,6 +161,8 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     redcarpet (2.1.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -228,6 +230,7 @@ DEPENDENCIES
   js-routes (= 0.7.4)
   less-rails-bootstrap (= 2.0.4)
   nifty-generators
+  nokogiri
   omniauth (= 1.0.2)
   omniauth-facebook (= 1.2.0)
   omniauth-google-oauth2 (= 0.1.9)
@@ -237,6 +240,7 @@ DEPENDENCIES
   rails (= 3.1.1)
   rails-backbone (= 0.6.1)
   redcarpet (= 2.1.0)
+  rest-client
   rspec
   rspec-rails
   sass-rails (= 3.1.4)

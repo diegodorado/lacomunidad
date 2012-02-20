@@ -1,0 +1,9 @@
+.image
+  %a.show-embed{target: "new", href:'<%=url%>'}
+    %img{ src:'<%=image%>'}
+.content
+  .title
+    %a.show-embed{target: "new", href:'<%=url%>'} <%=title%>
+  .url
+    %a.show-embed{target: "new", href:'<%=url%>'} <%=url%>
+  .description <%=app.utils.format(description)%>

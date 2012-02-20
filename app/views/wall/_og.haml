@@ -1,8 +1,0 @@
--if @og.valid?
-  .title #{@og.title.html_safe}
-  .url #{@og.url}
-  .description #{@og.description.html_safe}
-  .image #{image_tag @og.image, :size => "120x90" }
--else
-  = @og.uri
-  no es una url válida

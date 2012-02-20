@@ -11,18 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120206091751) do
-
-  create_table "attachements", :force => true do |t|
-    t.string    "title"
-    t.string    "url"
-    t.string    "description"
-    t.string    "image"
-    t.string    "video"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "post_id"
-  end
+ActiveRecord::Schema.define(:version => 20120219095644) do
 
   create_table "authentications", :force => true do |t|
     t.integer   "user_id"
@@ -63,10 +52,11 @@ ActiveRecord::Schema.define(:version => 20120206091751) do
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
 
   create_table "posts", :force => true do |t|
-    t.string    "body",       :null => false
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "user_id"
+    t.string   "body",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.text     "attach"
   end
 
   create_table "users", :force => true do |t|

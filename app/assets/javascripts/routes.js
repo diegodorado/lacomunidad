@@ -244,10 +244,6 @@
   post_comment_path: function(_post_id, _id, options) {
   return Utils.build_path(2, ["/posts/", "/comments/"], ["format"], arguments)
   },
-// post_opengraph => /posts/:post_id/opengraph(.:format)
-  post_opengraph_path: function(_post_id, options) {
-  return Utils.build_path(1, ["/posts/", "/opengraph"], ["format"], arguments)
-  },
 // vote_post => /posts/:id/vote(.:format)
   vote_post_path: function(_id, options) {
   return Utils.build_path(1, ["/posts/", "/vote"], ["format"], arguments)
@@ -259,6 +255,10 @@
 // post => /posts/:id(.:format)
   post_path: function(_id, options) {
   return Utils.build_path(1, ["/posts/"], ["format"], arguments)
+  },
+// opengraph => /opengraph(.:format)
+  opengraph_path: function(options) {
+  return Utils.build_path(0, ["/opengraph"], ["format"], arguments)
   },
 // pages => /pages(.:format)
   pages_path: function(options) {
