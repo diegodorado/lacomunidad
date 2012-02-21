@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   before_create :ensure_name
 
   def ensure_name
-    #set email first part as name if no nae is set
+    #set email first part as name if no name is set
     self.name ||= self.email.gsub(/@.*/, '')
   end
 
