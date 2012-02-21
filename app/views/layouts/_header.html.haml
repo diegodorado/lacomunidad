@@ -1,18 +1,29 @@
-#header.container
-  .row
-    .span4
-      #{link_to image_tag('logo.png'), root_path, :class=> 'logo'}
-    .span8
-      #user-nav
-        - if user_signed_in?
-          =link_to current_user.name, profile_path
-          =link_to "Salir", destroy_user_session_path, :method => :delete 
-        -else
-          -#{link_to "Registrarse", new_user_registration_path}
+#header.navbar.navbar-static
+  .navbar-inner.container
+    =link_to image_tag('logo.png', :width=>200, :height=>41), root_path, :class=> 'logo brand'
+    %ul#main-nav.nav
+      %li.home #{link_to '<i class="icon-white icon-home"></i><i class="icon-black icon-home"></i>'.html_safe, root_path, :class=> ('active' if current_page?(root_path))}
+      %li #{link_to "Que es La Comunidad", what_path, :class=> ('active' if current_page?(what_path))}
+      %li #{link_to "Muro", muro_path, :class=> ('active' if current_page?(muro_path))}
+      %li #{link_to "Noticias", noticias_path, :class=> ('active' if current_page?(noticias_path))}
+      %li #{link_to "Documentos", documentos_path, :class=> ('active' if current_page?(documentos_path))}
+      %li #{link_to "Como Participar", participate_path, :class=> ('active' if current_page?(participate_path))}
+    %ul.nav.pull-right
+      - if user_signed_in?
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %span #{current_user.name}
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a(href="#{profile_path}")
+                %i.icon-user
+                Perfil
+            %li.divider
+            %li
+              %a{:href=>"#{destroy_user_session_path}",:data=>{:method=>'delete'}}
+                %i.icon-exclamation-sign
+                Salir
+      -else
+        %li
           =link_to "Ingresar", new_user_session_path
-      %ul#main-nav
-        %li.first #{link_to "Que es La Comunidad", what_path, :class=> ('active' if current_page?(what_path))}
-        %li #{link_to "Muro", muro_path, :class=> ('active' if current_page?(muro_path))}
-        %li #{link_to "Noticias", noticias_path, :class=> ('active' if current_page?(noticias_path))}
-        %li #{link_to "Documentos", documentos_path, :class=> ('active' if current_page?(documentos_path))}
-        %li.last #{link_to "Como Participar", participate_path, :class=> ('active' if current_page?(participate_path))}

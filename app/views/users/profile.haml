@@ -76,27 +76,5 @@
             :markdown
               Si tienes una cuenta de [google](http://gmail.com), puedes 
               [vincularla a tu cuenta](/auth/google_oauth2)
-  
-:javascript
 
-  $(window).on('load resize', function () {
-    $("a.profile_pic").each(function () {
-      $(this)
-        .tooltip({
-          placement: 'right',
-          title: 'usar como imagen de perfil'
-        });
-      });
-  });
-  
-  $("#name").editInPlace({
-    callback: function(oe, html, ori) {
-      html = html != null ? html : {
-        html: ori
-      };
-      window.location = Routes.profile_name_path(html);
-      return html;
-    }
-  });
-
-
+= app_js_load :profile=> true

@@ -4,12 +4,6 @@ module ApplicationHelper
     [controller.controller_name, controller.action_name]
   end
 
-  def markdown(text)  
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-      :autolink => true)
-    markdown.render(text).html_safe
-  end  
-
   def user_id
     current_user.id if current_user
   end
@@ -21,5 +15,13 @@ module ApplicationHelper
   def app_js_load(options)
     content_for :app_js_load , "app.load(#{options.to_json});\n".html_safe
   end
+  
+
+  def markdown(text)  
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+      :autolink => true)
+    markdown.render(text).html_safe
+  end  
+  
   
 end

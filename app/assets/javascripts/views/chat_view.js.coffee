@@ -14,12 +14,21 @@ class Lacomunidad.Views.ChatView extends Backbone.View
   cache:
     open: false
     messages: []
+
     
   initialize: ->
     #gets cache and attachs handler to save it on page unload
     @cache = store.get('chat-cache') or @cache
     $(window).unload () =>
       store.set('chat-cache', @cache)
+
+    @Mp3PlayerListener = 
+      onInit: () =>
+        @player = $('#mp3-player')[0]
+        @player.SetVariable "method:setUrl", "/assets/beep.mp3"
+      onUpdate: () =>
+        false
+
   
   render: ->
     $(this.el).html @template()
@@ -33,39 +42,19 @@ class Lacomunidad.Views.ChatView extends Backbone.View
   
   initSocket: ->
     $.getScript @server_url+"socket.io/socket.io.js", @socketIoLoaded
-    @createBeepPlayer()
 
   socketIoLoaded: =>
+    @socketConnect()
+
+  socketConnect: ->
     @socket = io.connect @server_url
     @socketBinds()
     @key =  $('meta[name=csrf-token]').attr('content')
     @socket.emit 'load', @key, app.user_id
 
-  createBeepPlayer: ->
-    player_id = 'chat-mp3-player'
-    #create flash listener
-    @Mp3PlayerListener = 
-      onInit: () =>
-        #console.log 'init'
-        @player.SetVariable "method:setUrl", "/assets/beep.mp3"
-      onUpdate: () =>
-        #console.log 'onUpdate'
-    
-    flashvars =
-      listener: "app.views.chat.Mp3PlayerListener"
-      interval: "500"
-    params = 
-      menu: "false"
-      allowscriptaccess: 'always'
-    attrs =
-      id: player_id
-
-    swfobject.embedSWF "/assets/player_mp3_js.swf", player_id, "1", "1", "9.0.0","expressInstall.swf", flashvars, params, attrs, (e) =>
-      @player = @$("##{e.id}")[0]
-
   beep: ->
     #only beep if player is initialized and chat isnt focused
-    @player?.SetVariable?("method:play", "") unless @$(".send input").is(":focus")
+    @player?.SetVariable("method:play", "") #unless @$(".send input").is(":focus")
 
     
   socketBinds: ->
@@ -126,9 +115,14 @@ class Lacomunidad.Views.ChatView extends Backbone.View
     @system_message "#{user.get('name')} se conectó."
 
   user_disconnected: (key) =>
-    user_hash = @user_list[key]  
-    user = app.users.user_or_guest(user_hash.user_id)
-    @system_message "#{user.get('name')} se desconectó."
+    if key is @key
+      @system_message "No estas conectado a este chat. Reconectando..."
+      @socketConnect()
+    else
+      user_hash = @user_list[key]  
+      user = app.users.user_or_guest(user_hash.user_id)
+      @system_message "#{user.get('name')} se desconectó."
+
 
   user_message: (key, msg) =>
     @beep()    

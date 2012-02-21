@@ -1,32 +1,60 @@
 #header
-  background: $red
-  padding: 7px 0
-  #user-nav
-    text-align: right
-    a, span
-      color: #fff
-      font-size: 12px
-      font-weight: bold
-      padding-right: 10px
+  padding-top: 5px
+  margin: 0 auto
   #main-nav
-    margin-top: 15px
-    list-style: none
     li
-      text-align: center
-      height: 24px
-      line-height: 24px
-      float: left
       margin-right: 10px
-      &.last
+      &:last-child
         margin-right: 0
-      a
-        background: #fff
-        color: $red
-        font-size: 13px
-        font-weight: bold
-        padding: 0 10px
-        display: block
+      &.home
+        a 
+          padding: 0 6px
+          .icon-white
+            display: none
+          &:hover, &.active
+            .icon-white
+              display: inline-block
+            .icon-black
+              display: none
+  .brand
+    padding: 0 20px
+  .navbar-inner
+    background: $red
+    padding: 10px
+    width: 960px
+    .nav
+      margin-top: 18px
+      li
+        a
+          height: 24px
+          line-height: 24px
+          font-weight: bold
+          padding: 0 10px
+          background-color: #fff
+          color: $red
+          &:hover, &.active
+            background-color: #444
+            color: #fff
+      
+    .nav.pull-right
+      font-size: 12px
+      margin-left: 0
+      .dropdown-toggle
+        span
+          max-width: 120px
+          text-overflow: ellipsis
+          display: inline-block
+          white-space: nowrap
+          overflow: hidden
+        .caret
+          border-top-color: $red
+          opacity: 0.7
         &:hover, &.active
-          background: #444
-          color: #fff
-          text-decoration: none
+          .caret
+            border-top-color: #fff
+      .dropdown-menu
+        a
+          color: #444
+          &:hover
+            background: #ffa
+          

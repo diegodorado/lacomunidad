@@ -43,8 +43,8 @@ class Application
       @posts = new Lacomunidad.Collections.PostsCollection()
       @views.wall = new Lacomunidad.Views.WallView {collection: @posts}
       @views.wall.render()
-      #todo: reset from options instead of fetching
-      @posts.fetch()
+      @posts.reset @options.posts
+
     if @options.chat
       @views.chat = new Lacomunidad.Views.ChatView
       @views.chat.render()
@@ -55,7 +55,20 @@ class Application
       @videos.reset @options.videos
     if @options.page_edit
       App.Pages.initEditor()
+    if @options.profile
+      @initProfile()
 
+  #todo: move over      
+  initProfile: ->
+    $("a.profile_pic").each () ->
+      $(this).tooltip {placement: 'right',title: 'usar como imagen de perfil'}
+    $("#name").editInPlace
+      callback: (oe, html, ori) ->
+        if html
+          window.location = Routes.profile_name_path html
+        else
+          html = ori
+        html
 
 
 window.app = new Application  

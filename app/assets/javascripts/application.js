@@ -10,6 +10,7 @@
 //= require twitter/bootstrap/alert
 //= require twitter/bootstrap/tooltip
 //= require twitter/bootstrap/transition
+//= require twitter/bootstrap/dropdown
 
 //= require underscore
 //= require backbone

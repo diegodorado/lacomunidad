@@ -1,5 +1,4 @@
 module PagesHelper
-
   def wikify(content)
     markdown linkify content unless content.nil?
   end
@@ -27,6 +26,4 @@ module PagesHelper
       link_to title, :id => page_title.parameterize
     end
   end
-
-
 end

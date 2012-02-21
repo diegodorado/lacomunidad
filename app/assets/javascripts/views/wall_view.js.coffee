@@ -9,6 +9,7 @@ class Lacomunidad.Views.WallView extends Backbone.View
 
   addPosts: =>
     @collection.each(@addPost)
+    @bind_scroll_handler()  
 
   prependPost: (post) =>
     view = new Lacomunidad.Views.Posts.PostView {model : post}
@@ -22,15 +23,25 @@ class Lacomunidad.Views.WallView extends Backbone.View
     $(this.el).html(@template())
     view = new Lacomunidad.Views.Posts.NewPostView {collection: @collection}
     view.render()
-    $(window).bind 'scroll', @scroll_handler
     @
+
+  near_bottom: ->
+    ($(window).height() + $(window).scrollTop()) > @$('.posts_list li.post:last').offset().top
+
+  bind_scroll_handler:  ->
+    console.log 'window scroll bound'
+    $(window).bind 'scroll', @scroll_handler
+  unbind_scroll_handler:  ->
+    console.log 'window scroll unbound'
+    $(window).unbind 'scroll', @scroll_handler
     
   scroll_handler: (event) =>
-    #console.log $(document).height(),$(window).height(), $(window).scrollTop()
-    console.log $(document).height(),$(window).height() + $(window).scrollTop(), @$('.posts_list li.post:last').offset().top
-    #treshold = el.offset().top + el.height();
-
-
-	stop_scroll: ->
-    $(window).unbind 'scroll', @scroll_handler
+    if @near_bottom()
+      console.log 'bottom reached'
+      @unbind_scroll_handler()
+      ts = @collection.min (post) ->
+        Date.parse(post.get('created_at'))
+      .get('created_at')
+      @collection.fetch {data: {ts: ts}}
+      
 

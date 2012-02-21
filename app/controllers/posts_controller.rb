@@ -3,24 +3,14 @@ class PostsController < ApplicationController
   respond_to :json
 
   def index
-    @posts = Post.includes([:comments, :votes]).order('created_at desc').limit(10)
-    return render :json => @posts.to_json(
-                        :except => [ :updated_at ], 
-                        :include=> {
-                          :comments =>{
-                            :except => [ :updated_at,:commentable_id,:commentable_type, :title ],
-                          }, 
-                          :votes=>{
-                            :except => [ :updated_at,:created_at,:voteable_id,:voteable_type, :voter_type ],
-                          }
-                        })
-                          
+    ts = Time.parse params['ts']
+    @posts = Post.includes([:comments, :votes]).order('created_at desc').where('created_at < ?',ts).limit(10)
+    return render :json => @posts.to_json
   end
   
   def create
     post = Post.create(params['post'])
-    return render :json => post.to_json(:except => [ :updated_at ])
-
+    return render :json => post.to_json
   end
 
   def destroy
