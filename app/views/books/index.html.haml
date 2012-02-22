@@ -1,0 +1,20 @@
+%ul.thumbnails
+  - for book in @books
+    %li.span2
+      .thumbnail
+        %img{:src=>"#{book.image.url(:thumb)}",:width=>100, :height=>150, :title=>"#{book.title}", :style=>"display:block"}
+        .caption
+          %h5 #{book.title}
+          .btn-group
+            %a.btn(href="#{book_path(book)}") 
+              %i.icon-eye-open
+            %a.btn(href="#{edit_book_path(book)}")
+              %i.icon-pencil
+            %a.btn{:href=>"#{book_path(book)}",:data=>{:confirm => 'Seguro?', :method => :delete}}
+              %i.icon-remove
+
+
+.well
+  %a.btn.btn-primary(href="#{new_book_path}") 
+    %i.icon-file.icon-white
+    Nuevo Libro

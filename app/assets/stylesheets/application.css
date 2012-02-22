@@ -5,4 +5,5 @@
  *= require 'tb'
  *= require 'markdown-editor'
  *= require 'main'
+ *= require 'formtastic-bootstrap'
 */

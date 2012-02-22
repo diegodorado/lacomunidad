@@ -11,6 +11,8 @@
 //= require twitter/bootstrap/tooltip
 //= require twitter/bootstrap/transition
 //= require twitter/bootstrap/dropdown
+//= require twitter/bootstrap/collapse
+//= require twitter/bootstrap/tab
 
 //= require underscore
 //= require backbone

@@ -1,0 +1,24 @@
+.row
+  .span3
+    %ul.thumbnails
+      %li.span3
+        .thumbnail
+          %img(src="#{@video.thumb_url}")
+  .span9
+    %h2
+      = @video.title
+    %hr
+    %p
+      = @video.description
+    %br
+    = @video.embed.html_safe
+%br
+.well
+  .btn-group
+    %a.btn(href="#{edit_video_path(@video)}")
+      %i.icon-pencil
+    %a.btn{:href=>"#{video_path(@video)}",:data=>{:confirm => 'Seguro?', :method => :delete}}
+      %i.icon-remove
+    %a.btn(href="#{videos_path}") 
+      %i.icon-list-alt
+

@@ -1,0 +1,19 @@
+%ul.thumbnails
+  - for video in @videos
+    %li.span3
+      .thumbnail
+        %img(src="#{video.thumb_url}")
+        .caption
+          %h5 #{video.title}
+          .btn-group
+            %a.btn(href="#{video_path(video)}") 
+              %i.icon-play
+            %a.btn(href="#{edit_video_path(video)}")
+              %i.icon-pencil
+            %a.btn{:href=>"#{video_path(video)}",:data=>{:confirm => 'Seguro?', :method => :delete}}
+              %i.icon-remove
+
+.well
+  %a.btn.btn-primary(href="#{new_video_path}") 
+    %i.icon-file.icon-white
+    Nuevo Video

@@ -1,8 +1,27 @@
-#docs_viewport
-
-:markdown
-  ### Libros
-
-  ```Sección en construcción...```
-
 = app_js_load :videos=> @videos
+
+.tabbable.tabs-top
+  %ul.nav.nav-tabs
+    %li.active
+      %a{:href=>"#docs_videos",:data=>{:toggle=>"tab"}} Videos
+    %li
+      %a{:href=>"#docs_books",:data=>{:toggle=>"tab"}} Libros
+    %li
+      %a{:href=>"#docs_xg",:data=>{:toggle=>"tab"}} Experiencias Guiadas
+
+  .tab-content
+    #docs_videos.tab-pane.active
+      #docs_viewport
+    #docs_books.tab-pane
+      .tabbable.tabs-left
+        %ul.nav.nav-tabs
+          - for book in @books
+            %li
+              %a{:class => "#{((book.id == @books[0].id) ? 'active' : '')}",:href=>"#book_#{book.id}",:data=>{:toggle=>"tab"}} #{book.title}
+        .tab-content
+          - for book in @books
+            .tab-pane{:class => "#{((book.id == @books[0].id) ? 'active' : '')}",:id=>"book_#{book.id}"}
+              %img{:src=>"#{book.image.url(:thumb)}",:width=>100, :height=>150, :title=>"#{book.title}"}
+    #docs_xg.tab-pane
+      audios  
+

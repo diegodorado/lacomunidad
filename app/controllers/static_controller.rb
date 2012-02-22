@@ -1,5 +1,7 @@
 class StaticController < ApplicationController
   def docs
-    @videos = DOCS['videos']
+    @videos = Video.all
+    @books = Book.order('title').all
+    @audios = Audio.order('title').all
   end
 end

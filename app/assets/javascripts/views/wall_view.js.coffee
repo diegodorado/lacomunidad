@@ -4,12 +4,11 @@ class Lacomunidad.Views.WallView extends Backbone.View
 
   initialize: ->
     @collection.bind 'reset', @addPosts
-    #newly created post must be prepended, not appended
-    @collection.bind 'add', @prependPost
+    @collection.bind 'add', @addPost
+    @collection.bind 'posted', @prependPost
 
   addPosts: =>
     @collection.each(@addPost)
-    @bind_scroll_handler()  
 
   prependPost: (post) =>
     view = new Lacomunidad.Views.Posts.PostView {model : post}
@@ -23,25 +22,30 @@ class Lacomunidad.Views.WallView extends Backbone.View
     $(this.el).html(@template())
     view = new Lacomunidad.Views.Posts.NewPostView {collection: @collection}
     view.render()
+    @bind_scroll_handler()
     @
 
   near_bottom: ->
     ($(window).height() + $(window).scrollTop()) > @$('.posts_list li.post:last').offset().top
 
   bind_scroll_handler:  ->
-    console.log 'window scroll bound'
     $(window).bind 'scroll', @scroll_handler
+    
   unbind_scroll_handler:  ->
-    console.log 'window scroll unbound'
     $(window).unbind 'scroll', @scroll_handler
     
+
   scroll_handler: (event) =>
     if @near_bottom()
-      console.log 'bottom reached'
       @unbind_scroll_handler()
       ts = @collection.min (post) ->
         Date.parse(post.get('created_at'))
       .get('created_at')
-      @collection.fetch {data: {ts: ts}}
-      
+      @collection.fetch {data: {ts: ts}, add:true, success: @fetchCallback}
 
+  fetchCallback: (collection, models) =>
+    #bind only if there may be more posts
+    @bind_scroll_handler() if models.length < 10  
+    
+    
+    

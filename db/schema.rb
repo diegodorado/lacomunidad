@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219095644) do
+ActiveRecord::Schema.define(:version => 20120222100356) do
+
+  create_table "audios", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "mp3_file_name"
+    t.string   "mp3_content_type"
+    t.integer  "mp3_file_size"
+    t.datetime "mp3_updated_at"
+    t.string   "ogg_file_name"
+    t.string   "ogg_content_type"
+    t.integer  "ogg_file_size"
+    t.datetime "ogg_updated_at"
+  end
 
   create_table "authentications", :force => true do |t|
     t.integer   "user_id"
@@ -25,6 +40,21 @@ ActiveRecord::Schema.define(:version => 20120219095644) do
     t.string    "image"
     t.string    "token"
     t.string    "secret"
+  end
+
+  create_table "books", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "comments", :force => true do |t|
@@ -84,6 +114,15 @@ ActiveRecord::Schema.define(:version => 20120219095644) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.string   "thumb_url"
+    t.text     "embed"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "votes", :force => true do |t|
     t.boolean   "vote",          :default => false

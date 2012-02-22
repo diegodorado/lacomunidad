@@ -3,7 +3,7 @@ Lacomunidad.Views.Videos ||= {}
 class Lacomunidad.Views.Videos.MiniVideoView extends Backbone.View
   template: JST["templates/videos/mini_video"]
   tagName: 'li'
-  className: 'span2'
+  className: 'span3'
 
 
 

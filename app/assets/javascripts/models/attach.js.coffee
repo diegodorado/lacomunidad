@@ -21,18 +21,16 @@ class Lacomunidad.Models.Attach extends Backbone.Model
     @fetch()
   
   fetch: ->
-    console.log 'start fetching', @cached_url
     @clear()
     @xhr = $.ajax
       url: Routes.opengraph_path()
-      timeout: 3000
+      timeout: 5000
       type: 'POST'
       data: {url: @cached_url}
       success: @successCallback
       error:  @errorCallback
 
   successCallback: (data)=>
-    console.log 'successCallback', data, @cached_url,@parsed_url
     @xhr = null
     #check if url was changed while fetching
     if @parsed_url isnt @cached_url
@@ -40,13 +38,11 @@ class Lacomunidad.Models.Attach extends Backbone.Model
       @fetch @parsed_url
     else
       return if data.error
-      console.log data
       @set data
       @trigger 'fetched', @
 
   errorCallback: (jqXHR, textStatus, errorThrown)=>
     @xhr = null
-    console.log textStatus, errorThrown
     @clear()
     
 

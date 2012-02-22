@@ -132,6 +132,54 @@
   };
 
   window.Routes = {
+// audios => /audios(.:format)
+  audios_path: function(options) {
+  return Utils.build_path(0, ["/audios"], ["format"], arguments)
+  },
+// new_audio => /audios/new(.:format)
+  new_audio_path: function(options) {
+  return Utils.build_path(0, ["/audios/new"], ["format"], arguments)
+  },
+// edit_audio => /audios/:id/edit(.:format)
+  edit_audio_path: function(_id, options) {
+  return Utils.build_path(1, ["/audios/", "/edit"], ["format"], arguments)
+  },
+// audio => /audios/:id(.:format)
+  audio_path: function(_id, options) {
+  return Utils.build_path(1, ["/audios/"], ["format"], arguments)
+  },
+// books => /books(.:format)
+  books_path: function(options) {
+  return Utils.build_path(0, ["/books"], ["format"], arguments)
+  },
+// new_book => /books/new(.:format)
+  new_book_path: function(options) {
+  return Utils.build_path(0, ["/books/new"], ["format"], arguments)
+  },
+// edit_book => /books/:id/edit(.:format)
+  edit_book_path: function(_id, options) {
+  return Utils.build_path(1, ["/books/", "/edit"], ["format"], arguments)
+  },
+// book => /books/:id(.:format)
+  book_path: function(_id, options) {
+  return Utils.build_path(1, ["/books/"], ["format"], arguments)
+  },
+// videos => /videos(.:format)
+  videos_path: function(options) {
+  return Utils.build_path(0, ["/videos"], ["format"], arguments)
+  },
+// new_video => /videos/new(.:format)
+  new_video_path: function(options) {
+  return Utils.build_path(0, ["/videos/new"], ["format"], arguments)
+  },
+// edit_video => /videos/:id/edit(.:format)
+  edit_video_path: function(_id, options) {
+  return Utils.build_path(1, ["/videos/", "/edit"], ["format"], arguments)
+  },
+// video => /videos/:id(.:format)
+  video_path: function(_id, options) {
+  return Utils.build_path(1, ["/videos/"], ["format"], arguments)
+  },
 // root => /
   root_path: function(options) {
   return Utils.build_path(0, ["/"], [], arguments)

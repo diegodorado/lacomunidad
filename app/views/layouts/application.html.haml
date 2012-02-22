@@ -31,8 +31,8 @@
     = app_js_load :users=> user_list, :user_id=> user_id, :chat=> true
     = javascript_tag yield :app_js_load
     = javascript_tag "app.start();"
+    -# this is shit... use audio tag instead
     :plain
-      -#this is shit... use audio tag instead
       <object id="mp3-player" type="application/x-shockwave-flash" data="/assets/player_mp3_js.swf" width="1" height="1">
           <param name="movie" value="/assets/player_mp3_js.swf" />
           <param name="AllowScriptAccess" value="always" />
@@ -40,7 +40,6 @@
       </object>      
 
     -#  asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
-    -#  change the UA-XXXXX-X to be your site's ID
     %script
       var _gaq=[["_setAccount","UA-29367210-1"],["_trackPageview"],["_trackPageLoadTime"]];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;

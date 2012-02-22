@@ -1,0 +1,11 @@
+one:
+  title: MyString
+  thumb_url: MyString
+  embed: MyText
+  description: MyText
+
+two:
+  title: MyString
+  thumb_url: MyString
+  embed: MyText
+  description: MyText

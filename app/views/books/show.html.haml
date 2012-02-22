@@ -1,0 +1,15 @@
+%p
+  %strong Title:
+  = @book.title
+%p
+  %strong Description:
+  = @book.description
+
+%img(src="#{@book.image.url(:thumb)}")
+
+%p
+  = link_to "Edit", edit_book_path(@book)
+  |
+  = link_to "Destroy", @book, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", books_path

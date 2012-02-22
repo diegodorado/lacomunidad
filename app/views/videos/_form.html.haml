@@ -1,0 +1,10 @@
+= semantic_form_for @video, :html=>{:class=>'form-horizontal'} do |f|
+  = f.semantic_errors
+  = f.inputs do
+    %legend Video
+    = f.input :title, :input_html=>{:class=>'span6'}
+    = f.input :description, :input_html=>{:class=>'span6', :rows=>6}
+    = f.input :thumb_url, :label => "Thumbnail", :input_html=>{:class=>'span6'}
+    = f.input :embed, :input_html=>{:class=>'span6', :rows=>3}
+  = f.actions do
+    = f.action :submit,:button_html => { :class => "btn btn-primary"}

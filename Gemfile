@@ -8,9 +8,11 @@ gem "haml",'3.1.4'
 gem "redcarpet",'2.1.0'
 
 #for opengraph
-gem 'rest-client'
-gem 'nokogiri'
+gem 'rest-client','1.6.7'
+gem 'nokogiri','1.5.0'
 
+gem 'formtastic', '~> 2.1.0.beta1'
+gem 'formtastic-bootstrap', git: 'git://github.com/cgunther/formtastic-bootstrap.git', branch: 'bootstrap2-rails3-2-formtastic-2-1'
 
 gem "devise", '2.0.0'
 gem "omniauth", '1.0.2'
@@ -50,6 +52,7 @@ group :development do
 end
 
 group :test do
+  gem "mocha"
   gem 'rspec'
   gem 'webrat'
 end

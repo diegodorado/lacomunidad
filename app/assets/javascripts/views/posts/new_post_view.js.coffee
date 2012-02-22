@@ -46,7 +46,8 @@ class Lacomunidad.Views.Posts.NewPostView extends Backbone.View
     input = @$('.new_post_input')
     return unless input.val()
     @model.set {body: input.val()}
-    @collection.create @model.toJSON()
+    created = @collection.create @model.toJSON(), {silent:true}
+    @collection.trigger 'posted', created
     input.val ''
     input.blur()
     @destroy_attach()

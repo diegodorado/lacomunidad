@@ -1,5 +1,11 @@
 Lacomunidad::Application.routes.draw do
 
+  resources :audios
+
+  resources :books
+
+  resources :videos
+
   #static pages
   root :to => "static#home"
   match '/que-es' => 'static#what', :as => 'what'

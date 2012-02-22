@@ -1,0 +1,13 @@
+%p
+  %strong Title:
+  = @audio.title
+%p
+  %strong Description:
+  = @audio.description
+
+%p
+  = link_to "Edit", edit_audio_path(@audio)
+  |
+  = link_to "Destroy", @audio, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", audios_path

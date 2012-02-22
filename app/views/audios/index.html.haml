@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Title
+    %th Description
+  - for audio in @audios
+    %tr
+      %td= audio.title
+      %td= audio.description
+      %td= link_to 'Show', audio
+      %td= link_to 'Edit', edit_audio_path(audio)
+      %td= link_to 'Destroy', audio, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Audio", new_audio_path
