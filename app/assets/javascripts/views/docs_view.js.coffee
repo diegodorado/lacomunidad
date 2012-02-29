@@ -1,6 +1,6 @@
 class Lacomunidad.Views.DocsView extends Backbone.View
   template: JST["templates/docs"]
-  el: '#docs_viewport'
+  el: '#docs_videos'
 
   initialize: ->
     app.videos.bind('reset', @addVideos)

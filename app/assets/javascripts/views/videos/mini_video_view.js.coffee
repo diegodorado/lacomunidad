@@ -8,7 +8,7 @@ class Lacomunidad.Views.Videos.MiniVideoView extends Backbone.View
 
 
   events:
-    'click .thumbnail': 'thumbnail_click'
+    'click a': 'thumbnail_click'
 
   thumbnail_click: (event)->
     event.preventDefault()

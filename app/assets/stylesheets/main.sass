@@ -34,14 +34,23 @@ body.users
   .service h3 img
     vertical-align: bottom    
 
-body.static    
+body.static.docs
   #mini_videos
-    .thumbnail
-      height: 220px
-      .caption
-        color: #333
-        font-weight: bold
-        text-align: center
+    list-style: none
+    li
+      a, img, .caption
         display: block
-      &:hover
-        text-decoration: none
+      a
+        position: relative
+        margin-bottom: 5px
+        .caption
+          position: absolute
+          bottom: 0
+          width: 200px
+          padding: 10px
+          color: #fff
+          font-weight: bold
+          text-align: center
+          display: block
+        &:hover
+          text-decoration: none
