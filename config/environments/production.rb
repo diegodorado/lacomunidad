@@ -47,7 +47,7 @@ Lacomunidad::Application.configure do
 
 
   config.assets.precompile =  [/^(?!.*\.(css|js)$).*$/, /application.(css|js)$/]
-  config.assets.precompile += %w( print.css ie.css modernizer.js)
+  config.assets.precompile += %w( print.css ie.css modernizr.js)
 
 
 
