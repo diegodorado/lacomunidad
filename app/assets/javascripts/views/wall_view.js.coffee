@@ -45,7 +45,8 @@ class Lacomunidad.Views.WallView extends Backbone.View
 
   fetchCallback: (collection, models) =>
     #bind only if there may be more posts
-    @bind_scroll_handler() if models.length < 10  
+    console.log collection, models
+    @bind_scroll_handler() unless models.length < 10  
     
     
     

@@ -1,9 +1,35 @@
 .row
   .span8
-    %p Estamos actualizando la página de **La Comunidad para el desarrollo humano.**
-    %p Mientras tanto, te invitamos a ver este video.
-    <iframe width="480" height="360" src="http://www.youtube.com/embed/mDvUT__SIRQ" frameborder="0" allowfullscreen></iframe>  
+    <iframe width="460" height="360" src="http://www.youtube.com/embed/mDvUT__SIRQ" frameborder="0" allowfullscreen></iframe>  
+    %hr
+    .label.label-info(style="font-size: 13px;padding: 2px 10px;") Ultimas noticias
   .span4
+    .label.label-info(style="font-size: 13px;padding: 2px 10px;") Ultimas publicaciones
+    %ul.posts_list
+      - @posts.each do |post|
+        %li.post
+          .avatar
+            %img{ src:"#{post.user.avatar}", width:40, height:40}
+          .content
+            %p.body 
+              %a.name #{post.user.name}:
+              #{post.body}
+          -if post.attach
+            .attach
+              .post_attach
+                .image
+                  %a.show-embed{target: "new", href:"#{post.attach[:url]}"}
+                    %img{ src:"#{post.attach[:image]}"}
+                .content
+                  .title
+                    %a.show-embed{target: "new", href:"#{post.attach[:url]}"} #{post.attach[:title]}
+                  .description #{post.attach[:description]}
+          .stats  
+            %time.when{ datetime:"#{post.created_at}"} Hace #{time_ago_in_words(post.created_at)}
+            %span.comments_count #{post.comments.count}
+            %span.thumbs_up #{post.votes_for}
+            %span.thumbs_down #{post.votes_against}
+          
     %img(src='http://www.lacomunidadmundial.org/aplicaciones/app088/banners/00001.gif')
     %br
     %br
@@ -11,3 +37,5 @@
     %br
     %br
     %img(src='http://www.lacomunidadmundial.org/aplicaciones/app088/banners/00003.gif')
+
+

@@ -4,11 +4,11 @@ class Lacomunidad.Collections.VotesCollection extends Backbone.Collection
   model: Lacomunidad.Models.Vote
 
   initialize: (options)->
-    @post_id = options.post_id
-    @reset options.votes
+    @post = options.post
+    @reset @post.get('votes')
   
   url: ->
-    window.Routes.vote_post_path @post_id
+    window.Routes.vote_post_path @post.get('id')
 
   votes_for: ->
     @filter (vote) ->

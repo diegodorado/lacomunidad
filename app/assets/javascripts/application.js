@@ -6,6 +6,7 @@
 //= require jquery.timeago
 //= require jquery.timeago.es
 //= require store
+//= require jwplayer
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/alert
 //= require twitter/bootstrap/tooltip
@@ -13,6 +14,7 @@
 //= require twitter/bootstrap/dropdown
 //= require twitter/bootstrap/collapse
 //= require twitter/bootstrap/tab
+//= require twitter/bootstrap/carousel
 
 //= require underscore
 //= require backbone

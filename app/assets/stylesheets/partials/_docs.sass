@@ -1,0 +1,60 @@
+#docs_menu > li > a
+  height: 24px
+  line-height: 24px
+  font-weight: bold
+  padding: 0 10px
+  
+#xg_player
+  .controls ul li a
+    background: rgb(58,135,173)
+  .controls ul li.active a
+    color: #000
+    background: rgba(58,135,173,0.5)
+  .controls .play 
+    .icon-play
+      display: inline-block
+    .icon-pause
+      display: none
+  &.playing
+    .controls .play 
+      .icon-play
+        display: none
+      .icon-pause
+        display: inline-block
+  .playlist
+    a
+      color: rgb(58,135,173)
+    .active a
+      background: rgb(58,135,173)
+      color: #fff
+
+#videos_list
+  list-style: none
+  li
+    a, img, .caption
+      display: block
+    img
+      height: 165px
+    a
+      position: relative
+      margin-bottom: 5px
+      .caption
+        position: absolute
+        bottom: 0
+        width: 200px
+        padding: 10px
+        color: #fff
+        font-weight: bold
+        text-align: center
+        display: block
+      &:hover
+        text-decoration: none
+
+#books_list
+  list-style: none
+  li
+    float: left
+    margin: 0 0 4px 8px
+    a, img
+      display: block
+  

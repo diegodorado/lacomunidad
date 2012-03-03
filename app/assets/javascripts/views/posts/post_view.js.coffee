@@ -15,7 +15,7 @@ class Lacomunidad.Views.Posts.PostView extends Backbone.View
 
   initialize: ->
     @comments = new Lacomunidad.Collections.CommentsCollection comments: @model.get('comments'), post_id: @model.get('id')
-    @votes = new Lacomunidad.Collections.VotesCollection votes: @model.get('votes'), post_id: @model.get('id')
+    @votes = new Lacomunidad.Collections.VotesCollection post: @model
     @attach = new Lacomunidad.Models.Attach @model.get 'attach' if @model.get 'attach'
     
     #re-render if user voted or commented

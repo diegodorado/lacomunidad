@@ -1,0 +1,27 @@
+= app_js_load :books=> true
+=render :partial => "static/docs_menu"
+.row
+  .span6
+    #books_carousel.carousel
+      .carousel-inner
+        - @books.each_with_index do |book, index|
+          .item{:class => "#{'active' if index == 0}"}
+            .row
+              .span3
+                %img{:src=>"#{book.image.url(:medium)}",:width=>200, :height=>300, :title=>"#{book.title}"}
+              .span3
+                %h3 #{book.title}
+                %hr
+                %a{:href=>"#{book.document.url}", :title=>"#{book.title}"}
+                  %span Descargar el libro
+                  %i.icon-download-alt
+            .row
+              .span6
+                %hr
+                %p #{book.description}
+  .span6
+    %ul#books_list
+      - @books.each_with_index do |book, index|
+        %li
+          %a{:href=>"#", :data=>{:index=>index}, :title=>"#{book.title}"}
+            %img{:src=>"#{book.image.url(:thumb)}",:width=>100, :height=>150, :title=>"#{book.title}"}

@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
-  before_create :ensure_name
+  before_create :ensure_attrs
 
-  def ensure_name
+  def ensure_attrs
     #set email first part as name if no name is set
     self.name ||= self.email.gsub(/@.*/, '')
+    self.avatar ||= '/assets/default_avatar.png'
   end
 
   acts_as_voter

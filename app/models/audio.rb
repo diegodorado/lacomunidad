@@ -10,4 +10,20 @@ class Audio < ActiveRecord::Base
       :s3_credentials => "#{Rails.root}/config/s3.yml",
       :path => "/audio_ogg/:id/:filename" 
     }
+    
+
+  def file
+    mp3.url
+  end
+
+  def as_json(options)
+    options ||= {}
+    defaults = {
+      :methods => :file,
+      :only=>[:title, :description]
+    }
+    options = defaults.merge(options)
+    super(options)
+  end
+    
 end

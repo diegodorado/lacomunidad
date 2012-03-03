@@ -192,9 +192,21 @@
   noticias_path: function(options) {
   return Utils.build_path(0, ["/noticias"], ["format"], arguments)
   },
-// documentos => /documentos(.:format)
-  documentos_path: function(options) {
+// docs => /documentos(.:format)
+  docs_path: function(options) {
   return Utils.build_path(0, ["/documentos"], ["format"], arguments)
+  },
+// docs_videos => /documentos/videos(.:format)
+  docs_videos_path: function(options) {
+  return Utils.build_path(0, ["/documentos/videos"], ["format"], arguments)
+  },
+// docs_books => /documentos/libros(.:format)
+  docs_books_path: function(options) {
+  return Utils.build_path(0, ["/documentos/libros"], ["format"], arguments)
+  },
+// docs_xgs => /documentos/experiencias-guiadas(.:format)
+  docs_xgs_path: function(options) {
+  return Utils.build_path(0, ["/documentos/experiencias-guiadas"], ["format"], arguments)
   },
 // participate => /como-participar(.:format)
   participate_path: function(options) {

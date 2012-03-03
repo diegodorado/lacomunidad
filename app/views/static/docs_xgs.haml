@@ -1,0 +1,57 @@
+= app_js_load :xgs=> @xgs
+
+.row
+  .span6
+    =render :partial => "static/docs_menu"
+    %hr
+    :markdown 
+      Las **experiencias guiadas** son, básicamente, trabajos con imágenes.
+      
+      Tienden a positivizar la existencia, a fortalecer el contacto con uno mismo, a favorecer la búsqueda del sentido de la vida.
+
+      Es importante establecer relaciones entre lo que sucede en el propio psiquismo y lo que a uno le pasa en la vida cotidiana.
+      También interesa relacionar las dificultades que se tiene con las **experiencias guiadas** y las que se tiene en la vida.
+      
+      Se comienza a crecer realmente cuando en la propia conducta surgen respuestas superadoras y generadoras, es decir se producen cambios positivos en uno mismo y se ayuda a otros en la misma dirección.
+      
+    %hr
+    <iframe width="460" height="315" src="http://www.youtube.com/embed/EMvVPD-sJeY" frameborder="0" allowfullscreen></iframe>
+  .span6
+    .well(style="background:#ffc")
+      :markdown
+        Aquí puedes escuchar los **Ejercicios de Relajación** y las **Experiencias Guiadas**
+    %div(style="height:0;visibility:hidden;")
+      #xg_player_swf
+    #xg_player.well
+      .current
+        %h3 #{@xgs[0].title}
+        %p #{@xgs[0].description}
+      .controls
+        .pagination
+          %ul
+            %li
+              %a.prev(href="#")
+                %i.icon-step-backward
+            %li
+              %a.play(href="#")
+                %i.icon-play
+                %i.icon-pause
+            %li
+              %a.next(href="#")
+                %i.icon-step-forward
+            %li.active
+              %a.time(href="#")  00:00 / 00:00
+            %li
+              %a.download{:href=>"#",:title=>'Descargar mp3'}
+                %i.icon-download-alt
+      
+      .progress.progress-info(style="background:#fff")
+        .bar
+
+
+      %ul.nav.nav-tabs.nav-stacked.playlist
+        - @xgs.each_with_index do |xg, index|
+          %li{:class => "#{'active' if index == 0}"}
+            %a{:href=>"#", :data=>{:index=>index}, :title=>"#{xg.title}"} 
+              =xg.title
+

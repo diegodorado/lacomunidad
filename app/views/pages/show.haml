@@ -1,9 +1,10 @@
-%ul.breadcrumb
-  - pages_viewed_titles.each do |t|
-    %li
-      =link_to t, :id => t.parameterize
-      %span.divider 
-        ="&#8658;".html_safe unless t == pages_viewed_titles.last
+- if pages_viewed_titles
+  %ul.breadcrumb
+    - pages_viewed_titles.each do |t|
+      %li
+        =link_to t, :id => t.parameterize
+        %span.divider 
+          ="&#8658;".html_safe unless t == pages_viewed_titles.last
     
 -if has_perms?
   =link_to 'Editar', edit_page_path(@page), :class=> 'label success'

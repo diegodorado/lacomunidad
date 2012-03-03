@@ -1,0 +1,7 @@
+%ul#docs_menu.nav.nav-pills
+  %li{:class=>"#{('active' if current_page?(docs_videos_path))}"}
+    %a{:href=>"#{docs_videos_path}"} Videos
+  %li{:class=>"#{('active' if current_page?(docs_books_path))}"}
+    %a{:href=>"#{docs_books_path}"} Libros
+  %li{:class=>"#{('active' if current_page?(docs_xgs_path))}"}
+    %a{:href=>"#{docs_xgs_path}"} Experiencias Guiadas

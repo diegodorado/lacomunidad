@@ -6,7 +6,7 @@
       %li #{link_to "Que es La Comunidad", what_path, :class=> ('active' if current_page?(what_path))}
       %li #{link_to "Muro", muro_path, :class=> ('active' if current_page?(muro_path))}
       %li #{link_to "Noticias", noticias_path, :class=> ('active' if current_page?(noticias_path))}
-      %li #{link_to "Documentos", documentos_path, :class=> ('active' if current_page?(documentos_path))}
+      %li #{link_to "Documentos", docs_path, :class=> ('active' if current_page?(docs_path))}
       %li #{link_to "Participa", participate_path, :class=> ('active' if current_page?(participate_path))}
     %ul.nav.pull-right
       - if user_signed_in?

@@ -6,6 +6,8 @@
 @import "partials/wall"
 @import "partials/chat"
 @import "partials/pages"
+@import "partials/docs"
+@import "partials/home"
 
 body
   background: $red
@@ -32,25 +34,4 @@ a.thumbnail.selected
     
 body.users
   .service h3 img
-    vertical-align: bottom    
-
-body.static.docs
-  #mini_videos
-    list-style: none
-    li
-      a, img, .caption
-        display: block
-      a
-        position: relative
-        margin-bottom: 5px
-        .caption
-          position: absolute
-          bottom: 0
-          width: 200px
-          padding: 10px
-          color: #fff
-          font-weight: bold
-          text-align: center
-          display: block
-        &:hover
-          text-decoration: none
+    vertical-align: bottom 

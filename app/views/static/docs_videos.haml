@@ -1,0 +1,21 @@
+= app_js_load :videos=> @videos
+=render :partial => "static/docs_menu"
+.row
+  .span6
+    #videos_carousel.carousel
+      .carousel-inner
+        - @videos.each_with_index do |video, index|
+          .item{:class => "#{'active' if index == 0}"}
+            %h3 #{video.title}
+            %hr
+            .embed #{video.embed.html_safe}
+            %hr
+            %p #{video.description}
+  .span6
+    %ul#videos_list.row
+      - @videos.each_with_index do |video, index|
+        %li.span3{:class => "#{'active' if index == 0}"}
+          %a{:href=>"#", :data=>{:index=>index}}
+            %img{:src=>"#{video.thumb_url}",:width=>220, :height=>165}
+            %span.caption #{video.title}
+
