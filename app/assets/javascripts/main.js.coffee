@@ -93,6 +93,8 @@ class Application
         xg = @options.xgs[event.index]
         $('#xg_player .current h3').html xg.title
         $('#xg_player .current p').html xg.description
+        $("#xg_player .controls .download").attr 'href',xg.file
+        
 
 
       #@xg_player.onComplete (event) =>
