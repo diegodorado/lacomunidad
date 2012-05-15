@@ -127,20 +127,20 @@ class Application
 
     if @options.page_edit
       App.Pages.initEditor()
-    if @options.profile
-      @initProfile()
+    if @options.candidates
+      $('#candidates-carousel').carousel({interval: 15000}) #long interval
 
-  #todo: move over      
-  initProfile: ->
-    $("a.profile_pic").each () ->
-      $(this).tooltip {placement: 'right',title: 'usar como imagen de perfil'}
-    $("#name").editInPlace
-      callback: (oe, html, ori) ->
-        if html
-          window.location = Routes.profile_name_path html
-        else
-          html = ori
-        html
+  
+    if @options.profile
+      $("a.profile_pic").each () ->
+        $(this).tooltip {placement: 'right',title: 'usar como imagen de perfil'}
+      $("#name").editInPlace
+        callback: (oe, html, ori) ->
+          if html
+            window.location = Routes.change_name_user_path(app.user.id,{name:html})      
+          else
+            html = ori
+          html
 
 
 window.app = new Application  

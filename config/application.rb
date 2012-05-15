@@ -17,6 +17,9 @@ module Lacomunidad
     config.assets.version = '1.0'
     #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+    config.generators.stylesheets = false
+    config.generators.javascripts = false
+
     config.action_mailer.default_url_options = { :host => 'lacomunidad.org.ar' }
     ActionMailer::Base.smtp_settings = {
       :address        => "smtp.sendgrid.net",

@@ -180,6 +180,38 @@
   video_path: function(_id, options) {
   return Utils.build_path(1, ["/videos/"], ["format"], arguments)
   },
+// candidates => /candidates(.:format)
+  candidates_path: function(options) {
+  return Utils.build_path(0, ["/candidates"], ["format"], arguments)
+  },
+// new_candidate => /candidates/new(.:format)
+  new_candidate_path: function(options) {
+  return Utils.build_path(0, ["/candidates/new"], ["format"], arguments)
+  },
+// edit_candidate => /candidates/:id/edit(.:format)
+  edit_candidate_path: function(_id, options) {
+  return Utils.build_path(1, ["/candidates/", "/edit"], ["format"], arguments)
+  },
+// candidate => /candidates/:id(.:format)
+  candidate_path: function(_id, options) {
+  return Utils.build_path(1, ["/candidates/"], ["format"], arguments)
+  },
+// votes_result_candidates => /candidates/votes_result(.:format)
+  votes_result_candidates_path: function(options) {
+  return Utils.build_path(0, ["/candidates/votes_result"], ["format"], arguments)
+  },
+// vote_candidate => /candidates/:id/vote(.:format)
+  vote_candidate_path: function(_id, options) {
+  return Utils.build_path(1, ["/candidates/", "/vote"], ["format"], arguments)
+  },
+// unvote_candidate => /candidates/:id/unvote(.:format)
+  unvote_candidate_path: function(_id, options) {
+  return Utils.build_path(1, ["/candidates/", "/unvote"], ["format"], arguments)
+  },
+// settings => /settings(.:format)
+  settings_path: function(options) {
+  return Utils.build_path(0, ["/settings"], ["format"], arguments)
+  },
 // root => /
   root_path: function(options) {
   return Utils.build_path(0, ["/"], [], arguments)
@@ -211,6 +243,26 @@
 // participate => /como-participar(.:format)
   participate_path: function(options) {
   return Utils.build_path(0, ["/como-participar"], ["format"], arguments)
+  },
+// profile_user => /users/:id/profile(.:format)
+  profile_user_path: function(_id, options) {
+  return Utils.build_path(1, ["/users/", "/profile"], ["format"], arguments)
+  },
+// toggle_role_user => /users/:id/toggle_role(.:format)
+  toggle_role_user_path: function(_id, options) {
+  return Utils.build_path(1, ["/users/", "/toggle_role"], ["format"], arguments)
+  },
+// change_pic_user => /users/:id/change_pic(.:format)
+  change_pic_user_path: function(_id, options) {
+  return Utils.build_path(1, ["/users/", "/change_pic"], ["format"], arguments)
+  },
+// change_name_user => /users/:id/change_name(.:format)
+  change_name_user_path: function(_id, options) {
+  return Utils.build_path(1, ["/users/", "/change_name"], ["format"], arguments)
+  },
+// users => /users(.:format)
+  users_path: function(options) {
+  return Utils.build_path(0, ["/users"], ["format"], arguments)
   },
 // new_user_session => /users/sign_in(.:format)
   new_user_session_path: function(options) {
@@ -260,10 +312,6 @@
   new_user_confirmation_path: function(options) {
   return Utils.build_path(0, ["/users/confirmation/new"], ["format"], arguments)
   },
-// users => /users(.:format)
-  users_path: function(options) {
-  return Utils.build_path(0, ["/users"], ["format"], arguments)
-  },
 // authentications => /authentications(.:format)
   authentications_path: function(options) {
   return Utils.build_path(0, ["/authentications"], ["format"], arguments)
@@ -279,18 +327,6 @@
 // authentication => /authentications/:id(.:format)
   authentication_path: function(_id, options) {
   return Utils.build_path(1, ["/authentications/"], ["format"], arguments)
-  },
-// profile => /profile(.:format)
-  profile_path: function(options) {
-  return Utils.build_path(0, ["/profile"], ["format"], arguments)
-  },
-// profile_pic => /profile_pic/:provider(.:format)
-  profile_pic_path: function(_provider, options) {
-  return Utils.build_path(1, ["/profile_pic/"], ["format"], arguments)
-  },
-// profile_name => /profile_name/:name(.:format)
-  profile_name_path: function(_name, options) {
-  return Utils.build_path(1, ["/profile_name/"], ["format"], arguments)
   },
 // muro => /muro(.:format)
   muro_path: function(options) {
@@ -324,6 +360,10 @@
   pages_path: function(options) {
   return Utils.build_path(0, ["/pages"], ["format"], arguments)
   },
+// new_page => /pages/new(.:format)
+  new_page_path: function(options) {
+  return Utils.build_path(0, ["/pages/new"], ["format"], arguments)
+  },
 // edit_page => /pages/:id/edit(.:format)
   edit_page_path: function(_id, options) {
   return Utils.build_path(1, ["/pages/", "/edit"], ["format"], arguments)
@@ -332,9 +372,9 @@
   page_path: function(_id, options) {
   return Utils.build_path(1, ["/pages/"], ["format"], arguments)
   },
-// new_page => /pages/new(.:format)
-  new_page_path: function(options) {
-  return Utils.build_path(0, ["/pages/new"], ["format"], arguments)
+// rails_info_properties => /rails/info/properties(.:format)
+  rails_info_properties_path: function(options) {
+  return Utils.build_path(0, ["/rails/info/properties"], ["format"], arguments)
   }}
 ;
   window.Routes.options = defaults;

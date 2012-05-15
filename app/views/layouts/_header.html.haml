@@ -16,9 +16,36 @@
             %b.caret
           %ul.dropdown-menu
             %li
-              %a(href="#{profile_path}")
+              %a(href="#{profile_user_path(current_user)}")
                 %i.icon-user
                 Perfil
+            - if can? :manage, Book
+              %li
+                %a(href="#{books_path}")
+                  %i.icon-book
+                  Libros
+            - if can? :manage, Video
+              %li
+                %a(href="#{videos_path}")
+                  %i.icon-film
+                  Videos
+            - if can? :manage, Audio
+              %li
+                %a(href="#{audios_path}")
+                  %i.icon-music
+                  Audios
+            - if can? :manage, User
+              %li
+                %a(href="#{users_path}")
+                  %i.icon-user
+                  Usuarios
+            - if can? :manage, Setting
+              %li.divider
+              %li
+                %a(href="#{settings_path}")
+                  %i.icon-cog
+                  Configuración
+                
             %li.divider
             %li
               %a{:href=>"#{destroy_user_session_path}",:data=>{:method=>'delete'}}

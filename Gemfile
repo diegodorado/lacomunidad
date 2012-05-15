@@ -7,6 +7,9 @@ gem "jquery-rails",'1.0.19'
 gem "haml",'3.1.4'
 gem "redcarpet",'2.1.0'
 
+gem "rails-settings-cached"
+gem "cancan"
+
 #for opengraph
 gem 'rest-client','1.6.7'
 gem 'nokogiri','1.5.0'
@@ -42,6 +45,8 @@ group :production do
 end
 
 group :development do
+#  gem 'guard-livereload'
+#  gem 'rack-livereload'
   gem 'rspec-rails'
   gem "annotate"
   gem 'sqlite3'

@@ -23,7 +23,7 @@
       %hr
       %ul.thumbnails
         %li.span1
-          = link_to image_tag( @user.gravatar, :size => "50x50"), profile_pic_path(:gravatar), :class=>'profile_pic thumbnail'
+          = link_to image_tag( @user.gravatar, :size => "50x50"), change_pic_user_path(@user,:provider=>:gravatar), :class=>'profile_pic thumbnail'
         %li.span4
           :markdown
             [Gravatar](https://es.gravatar.com/) asocia una imagen de perfil
@@ -40,7 +40,7 @@
       - if a = @user.facebook_authentication
         %ul.thumbnails
           %li.span1
-            = link_to image_tag( a.image, :size => "50x50"), profile_pic_path(:facebook), :class=>'profile_pic thumbnail'
+            = link_to image_tag( a.image, :size => "50x50"), change_pic_user_path(@user,:provider=>:facebook), :class=>'profile_pic thumbnail'
           %li.span4
             :markdown
               La cuenta de #{a.name} ha sido vinculada.
@@ -63,7 +63,7 @@
       - if a = @user.google_authentication
         %ul.thumbnails
           %li.span1
-            = link_to image_tag( a.image, :size => "50x50"), profile_pic_path(:google), :class=>'profile_pic thumbnail'
+            = link_to image_tag( a.image, :size => "50x50"), change_pic_user_path(@user,:provider=>:google), :class=>'profile_pic thumbnail'
           %li.span4
             :markdown
               La cuenta de #{a.name} ha sido vinculada.

@@ -1,0 +1,10 @@
+es:
+  unauthorized:
+    default: "No estas autorizado para visitar esta pagina."
+    manage:
+      all: "No estas autorizado para %{action} %{subject}."
+      user: "Not allowed to manage other user accounts."
+    update:
+      project: "Not allowed to update this project."
+    create:
+      candidate: "Debes ser miembro pleno para poder postularte. Si consideras esto un error, comunicate con info@lacomunidad.org.ar"

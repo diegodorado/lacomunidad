@@ -1,49 +1,25 @@
 class BooksController < ApplicationController
 
-  before_filter :authenticate_user!, :check_perms
+  load_and_authorize_resource
   
-  def check_perms
-    authorized = [ 'diegodorado@gmail.com', 'carlos@redhumanista.org', 'joseluismiranda@gmail.com','gabiyas@gmail.com', 'julietaspagnuolo@yahoo.com.ar' ]
-    redirect_to root_path, :alert =>  "No tienes permisos suficientes." unless authorized.include?(current_user.email)
-  end
-  
-  def index
-    @books = Book.all
-  end
-
-  def show
-    @book = Book.find(params[:id])
-  end
-
-  def new
-    @book = Book.new
-  end
-
   def create
-    @book = Book.new(params[:book])
     if @book.save
-      redirect_to @book, :notice => "Successfully created book."
+      redirect_to books_path, :notice => "Libro #{@book.title} creado."
     else
       render :action => 'new'
     end
   end
 
-  def edit
-    @book = Book.find(params[:id])
-  end
-
   def update
-    @book = Book.find(params[:id])
     if @book.update_attributes(params[:book])
-      redirect_to @book, :notice  => "Successfully updated book."
+      redirect_to books_path, :notice => "Libro #{@book.title} actualizado."
     else
       render :action => 'edit'
     end
   end
 
   def destroy
-    @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_url, :notice => "Successfully destroyed book."
+    redirect_to books_path, :notice => "Successfully destroyed book."
   end
 end

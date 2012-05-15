@@ -1,0 +1,23 @@
+= app_js_load :candidates=> true
+.row
+  .span6
+    %h3 Candidatos al Equipo de Coordinación Nacional
+  .span6
+    =link_to 'Ver como pasarela', candidates_path, :class=> 'label label-success'
+    =link_to 'Ver como lista', candidates_path(:list=>true), :class=> 'label label-success'
+%hr
+
+-if @list
+
+  - @candidates.each do |candidate|
+    =render 'candidate', :candidate => candidate
+    %hr
+    
+-else
+  #candidates-carousel.carousel
+    .carousel-inner
+      - @candidates.each_with_index do |candidate, index|
+        .item{:class => "#{'active' if index == 0}"}
+          =render 'candidate', :candidate => candidate
+    %a.carousel-control.left{"data-slide" => "prev", :href => "#candidates-carousel"} &lsaquo;
+    %a.carousel-control.right{"data-slide" => "next", :href => "#candidates-carousel"} &rsaquo;  

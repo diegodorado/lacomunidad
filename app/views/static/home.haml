@@ -2,6 +2,14 @@
   .span8
     .label.label-info(style="font-size: 13px;padding: 2px 10px;") Ultimas novedades
     %br
+    .well
+      %h3 Elecciones 2012
+      %p Se acercan las elecciones para el Equipo de Coordinación País (ECP) y para el Equipo de Coordinación Mundial (ECM).
+      %p Estas son las personas que se han postulado para las funciones.
+      =link_to 'Candidatos al ECP', candidates_path, :style=>'color:#fff',:class => 'btn btn-primary btn-large'
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      =link_to 'Candidatos al ECM', 'http://candidatos-lacomunidad.blogspot.com.es/index.html', :style=>'color:#fff',:class => 'btn btn-primary btn-large', :target => 'blank'
+    %br
     =image_tag 'invitacion.jpg'
   .span4
     .label.label-info(style="font-size: 13px;padding: 2px 10px;") Ultimas publicaciones

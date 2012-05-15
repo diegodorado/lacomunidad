@@ -1,0 +1,24 @@
+.row
+  .span4
+    %img(src="#{candidate.photo.url(:medium)}")
+  .span8
+    %h4
+      = candidate.user.name
+      =link_to 'Editar', edit_candidate_path(candidate), :class=> 'label label-success' if can? :manage, candidate
+    -if can? :manage, candidate
+      -# %h5
+        -# Votos a favor
+        -# %span.label.label-success #{candidate.votes_for}
+    -if false and can? :vote, candidate
+      -if current_user.voted_on? candidate
+        %span.label Ya diste tu voto
+        =link_to 'Revocar voto', unvote_candidate_path(candidate), :class=> 'label label-success'
+      -else
+        =link_to 'Votar', vote_candidate_path(candidate), :class=> 'label label-success'
+    %hr
+    =simple_format candidate.bio
+    %hr
+    =mail_to candidate.user.email
+    %br
+    %br
+

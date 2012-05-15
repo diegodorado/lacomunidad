@@ -1,0 +1,18 @@
+= app_js_load :candidates=> true
+%h3 Resultados de las Elecciones
+%h4 Candidatos al Equipo de Coordinación Nacional
+%hr
+
+- @candidates.each do |candidate|
+  .row
+    .span4
+      %img(src="#{candidate.photo.url(:medium)}")
+    .span8
+      %h4 #{candidate.user.name}
+      %hr
+      =link_to 'Votar', vote_candidate_path(candidate), :class=> 'label label-success'
+      =link_to 'Revocar voto', unvote_candidate_path(candidate), :class=> 'label label-success'
+      =simple_format candidate.bio
+      %hr
+      =mail_to candidate.user.email
+  %hr

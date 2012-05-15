@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222100356) do
+ActiveRecord::Schema.define(:version => 20120506225627) do
 
   create_table "audios", :force => true do |t|
     t.string   "title"
@@ -57,6 +57,17 @@ ActiveRecord::Schema.define(:version => 20120222100356) do
     t.datetime "image_updated_at"
   end
 
+  create_table "candidates", :force => true do |t|
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "user_id"
+  end
+
   create_table "comments", :force => true do |t|
     t.string    "title",            :limit => 50, :default => ""
     t.text      "comment"
@@ -88,6 +99,30 @@ ActiveRecord::Schema.define(:version => 20120222100356) do
     t.integer  "user_id"
     t.text     "attach"
   end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "user_id", :null => false
+    t.integer "role_id", :null => false
+  end
+
+  add_index "roles_users", ["user_id", "role_id"], :name => "index_roles_users_on_user_id_and_role_id", :unique => true
+
+  create_table "settings", :force => true do |t|
+    t.string   "var",                      :null => false
+    t.text     "value"
+    t.integer  "thing_id"
+    t.string   "thing_type", :limit => 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["thing_type", "thing_id", "var"], :name => "index_settings_on_thing_type_and_thing_id_and_var", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

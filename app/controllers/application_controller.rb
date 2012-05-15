@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
       redirect_to "http://#{APP_DOMAIN}", :status => 301
     end
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path, :alert =>  exception.message
+  end
   
 end
