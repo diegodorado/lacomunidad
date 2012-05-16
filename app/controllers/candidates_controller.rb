@@ -10,9 +10,6 @@ class CandidatesController < ApplicationController
     @results = params[:results]
   end
 
-  def votes_result
-    redirect_to root_path, :alert => "..........dddd......"
-  end
 
   def new
     if cannot? :manage, @candidate
@@ -27,7 +24,7 @@ class CandidatesController < ApplicationController
 
   def create
     if @candidate.save
-      redirect_to root_path, :notice => "Recibimos tu postulacion."
+      redirect_to candidates_path, :notice => "Recibimos la postulacion."
     else
       render :action => 'new'
     end
@@ -35,7 +32,7 @@ class CandidatesController < ApplicationController
 
   def update
     if @candidate.update_attributes(params[:candidate])
-      redirect_to root_path, :notice => "Actualizaste tu postulacion."
+      redirect_to candidates_path, :notice => "Actualizaste la postulacion."
     else
       render :action => 'edit'
     end
@@ -43,7 +40,7 @@ class CandidatesController < ApplicationController
 
   def destroy
     @candidate.destroy
-    redirect_to root_path, :notice => "Eliminaste tu postulacion."
+    redirect_to candidates_path, :notice => "Eliminaste la postulacion."
   end
 
 

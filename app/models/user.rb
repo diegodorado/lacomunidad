@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   def ensure_attrs
     #set email first part as name if no name is set
     self.name ||= self.email.gsub(/@.*/, '')
-    self.avatar ||= '/assets/default_avatar.png'
   end
 
   acts_as_voter
@@ -34,6 +33,11 @@ class User < ActiveRecord::Base
       gravatar_id = Digest::MD5::hexdigest(email).downcase  
       "http://gravatar.com/avatar/#{gravatar_id}.png?s=50"
   end
+
+  def avatar
+    self[:avatar] || '/assets/default_avatar.png'
+  end
+
 
   def facebook_authentication
       authentications.select{|a| a.provider=='facebook'}.first

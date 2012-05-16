@@ -2,11 +2,8 @@
   = f.semantic_errors
   = f.inputs do
     %legend Postulación
-    -if can? :manage, @candidate
-      = f.input :user
+    = f.input :name
     = f.input :bio, :label=>'Descripción', :hint=>'Una breve descripción para quienes no te conocen. ( ciudad, barrio, equipo de base al que perteneces)',:input_html=>{:class=>'span6', :rows=>6}
     = f.input :photo, :label=>'Foto'
-    -if cannot? :manage, @candidate
-      = f.input :user_id, :as => :hidden
   = f.actions do
     = f.action :submit,:label=>'Postularse',:button_html => {:class => "btn btn-primary"}

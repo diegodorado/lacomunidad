@@ -1,6 +1,6 @@
 class Candidate < ActiveRecord::Base
   validates :bio, :presence => true 
-  validates :user_id, :presence => true, :uniqueness => true  
+  #validates :user_id, :presence => true, :uniqueness => true  
   validates :photo, :presence => true  
   acts_as_voteable
 

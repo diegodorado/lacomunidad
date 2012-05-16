@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120506225627) do
+ActiveRecord::Schema.define(:version => 20120516155325) do
 
   create_table "audios", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "mp3_file_name"
-    t.string   "mp3_content_type"
-    t.integer  "mp3_file_size"
-    t.datetime "mp3_updated_at"
-    t.string   "ogg_file_name"
-    t.string   "ogg_content_type"
-    t.integer  "ogg_file_size"
-    t.datetime "ogg_updated_at"
+    t.string    "title"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "mp3_file_name"
+    t.string    "mp3_content_type"
+    t.integer   "mp3_file_size"
+    t.timestamp "mp3_updated_at"
+    t.string    "ogg_file_name"
+    t.string    "ogg_content_type"
+    t.integer   "ogg_file_size"
+    t.timestamp "ogg_updated_at"
   end
 
   create_table "authentications", :force => true do |t|
@@ -43,18 +43,18 @@ ActiveRecord::Schema.define(:version => 20120506225627) do
   end
 
   create_table "books", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.integer  "document_file_size"
-    t.datetime "document_updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string    "title"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "document_file_name"
+    t.string    "document_content_type"
+    t.integer   "document_file_size"
+    t.timestamp "document_updated_at"
+    t.string    "image_file_name"
+    t.string    "image_content_type"
+    t.integer   "image_file_size"
+    t.timestamp "image_updated_at"
   end
 
   create_table "candidates", :force => true do |t|
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20120506225627) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "user_id"
+    t.string   "name"
   end
 
   create_table "comments", :force => true do |t|
@@ -93,11 +94,11 @@ ActiveRecord::Schema.define(:version => 20120506225627) do
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
 
   create_table "posts", :force => true do |t|
-    t.string   "body",       :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.text     "attach"
+    t.string    "body",       :null => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "user_id"
+    t.text      "attach"
   end
 
   create_table "roles", :force => true do |t|
@@ -125,25 +126,25 @@ ActiveRecord::Schema.define(:version => 20120506225627) do
   add_index "settings", ["thing_type", "thing_id", "var"], :name => "index_settings_on_thing_type_and_thing_id_and_var", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
-    t.string   "reset_password_token"
-    t.string   "remember_token"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "avatar"
-    t.datetime "reset_password_sent_at"
-    t.string   "unconfirmed_email"
+    t.string    "email",                                 :default => "", :null => false
+    t.string    "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string    "reset_password_token"
+    t.string    "remember_token"
+    t.timestamp "remember_created_at"
+    t.integer   "sign_in_count",                         :default => 0
+    t.timestamp "current_sign_in_at"
+    t.timestamp "last_sign_in_at"
+    t.string    "current_sign_in_ip"
+    t.string    "last_sign_in_ip"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "name"
+    t.string    "confirmation_token"
+    t.timestamp "confirmed_at"
+    t.timestamp "confirmation_sent_at"
+    t.string    "avatar"
+    t.timestamp "reset_password_sent_at"
+    t.string    "unconfirmed_email"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
@@ -151,12 +152,12 @@ ActiveRecord::Schema.define(:version => 20120506225627) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "videos", :force => true do |t|
-    t.string   "title"
-    t.string   "thumb_url"
-    t.text     "embed"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.string    "thumb_url"
+    t.text      "embed"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "votes", :force => true do |t|

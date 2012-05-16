@@ -3,8 +3,9 @@
     %img(src="#{candidate.photo.url(:medium)}")
   .span8
     %h4
-      = candidate.user.name
+      = candidate.name
       =link_to 'Editar', edit_candidate_path(candidate), :class=> 'label label-success' if can? :manage, candidate
+      =link_to 'Eliminar', candidate_path(candidate), :class=> 'label label-success', :method=>:delete if can? :manage, candidate
     -if can? :manage, candidate
       -# %h5
         -# Votos a favor
@@ -18,7 +19,7 @@
     %hr
     =simple_format candidate.bio
     %hr
-    =mail_to candidate.user.email
+    -#=mail_to candidate.user.email
     %br
     %br
 
