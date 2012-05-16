@@ -1,7 +1,7 @@
 .row
-  .span4
+  .span4.offset1
     %img(src="#{candidate.photo.url(:medium)}")
-  .span8
+  .span7
     %h4
       = candidate.name
       =link_to 'Editar', edit_candidate_path(candidate), :class=> 'label label-success' if can? :manage, candidate
