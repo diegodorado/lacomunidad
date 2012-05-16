@@ -20,5 +20,5 @@
         %td #{user.email}
         %td 
           - @roles.each do |key, name| 
-            %a.btn{:href=>toggle_role_user_path(user,key), :class=>('active' if user.role? key)}
+            %a.btn{:href=>toggle_role_user_path(user,:role=> key), :class=>('active' if user.role? key)}
               =name
