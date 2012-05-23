@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 
 gem "jquery-rails",'1.0.19'
+#for action.js.coffe views to work on production
+gem 'coffee-rails','3.1.1'
 
 gem "haml",'3.1.4'
 gem "redcarpet",'2.1.0'
@@ -32,7 +34,6 @@ gem 'thumbs_up','0.4.6'
 group :assets do
   gem 'haml_assets','0.0.5'
   gem 'sass-rails', '3.1.4'
-  gem 'coffee-rails','3.1.1'
   gem 'uglifier','1.2.3'
   gem "js-routes", '0.7.4'
   gem 'less-rails-bootstrap', '2.0.4'
