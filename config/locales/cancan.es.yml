@@ -8,3 +8,6 @@ es:
       project: "Not allowed to update this project."
     create:
       candidate: "Debes ser miembro pleno para poder postularte. Si consideras esto un error, comunicate con info@lacomunidad.org.ar"
+    votes_result:
+      candidate: "Los resultados no pueden verse en este momento."
+    

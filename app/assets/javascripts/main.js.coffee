@@ -130,6 +130,8 @@ class Application
     if @options.candidates
       $('#candidates-carousel').carousel({interval: 15000}) #long interval
 
+    if @options.settings
+      $('.datepicker').datepicker({format: "yyyy-mm-dd"})      
   
     if @options.profile
       $("a.profile_pic").each () ->

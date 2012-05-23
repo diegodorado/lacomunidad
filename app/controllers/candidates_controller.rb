@@ -1,13 +1,26 @@
 class CandidatesController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index]
-  before_filter :check_candidates_time, :only => [:new, :create, :destroy]
+  before_filter :authenticate_user!, :except => [:index, :votes_result]
 
   load_and_authorize_resource
 
   def index
     @list = params[:list]
     @results = params[:results]
+  end
+
+
+  def votes_result
+    @candidates = Candidate.tally(
+      { :limit => 10,
+      #  :order => 'votes.count desc' 
+      })
+    
+  end
+
+  def votes_reset
+    Candidate.clear_votes
+    redirect_to candidates_path, :notice => "Votos reseteados."
   end
 
 
@@ -47,41 +60,13 @@ class CandidatesController < ApplicationController
 
   def vote
     current_user.vote_exclusively_for(@candidate)
-    redirect_to candidates_path @candidate, :notice => "Diste tu voto a #{@candidate.user.name}."
+    #redirect_to candidates_path @candidate, :notice => "Diste tu voto a #{@candidate.name}."
   end
 
   def unvote
     current_user.clear_votes(@candidate)
-    redirect_to candidates_path @candidate, :notice => "Revocaste tu voto a #{@candidate.user.name}."
+    #redirect_to candidates_path @candidate, :notice => "Revocaste tu voto a #{@candidate.name}."
   end
 
 
-  private
-  
-  
-  def check_candidates_time
-    return if can? :manage, Candidate
-    starts_at = Setting.candidates_starts_at
-    ends_at = Setting.candidates_ends_at
-    unless (starts_at..ends_at).cover?(Time.now)
-      redirect_to root_path, :alert => "Las postulaciones son entre el #{I18n.l(starts_at)} y el #{I18n.l(ends_at)}."
-    end
-    
-    rescue StandardError => err
-      redirect_to root_path, :alert => "Aun no esta configurada esta seccion. #{err}"
-  end
-  
-  def check_votes_time
-    return if can? :manage, Candidate
-    starts_at = Setting.votes_starts_at
-    ends_at = Setting.votes_ends_at
-    unless (starts_at..ends_at).cover?(Time.now)
-      redirect_to root_path, :alert => "Las votaciones son entre el #{I18n.l(starts_at)} y el #{I18n.l(ends_at)}."
-    end   
-
-    rescue StandardError => err
-      redirect_to root_path, :alert => "Aun no esta configurada esta seccion. #{err}"
-  end
-  
-  
 end

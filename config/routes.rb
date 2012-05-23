@@ -3,16 +3,19 @@ Lacomunidad::Application.routes.draw do
   resources :audios
   resources :books
   resources :videos
-  resources :candidates
-  resources :candidates do
+
+  resources :candidates, :except => [:show] do
     get 'votes_result', :on => :collection  
+    get 'votes_reset', :on => :collection  
     member do
       get 'vote'
       get 'unvote'
     end    
   end
   
-  resources :settings, :only => [:index]
+  resources :settings, :only => [:index] do
+    post 'change', :on => :collection  
+  end
   
 
   #static pages

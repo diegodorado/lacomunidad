@@ -1,0 +1,10 @@
+%tr(id=key)
+  = form_tag change_settings_path, :remote => true do
+    %td
+      = label_tag :value, title
+    %td
+      = hidden_field_tag :key, key
+      = hidden_field_tag :date, true if date
+      = text_field_tag :value, Setting[key], :class =>('datepicker' if date)
+      = submit_tag("Cambiar")
+

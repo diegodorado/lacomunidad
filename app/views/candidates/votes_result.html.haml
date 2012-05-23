@@ -1,18 +1,17 @@
 = app_js_load :candidates=> true
-%h3 Resultados de las Elecciones
-%h4 Candidatos al Equipo de Coordinación Nacional
-%hr
-
-- @candidates.each do |candidate|
-  .row
-    .span4
-      %img(src="#{candidate.photo.url(:medium)}")
-    .span8
-      %h4 #{candidate.user.name}
-      %hr
-      =link_to 'Votar', vote_candidate_path(candidate), :class=> 'label label-success'
-      =link_to 'Revocar voto', unvote_candidate_path(candidate), :class=> 'label label-success'
-      =simple_format candidate.bio
-      %hr
-      =mail_to candidate.user.email
-  %hr
+%h3 Resultados de las Elecciones al Equipo de Coordinación Nacional
+%br
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %tr
+      %th(colspan=2) Candidato/a
+      %th(style="text-align: center;") Votos
+  %tbody
+    - @candidates.each do |candidate|
+      %tr
+        %td(width=120)
+          =image_tag candidate.photo.url(:thumb), :size=> "120x120"
+        %td(style="vertical-align: middle;")
+          %h4(style="margin-left:40px;font-size: 20px;letter-spacing: 1px;") #{candidate.name}
+        %td(style="vertical-align: middle;text-align: center;font-weight: bold;font-size:50px")
+          %span #{candidate.votes_for}

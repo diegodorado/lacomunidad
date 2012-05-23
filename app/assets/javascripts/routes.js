@@ -180,6 +180,22 @@
   video_path: function(_id, options) {
   return Utils.build_path(1, ["/videos/"], ["format"], arguments)
   },
+// votes_result_candidates => /candidates/votes_result(.:format)
+  votes_result_candidates_path: function(options) {
+  return Utils.build_path(0, ["/candidates/votes_result"], ["format"], arguments)
+  },
+// votes_reset_candidates => /candidates/votes_reset(.:format)
+  votes_reset_candidates_path: function(options) {
+  return Utils.build_path(0, ["/candidates/votes_reset"], ["format"], arguments)
+  },
+// vote_candidate => /candidates/:id/vote(.:format)
+  vote_candidate_path: function(_id, options) {
+  return Utils.build_path(1, ["/candidates/", "/vote"], ["format"], arguments)
+  },
+// unvote_candidate => /candidates/:id/unvote(.:format)
+  unvote_candidate_path: function(_id, options) {
+  return Utils.build_path(1, ["/candidates/", "/unvote"], ["format"], arguments)
+  },
 // candidates => /candidates(.:format)
   candidates_path: function(options) {
   return Utils.build_path(0, ["/candidates"], ["format"], arguments)
@@ -196,17 +212,9 @@
   candidate_path: function(_id, options) {
   return Utils.build_path(1, ["/candidates/"], ["format"], arguments)
   },
-// votes_result_candidates => /candidates/votes_result(.:format)
-  votes_result_candidates_path: function(options) {
-  return Utils.build_path(0, ["/candidates/votes_result"], ["format"], arguments)
-  },
-// vote_candidate => /candidates/:id/vote(.:format)
-  vote_candidate_path: function(_id, options) {
-  return Utils.build_path(1, ["/candidates/", "/vote"], ["format"], arguments)
-  },
-// unvote_candidate => /candidates/:id/unvote(.:format)
-  unvote_candidate_path: function(_id, options) {
-  return Utils.build_path(1, ["/candidates/", "/unvote"], ["format"], arguments)
+// change_settings => /settings/change(.:format)
+  change_settings_path: function(options) {
+  return Utils.build_path(0, ["/settings/change"], ["format"], arguments)
   },
 // settings => /settings(.:format)
   settings_path: function(options) {

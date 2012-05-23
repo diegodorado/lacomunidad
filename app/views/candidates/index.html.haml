@@ -1,10 +1,14 @@
 = app_js_load :candidates=> true
 %h3 
   Candidatos al Equipo de Coordinación Nacional
+  %small
+    =link_to 'Nueva Postulacion', new_candidate_path, :class=> 'label label-success' if can? :manage, Candidate
+    =link_to 'Ver como pasarela', candidates_path, :class=> 'label label-success'
+    =link_to 'Ver como lista', candidates_path(:list=>true), :class=> 'label label-success'
+
   &nbsp;&nbsp;&nbsp;&nbsp;
-  =link_to 'Nueva Postulacion', new_candidate_path, :class=> 'label label-success' if can? :manage, Candidate
-  =link_to 'Ver como pasarela', candidates_path, :class=> 'label label-success'
-  =link_to 'Ver como lista', candidates_path(:list=>true), :class=> 'label label-success'
+  =link_to 'Resultados  de la Votación', votes_result_candidates_path, :class=> 'btn btn-success', :style=> 'color:#fff'
+  
 %hr
 
 -if @list

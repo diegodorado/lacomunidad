@@ -13,4 +13,10 @@ class Candidate < ActiveRecord::Base
       :path => "/candidate_photo/:style/:id/:filename" 
     }
 
+  def self.clear_votes
+    Vote.where(
+              :voteable_type => 'Candidate'
+            ).map(&:destroy)  
+  end
+
 end

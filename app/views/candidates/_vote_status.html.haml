@@ -1,0 +1,10 @@
+-if can? :vote, candidate
+  .well{:style=> ("background:#51A351" if current_user.voted_on? candidate)}
+    -if current_user.voted_on? candidate
+      %i.icon-white.icon-ok-sign
+      %span(style="color:#fff") #{candidate.name} tiene tu voto
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      =link_to 'Deshacer', unvote_candidate_path(candidate), :class=> 'btn', :remote => true
+    -else
+      =link_to "Votar por #{candidate.name}", vote_candidate_path(candidate), :class=> 'btn btn-success', :remote => true
+

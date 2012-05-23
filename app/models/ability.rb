@@ -13,7 +13,23 @@ class Ability
     can :manage, User if user.role? :admin
     can :manage, Book if user.role? :book_editor
 
-    can :read, Candidate
+    can :read , Candidate
+
+    if Setting.candidates_season and user.role? :member
+      can [:edit,:new, :destroy] , Candidate, :user_id => user.id
+    end
+    
+    if Setting.votes_season and user.role? :member
+      can [:vote,:unvote] , Candidate
+    end
+    
+    can :votes_result , Candidate if Setting.votes_result_season
+
+    #redirect_to root_path, :alert => "Las postulaciones son entre el #{I18n.l(starts_at)} y el #{I18n.l(ends_at)}."
+    #rescue StandardError => err
+    #redirect_to root_path, :alert => "Aun no esta configurada esta seccion. #{err}"
+    #redirect_to root_path, :alert => "Las votaciones son entre el #{I18n.l(starts_at)} y el #{I18n.l(ends_at)}."
+    
     can :create, Candidate if user.role? :member
     can :update, Candidate if user.role? :member
 

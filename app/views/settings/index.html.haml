@@ -1,10 +1,36 @@
-%table.table.table-striped.table-bordered.table-condensed
-  %thead
-    %tr
-      %th Key
-      %th Value
-  %tbody
-    - for setting in @settings
+= app_js_load :settings=> true, :chat=> false
+
+.row
+  .span8
+    %h2 Configuración
+    %br
+    %table.well.table.table-striped
+      =render 'setting', :title=> 'Inicio postulacion', :key => :candidates_starts_at, :date=> true
+      =render 'setting', :title=> 'Fin postulacion', :key => :candidates_ends_at, :date=> true
+      =render 'setting', :title=> 'Inicio Votación', :key => :votes_starts_at, :date=> true
+      =render 'setting', :title=> 'Fin Votación', :key => :votes_ends_at, :date=> true
+      =render 'setting', :title=> 'Cantidad Máxima en el ECP', :key => :ecp_max, :date=> false
+  .span4
+    %h2 
+      Información
+      = link_to 'actualizar', settings_path, :class=> 'label label-success'
+    %br
+    %table.well.table.table-striped
       %tr
-        %td #{setting.var}
-        %td #{setting.value}
+        %td Período de postulación?
+        %td
+          = Setting.candidates_season ? 'SI' : 'NO'
+      %tr
+        %td Período de votación?
+        %td
+          = Setting.votes_season ? 'SI' : 'NO'
+      %tr
+        %td Período de resultados?
+        %td
+          = Setting.votes_result_season ? 'SI' : 'NO'
+
+      %tr
+        %td
+          = link_to 'Resetear Votos a Candidatos', votes_reset_candidates_path, :confirm=> 'Estas seguro?'
+        %td
+          

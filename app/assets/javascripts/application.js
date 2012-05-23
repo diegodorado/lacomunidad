@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui-1.8.20.custom.min.js
 //= require jquery.autogrow
 //= require jquery.special.edit
 //= require jquery.editinplace
@@ -15,6 +16,7 @@
 //= require twitter/bootstrap/collapse
 //= require twitter/bootstrap/tab
 //= require twitter/bootstrap/carousel
+//= require bootstrap-datepicker
 
 //= require underscore
 //= require backbone
