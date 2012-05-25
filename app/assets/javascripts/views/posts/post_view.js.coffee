@@ -29,14 +29,14 @@ class Lacomunidad.Views.Posts.PostView extends Backbone.View
     setTimeout (()=>$(@el).remove()), 500
 
   vote_for: (event) ->
-    @votes.vote 'up'
+    @votes.vote 'up' if app.user_id
 
   vote_against: (event) ->
-    @votes.vote 'down'
+    @votes.vote 'down' if app.user_id
 
   comments_count_click: (event) ->
     #caution!. .new_comment_input belongs to a sub-view
-    @$('.new_comment_input').focus()
+    @$('.new_comment_input').focus() if app.user_id
 
   renderStats: =>
     data =

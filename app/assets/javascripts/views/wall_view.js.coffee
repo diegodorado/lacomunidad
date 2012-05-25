@@ -20,8 +20,9 @@ class Lacomunidad.Views.WallView extends Backbone.View
 
   render: ->
     $(this.el).html(@template())
-    view = new Lacomunidad.Views.Posts.NewPostView {collection: @collection}
-    view.render()
+    if app.user_id
+      view = new Lacomunidad.Views.Posts.NewPostView {collection: @collection}
+      view.render()
     @bind_scroll_handler()
     @
 

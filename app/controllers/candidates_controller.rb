@@ -1,20 +1,14 @@
 class CandidatesController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index, :votes_result]
-
   load_and_authorize_resource
+  skip_authorize_resource :only => [:index]
 
   def index
     @list = params[:list]
-    @results = params[:results]
   end
 
-
   def votes_result
-    @candidates = Candidate.tally(
-      { :limit => 10,
-      #  :order => 'votes.count desc' 
-      })
+    @candidates = Candidate.tally
     
   end
 

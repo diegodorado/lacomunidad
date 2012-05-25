@@ -129,6 +129,8 @@ class Application
       App.Pages.initEditor()
     if @options.candidates
       $('#candidates-carousel').carousel({interval: 15000}) #long interval
+      $('#votes_ends_at time').timeago()    
+      
 
     if @options.settings
       $('.datepicker').datepicker({format: "yyyy-mm-dd"})      

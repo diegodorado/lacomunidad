@@ -1,16 +1,97 @@
+%link{:href => "http://fonts.googleapis.com/css?family=Anton", :rel => "stylesheet", :type => "text/css"}/
+%style{:type => "text/css"}
+  :sass 
+    .elecciones
+      .well
+        font-weight: bold
+        font-family: trebuchet ms
+      .span5
+        font-size: 45px
+        line-height: 50px
+      .red
+        color: #E33326
+      .grey
+        color: #666
+      .well .span2
+        text-align: right
+        font-size: 34px
+        line-height: 25px
+      .questions
+        color: #777
+        strong, p
+          font-size: 16px
+          line-height: 22px
+        strong
+          color: #666
+      .info
+        font-size: 24px
+        line-height: 34px
+        color: #E33326
+        font-weight: bold
+        font-family: trebuchet ms
+    .public-wall
+      font-family: 'Anton'
+      font-size: 40px
+
 .row
   .span8
     .label.label-info(style="font-size: 13px;padding: 2px 10px;") Ultimas novedades
     %br
-    .well
-      %h3 Elecciones 2012
-      %p Se acercan las elecciones para el Equipo de Coordinación País (ECP) y para el Equipo de Coordinación Mundial (ECM).
-      %p Estas son las personas que se han postulado para las funciones.
-      =link_to 'Candidatos al ECP', candidates_path, :style=>'color:#fff',:class => 'btn btn-primary btn-large'
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      =link_to 'Candidatos al ECM', 'http://candidatos-lacomunidad.blogspot.com.es/index.html', :style=>'color:#fff',:class => 'btn btn-primary btn-large', :target => 'blank'
+    .elecciones
+      .well
+        .row
+          .span5
+            %span.red elecciones
+            %span.grey 2012
+          .span2
+            %span.grey SAB26
+            %br
+            %span.red DOM27
+      .questions
+        %strong
+          ¿Qué se vota y cuando?
+        %p
+          La votación es para elegir a los Equipos de Coordinación País y Mundial (ECP y ECM)
+          por el período 2012-2014, los días Sábado 26 y Domingo 27 de Mayo.
+          
+        %strong
+          ¿Quienes votan?
+        %p
+          Los miembros plenos; es decir, aquellos que se hayan anotado en el último censo.
+          
+        %strong
+          ¿Cómo se vota?
+        %p
+          Por medios digitales en ambos casos, los cuales detallamos a continuación. 
+          %br
+          %br
+          %strong
+            ECP:
+          Cada miembro debe estar registrado en esta web antes del 27 de Mayo en lo posible
+          con la misma dirección de correo que envió al censo.
+          %br
+          %strong
+            ECM:
+          Cada miembro será notificado por correo electrónico y recibirá un link
+          que lo habilitará como votante.
+      .well
+        =link_to 'Candidatos al ECP', candidates_path, :style=>'color:#fff',:class => 'btn btn-primary btn-large'
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        =link_to 'Candidatos al ECM', 'http://candidatos-lacomunidad.blogspot.com.es/index.html', :style=>'color:#fff',:class => 'btn btn-primary btn-large', :target => 'blank'
+      .info
+        Consultas o comentarios: 
+        =mail_to 'info@lacomunidad.org.ar'
+          
     %br
-    =image_tag 'invitacion.jpg'
+    %hr
+    .well
+      %br
+      .public-wall
+        El muro es público
+      %hr
+      Cualquiera puede ahora ver el #{link_to 'muro', muro_path}.
+      %br
+      Sólo hay que ingresar para publicar o comentar.
   .span4
     .label.label-info(style="font-size: 13px;padding: 2px 10px;") Ultimas publicaciones
     %ul.posts_list

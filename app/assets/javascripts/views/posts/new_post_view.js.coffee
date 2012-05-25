@@ -75,7 +75,7 @@ class Lacomunidad.Views.Posts.NewPostView extends Backbone.View
       return ori
 
   render: ->
-    $(this.el).html(@template())
+    $(@el).html(@template())
     @$(".new_post_input").tooltip { trigger:'focus',placement: 'right', title: 'presiona enter para compartir'}
     @$('.new_post_input').bind 'edit', @new_post_edit
     @$("#post_og .title").editInPlace

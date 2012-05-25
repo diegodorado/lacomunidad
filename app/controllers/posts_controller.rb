@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!
+  #todo: make proper auuthorization through cancan
+  before_filter :authenticate_user!, :except => :index
   respond_to :json
 
   def index

@@ -1,4 +1,28 @@
 = app_js_load :candidates=> true
+
+%style{:type => "text/css"}
+  :sass 
+    .candidates.votes_result
+      .votes
+        vertical-align: middle
+        text-align: center
+        span      
+          font-weight: bold
+          font-size: 50px
+          background: #E33326
+          color: #fff
+          border-radius: 90px
+          width: 100px
+          height: 100px
+          display: inline-block
+          line-height: 100px
+    .ie7 .votes_results .votes span
+      vertical-align: top
+      zoom: 1
+      *display: inline        
+
+
+
 %h3 Resultados de las Elecciones al Equipo de Coordinación Nacional
 %br
 %table.table.table-striped.table-bordered.table-condensed
@@ -13,5 +37,5 @@
           =image_tag candidate.photo.url(:thumb), :size=> "120x120"
         %td(style="vertical-align: middle;")
           %h4(style="margin-left:40px;font-size: 20px;letter-spacing: 1px;") #{candidate.name}
-        %td(style="vertical-align: middle;text-align: center;font-weight: bold;font-size:50px")
+        %td.votes
           %span #{candidate.votes_for}

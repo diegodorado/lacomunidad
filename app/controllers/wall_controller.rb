@@ -1,5 +1,6 @@
 class WallController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
+  # making wall public
   respond_to :html
   
   def index
