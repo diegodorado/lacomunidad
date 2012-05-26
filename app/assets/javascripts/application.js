@@ -27,3 +27,4 @@
 //= require routes
 //= require pages
 //= require main
+//= require lightbox

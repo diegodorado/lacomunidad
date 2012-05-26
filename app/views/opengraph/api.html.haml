@@ -1,0 +1,16 @@
+.row
+  = form_tag opengraph_api_path, :method => :get do
+    = label_tag :url, 'Url:', :class=>'span2'
+    = text_field_tag :url, @url, :class=>'span9'
+    = submit_tag "Enviar", :class=>'span1'
+  
+-if @page
+  -@page.each_pair do |key, value|
+    .row
+      .span2
+        =key
+      .span10
+        =raw value
+    %hr  
+
+%iframe{:src=>@url}    

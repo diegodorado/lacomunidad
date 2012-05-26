@@ -364,6 +364,10 @@
   opengraph_path: function(options) {
   return Utils.build_path(0, ["/opengraph"], ["format"], arguments)
   },
+// opengraph_api => /opengraph_api(.:format)
+  opengraph_api_path: function(options) {
+  return Utils.build_path(0, ["/opengraph_api"], ["format"], arguments)
+  },
 // pages => /pages(.:format)
   pages_path: function(options) {
   return Utils.build_path(0, ["/pages"], ["format"], arguments)

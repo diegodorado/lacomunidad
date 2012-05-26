@@ -54,6 +54,7 @@ Lacomunidad::Application.routes.draw do
   end
   
   post '/opengraph' => 'opengraph#index', :as => 'opengraph'
+  get '/opengraph_api' => 'opengraph#api', :as => 'opengraph_api'
 
   #pages
   resources :pages, :except => [:create] do

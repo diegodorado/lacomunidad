@@ -1,18 +1,34 @@
 class OpengraphController < ApplicationController
   respond_to :json
 
+
+  def api
+    @url =  params['url']
+    @page = get_page @url
+  end
+
+
   def index
-
-    uri = params['url']
-    page = {}
-
     #if Rails.cache.exist? "og_url:#{uri}"
     #  page = Rails.cache.read "og_url:#{uri}"
     #  return render :json => page.to_json
     #end
-        
-    html = RestClient.get(uri).body
+    page = get_page params['url']
+    page.keep_if do |k,v|
+      ['title','url','description','image','embed'].include? k
+    end
+    
+    #Rails.cache.write "og_url:#{uri}", page
+    
+    return render :json => page.to_json
+  end
+
+  def get_page(url)
+    page = {}
+    html = RestClient.get(url).body
+    
     doc = Nokogiri::HTML.parse(html)
+
 
     doc.css('meta[property^="og:"][content]').each do |n|
       k = n.attribute('property').to_s.downcase.gsub(/^og:/,'').gsub('-','_')
@@ -30,7 +46,7 @@ class OpengraphController < ApplicationController
     page['url'] = n.attribute('href').to_s.strip.chomp if (n = doc.css("link[rel='shortlink']").first)
     page['url'] = n.attribute('href').to_s.strip.chomp if (n = doc.css("link[rel='shorturl']").first)
     page['url'] = n.attribute('href').to_s.strip.chomp if (n = doc.css("link[id='shorturl']").first)    
-    page['url'] ||= uri
+    page['url'] ||= url
     page['url'].insert(0, '//')  unless page['url'].starts_with?('http') or page['url'].starts_with?('//')
     
     page['title'] ||= page['url']
@@ -41,7 +57,7 @@ class OpengraphController < ApplicationController
     if page['site_name']
       page['site_name'].downcase!
     else
-      myUri = URI.parse uri
+      myUri = URI.parse url
       page['site_name'] = myUri.host
     end
 
@@ -61,6 +77,27 @@ class OpengraphController < ApplicationController
         video.match(/tracks%2F(\d*)&/) do |m|
           page['embed'] = '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F'+m[1]+'&show_artwork=true"></iframe>'
         end
+      when 'picasaweb.google.com'
+        album_url = doc.css("link[type='application/rss+xml']").attribute('href').to_s
+        myUri = URI.parse album_url
+        album = myUri.path.match(/albumid\/(.*)/)[1]
+
+        images = []
+        embed = ''
+        doc.css('noscript img[src]').each_with_index do |n,i|
+          image = n.attribute('src').to_s
+          big = image.gsub(/\/s128\//, '/s720/')
+          if i < 12
+            page['image'] ||= image
+            embed << "<a href=\"#{big}\" rel=\"lightbox[picasa_#{album}]\"><img src=\"#{image}\" /></a>"
+          else
+            embed << "<a href=\"#{big}\" rel=\"lightbox[picasa_#{album}]\"></a>"
+          end
+          images << image
+        end
+        page['embed'] = "<div style=\"width:520px;\" >#{embed}</div>"
+
+      
     end
 
 
@@ -79,17 +116,12 @@ class OpengraphController < ApplicationController
     page['image'] ||= images[0] unless images.empty?
     page['image'] ||= 'http://placehold.it/120x80'
 
-    page.keep_if do |k,v|
-      ['title','url','description','image','embed'].include? k
-    end
+    page
 
-    #Rails.cache.write "og_url:#{uri}", page
-    
-    return render :json => page.to_json
   
   
   rescue StandardError => err
-    return render :json => {:error=>err}.to_json
+    return {:error=>err}
     
   end
   
