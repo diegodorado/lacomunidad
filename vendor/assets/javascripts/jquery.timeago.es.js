@@ -1,7 +1,7 @@
 // Spanish
 jQuery.timeago.settings.strings = {
-   prefixAgo: "Hace",
-   prefixFromNow: "Dentro de",
+   prefixAgo: "hace",
+   prefixFromNow: "dentro de",
    suffixAgo: "",
    suffixFromNow: "",
    seconds: "menos de un minuto",

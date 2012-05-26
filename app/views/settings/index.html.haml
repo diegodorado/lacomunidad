@@ -17,6 +17,10 @@
     %br
     %table.well.table.table-striped
       %tr
+        %td Hora del servidor
+        %td
+          = Time.now.to_s(:db)
+      %tr
         %td Período de postulación?
         %td
           = Setting.candidates_season ? 'SI' : 'NO'

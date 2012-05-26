@@ -1,4 +1,18 @@
 = app_js_load :candidates=> true
+
+-if Setting.pre_votes_season
+  %h3#votes_ends_at
+    La votación comienza 
+    %time{:style=>'color: #E33326', :datetime => Setting.votes_starts_at.to_time.iso8601 }
+
+
+-if Setting.votes_season
+  %h3#votes_ends_at
+    La votación finaliza 
+    %time{:style=>'color: #E33326', :datetime => Setting.votes_ends_at.to_time.iso8601 }
+
+=link_to 'Resultados  de la Votación', votes_result_candidates_path, :class=> 'btn btn-primary  btn-large', :style=> 'color:#fff;font-size: 24px' if can? :votes_results , Candidate
+
 %h3 
   Candidatos al Equipo de Coordinación Nacional
   %small
@@ -6,13 +20,7 @@
     =link_to 'Ver como pasarela', candidates_path, :class=> 'label label-success' if @list
     =link_to 'Ver como lista', candidates_path(:list=>true), :class=> 'label label-success' unless @list
 
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  =link_to 'Resultados  de la Votación', votes_result_candidates_path, :class=> 'btn btn-success', :style=> 'color:#fff' if can? :votes_results , Candidate
 
--if can? :vote, Candidate
-  %h3#votes_ends_at
-    La votación finaliza en
-    %time.when{ :datetime => Setting.votes_ends_at.to_time.iso8601 }
   
   
 %hr
