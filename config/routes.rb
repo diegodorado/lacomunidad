@@ -30,6 +30,7 @@ Lacomunidad::Application.routes.draw do
 
   #users
   resources :users, :only => [:index] do
+    get 'votes', :on => :collection  
     member do
       #get 'toggle_role/:role' => "users#toggle_role", :as => 'toggle_role'
       get 'profile' => "users#profile"

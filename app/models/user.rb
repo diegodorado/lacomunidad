@@ -97,6 +97,16 @@ class User < ActiveRecord::Base
   def friendly_roles_name
     roles.map{|r| r.friendly_name}.to_sentence
   end
+
+
+  def candidates_votes_count
+    Vote.where(
+          :voter_id => self.id,
+          :voter_type => self.class.name,
+          :vote => true,
+          :voteable_type => Candidate
+        ).count
+  end
   
   
 end

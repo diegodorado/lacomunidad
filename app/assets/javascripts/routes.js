@@ -252,6 +252,10 @@
   participate_path: function(options) {
   return Utils.build_path(0, ["/como-participar"], ["format"], arguments)
   },
+// votes_users => /users/votes(.:format)
+  votes_users_path: function(options) {
+  return Utils.build_path(0, ["/users/votes"], ["format"], arguments)
+  },
 // profile_user => /users/:id/profile(.:format)
   profile_user_path: function(_id, options) {
   return Utils.build_path(1, ["/users/", "/profile"], ["format"], arguments)

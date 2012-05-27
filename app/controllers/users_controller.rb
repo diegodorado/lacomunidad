@@ -36,6 +36,10 @@ class UsersController < ApplicationController
     redirect_to users_path, :notice => "Ahora #{user.name} es #{user.friendly_roles_name}"
   end
 
+  def votes
+    @users = @users.includes(:roles).where('roles.name'=>:member).order('users.name')
+    @candidates = Candidate.includes(:votes).all
+  end
 
 
   

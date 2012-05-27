@@ -1,0 +1,25 @@
+
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %tr
+      %th Imagen
+      %th Nombre
+      %th Email
+      %th Votos
+      %th Voto a
+  %tbody
+    - for user in @users
+      %tr
+        %td
+          =image_tag user.avatar, :width => "50", :alt => user.name
+        %td #{user.name}
+        %td #{user.email}
+        %td
+          =user.candidates_votes_count
+        %td
+          -if user.candidates_votes_count > 0
+            %ul
+              - for candidate in @candidates
+                %li{:style=> ('color:red;text-decoration: line-through;' unless candidate.voted_by?(user))}
+                  =candidate.name  
+

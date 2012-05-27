@@ -47,6 +47,10 @@
             %span.grey SAB26
             %br
             %span.red DOM27
+      -if can? :votes_results , Candidate            
+        =link_to 'Resultados  de la Votación', votes_result_candidates_path, :class=> 'btn btn-primary  btn-large', :style=> 'color:#fff;font-size: 24px' 
+        %br
+        %br
       .questions
         %strong
           ¿Qué se vota y cuando?
@@ -75,7 +79,7 @@
           Cada miembro será notificado por correo electrónico y recibirá un link
           que lo habilitará como votante.
       .well
-        =link_to 'Candidatos al ECP', candidates_path, :style=>'color:#fff',:class => 'btn btn-primary btn-large'
+        =link_to 'Candidatos al ECP', candidates_path(:list=>true), :style=>'color:#fff',:class => 'btn btn-primary btn-large'
         &nbsp;&nbsp;&nbsp;&nbsp;
         =link_to 'Candidatos al ECM', 'http://candidatos-lacomunidad.blogspot.com.es/index.html', :style=>'color:#fff',:class => 'btn btn-primary btn-large', :target => 'blank'
       .info
