@@ -47,10 +47,9 @@
             %span.grey SAB26
             %br
             %span.red DOM27
-      -if can? :votes_results , Candidate            
-        =link_to 'Resultados  de la Votación', votes_result_candidates_path, :class=> 'btn btn-primary  btn-large', :style=> 'color:#fff;font-size: 24px' 
-        %br
-        %br
+      =link_to 'Resultados  de la Votación', votes_result_candidates_path, :class=> 'btn btn-primary  btn-large', :style=> 'color:#fff;font-size: 24px' 
+      %br
+      %br
       .questions
         %strong
           ¿Qué se vota y cuando?
