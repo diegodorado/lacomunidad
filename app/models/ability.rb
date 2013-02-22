@@ -10,7 +10,6 @@ class Ability
     #a user can edit his account
     can :manage, User, :id => user.id
 
-    can :manage, User if user.role? :admin
     can :manage, Book if user.role? :book_editor
 
     can :read , Candidate
