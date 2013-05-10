@@ -35,89 +35,26 @@
 
 .row
   .span8
-    .label.label-info(style="font-size: 13px;padding: 2px 10px;") Ultimas novedades
-    %br
-    .elecciones
-      .well
-        .row
-          .span5
-            %span.red elecciones
-            %span.grey 2012
-          .span2
-            %span.grey SAB26
-            %br
-            %span.red DOM27
-      =link_to 'Resultados  de la Votación', votes_result_candidates_path, :class=> 'btn btn-primary  btn-large', :style=> 'color:#fff;font-size: 24px' 
-      %br
-      %br
-      .questions
-        %strong
-          ¿Qué se vota y cuando?
-        %p
-          La votación es para elegir a los Equipos de Coordinación País y Mundial (ECP y ECM)
-          por el período 2012-2014, los días Sábado 26 y Domingo 27 de Mayo.
-          
-        %strong
-          ¿Quienes votan?
-        %p
-          Los miembros plenos; es decir, aquellos que se hayan anotado en el último censo.
-          
-        %strong
-          ¿Cómo se vota?
-        %p
-          Por medios digitales en ambos casos, los cuales detallamos a continuación. 
-          %br
-          %br
-          %strong
-            ECP:
-          Cada miembro debe estar registrado en esta web antes del 27 de Mayo en lo posible
-          con la misma dirección de correo que envió al censo.
-          %br
-          %strong
-            ECM:
-          Cada miembro será notificado por correo electrónico y recibirá un link
-          que lo habilitará como votante.
-      .well
-        =link_to 'Candidatos al ECP', candidates_path(:list=>true), :style=>'color:#fff',:class => 'btn btn-primary btn-large'
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        =link_to 'Candidatos al ECM', 'http://candidatos-lacomunidad.blogspot.com.es/index.html', :style=>'color:#fff',:class => 'btn btn-primary btn-large', :target => 'blank'
-      .info
-        Consultas o comentarios: 
-        =mail_to 'info@lacomunidad.org.ar'
+    =image_tag 'conjunta-lc.jpg'
           
     %br
     %hr
-    .well
-      %br
-      .public-wall
-        El muro es público
-      %hr
-      Cualquiera puede ahora ver el #{link_to 'muro', muro_path}.
-      %br
-      Sólo hay que ingresar para publicar o comentar.
+    #wall_viewport
   .span4
-    .label.label-info(style="font-size: 13px;padding: 2px 10px;") Ultimas publicaciones
+    .well
+      :markdown
+        Comparte escrbiendo algo o pegando el enlace de **[youtube](//youtube.com)**, 
+        **[vimeo](//vimeo.com)**, 
+        **[soundcloud](//soundcloud.com)**, 
+        **[picasa](//picasaweb.google.com)**, etc.
     %ul.posts_list
-      - @posts.each do |post|
+      - 4.times do
         %li.post
           .avatar
-            %img{ src:"#{post.user.avatar}", width:40, height:40}
+            %img{ src:"http://placehold.it/40x40", width:40, height:40}
           .content
             %p.body 
-              %a.name #{post.user.name}:
-              #{post.body}
-          -if post.attach
-            .attach
-              .post_attach
-                .image
-                  %a.show-embed{target: "new", href:"#{post.attach[:url]}"}
-                    %img{ src:"#{post.attach[:image]}"}
-                .content
-                  .title
-                    %a.show-embed{target: "new", href:"#{post.attach[:url]}"} #{post.attach[:title]}
-                  .description #{post.attach[:description]}
-          .stats  
-            %time.when{ datetime:"#{post.created_at}"} Hace #{time_ago_in_words(post.created_at)}
-            %span.comments_count #{post.comments.count}
-            %span.thumbs_up #{post.votes_for}
-            %span.thumbs_down #{post.votes_against}
+              %a.name noticia:
+              loren ipsum dolor sit amet
+
+= app_js_load :posts=> @posts            

@@ -1,7 +1,8 @@
 class StaticController < ApplicationController
   def home
     #@posts = Post.plusminus_tally.limit(5).where('created_at > ?', 1.month.ago).having('plusminus > 10')  
-    @posts = Post.plusminus_tally.limit(5).order('created_at desc')
+    #@posts = Post.plusminus_tally.limit(5).order('created_at desc')
+    @posts = Post.includes([:comments, :votes]).order('created_at desc').limit(10)
   end
   
   def docs
