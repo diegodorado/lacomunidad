@@ -1,0 +1,23 @@
+.row
+  .span6
+    %p
+      %strong Titulo:
+      = @blog_post.title
+    %p
+      %strong Fecha:
+      = @blog_post.created_at
+    %h4 Contenido
+    %p
+      = @blog_post.body
+    %p
+      = link_to "Edit", edit_blog_post_path(@blog_post)
+      |
+      = link_to "Destroy", @blog_post, :confirm => 'Are you sure?', :method => :delete
+      |
+      = link_to "View All", blog_posts_path
+
+  .span6
+    %h4 Multimedia      
+    %br
+    %img(src="#{@blog_post.image.url(:thumb)}")
+    = raw @blog_post.embed

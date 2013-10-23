@@ -1,10 +1,10 @@
 class StaticController < ApplicationController
   def home
-    #@posts = Post.plusminus_tally.limit(5).where('created_at > ?', 1.month.ago).having('plusminus > 10')  
-    #@posts = Post.plusminus_tally.limit(5).order('created_at desc')
+    @blog_post = BlogPost.limit(1).order('created_at desc').first
+    @blog_posts = BlogPost.where('id not in (?)', @blog_post.id).limit(4).order('created_at desc') if @blog_post
     @posts = Post.includes([:comments, :votes]).order('created_at desc').limit(10)
   end
-  
+
   def docs
     redirect_to docs_videos_path
   end

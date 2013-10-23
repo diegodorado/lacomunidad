@@ -51,7 +51,6 @@ group :development do
   gem 'rspec-rails'
   gem "annotate"
   gem 'sqlite3'
-  gem 'sqlite3-ruby'
   gem "nifty-generators"
   gem "faker"
   gem "populator"

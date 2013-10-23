@@ -132,6 +132,22 @@
   };
 
   window.Routes = {
+// blog_posts => /blog_posts(.:format)
+  blog_posts_path: function(options) {
+  return Utils.build_path(0, ["/blog_posts"], ["format"], arguments)
+  },
+// new_blog_post => /blog_posts/new(.:format)
+  new_blog_post_path: function(options) {
+  return Utils.build_path(0, ["/blog_posts/new"], ["format"], arguments)
+  },
+// edit_blog_post => /blog_posts/:id/edit(.:format)
+  edit_blog_post_path: function(_id, options) {
+  return Utils.build_path(1, ["/blog_posts/", "/edit"], ["format"], arguments)
+  },
+// blog_post => /blog_posts/:id(.:format)
+  blog_post_path: function(_id, options) {
+  return Utils.build_path(1, ["/blog_posts/"], ["format"], arguments)
+  },
 // audios => /audios(.:format)
   audios_path: function(options) {
   return Utils.build_path(0, ["/audios"], ["format"], arguments)
@@ -339,10 +355,6 @@
 // authentication => /authentications/:id(.:format)
   authentication_path: function(_id, options) {
   return Utils.build_path(1, ["/authentications/"], ["format"], arguments)
-  },
-// muro => /muro(.:format)
-  muro_path: function(options) {
-  return Utils.build_path(0, ["/muro"], ["format"], arguments)
   },
 // post_comments => /posts/:post_id/comments(.:format)
   post_comments_path: function(_post_id, options) {

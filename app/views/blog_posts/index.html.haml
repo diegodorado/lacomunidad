@@ -1,0 +1,26 @@
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %tr
+      %th Imagen
+      %th Fecha
+      %th Titulo
+      %th
+  %tbody
+    - for blog_post in @blog_posts
+      %tr
+        %td
+          =image_tag blog_post.image.url(:thumb)
+        %td #{blog_post.created_at}
+        %td #{blog_post.title}
+        %td
+          .btn-group
+            %a.btn(href="#{blog_post_path(blog_post)}") 
+              %i.icon-eye-open
+            %a.btn(href="#{edit_blog_post_path(blog_post)}")
+              %i.icon-pencil
+            %a.btn{:href=>"#{blog_post_path(blog_post)}",:data=>{:confirm => 'Seguro?', :method => :delete}}
+              %i.icon-remove        
+
+%br
+
+= link_to 'New Blog post', new_blog_post_path

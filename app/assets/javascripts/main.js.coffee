@@ -53,9 +53,9 @@ class Application
       @views.wall.render()
       @posts.reset @options.posts
 
-    if @options.chat
-      @views.chat = new Lacomunidad.Views.ChatView
-      @views.chat.render()
+    #if @options.chat
+      #@views.chat = new Lacomunidad.Views.ChatView
+      #@views.chat.render()
     if @options.videos
       $('#videos_carousel').carousel({interval: 1000000000}) #long interval for no cycle
       $('#videos_carousel').bind 'slide', (event)->

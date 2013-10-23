@@ -16,6 +16,11 @@
               %a(href="#{profile_user_path(current_user)}")
                 %i.icon-user
                 Perfil
+            - if can? :manage, BlogPost
+              %li
+                %a(href="#{blog_posts_path}")
+                  %i.icon-book
+                  Noticias
             - if can? :manage, Book
               %li
                 %a(href="#{books_path}")

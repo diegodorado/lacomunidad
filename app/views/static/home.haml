@@ -1,44 +1,29 @@
-%link{:href => "http://fonts.googleapis.com/css?family=Anton", :rel => "stylesheet", :type => "text/css"}/
-%style{:type => "text/css"}
-  :sass 
-    .elecciones
-      .well
-        font-weight: bold
-        font-family: trebuchet ms
-      .span5
-        font-size: 45px
-        line-height: 50px
-      .red
-        color: #E33326
-      .grey
-        color: #666
-      .well .span2
-        text-align: right
-        font-size: 34px
-        line-height: 25px
-      .questions
-        color: #777
-        strong, p
-          font-size: 16px
-          line-height: 22px
-        strong
-          color: #666
-      .info
-        font-size: 24px
-        line-height: 34px
-        color: #E33326
-        font-weight: bold
-        font-family: trebuchet ms
-    .public-wall
-      font-family: 'Anton'
-      font-size: 40px
+-if @blog_post
+  .row
+    .span8
+      -unless @blog_post.embed.empty?
+        = @blog_post.title
+        = raw @blog_post.embed
+      -else
+        =image_tag @blog_post.image.url(:large)
+          
+    .span4
+      -if @blog_posts
+        %ul.posts_list
+          - @blog_posts.each do |blog_post|
+            %li.post
+              .avatar
+                =image_tag blog_post.image.url(:thumb)
+              .content
+                %p.body 
+                  %a.name #{blog_post.title}
+                  %br
+                  = blog_post.body
+
+%hr
 
 .row
   .span8
-    =image_tag 'conjunta-lc.jpg'
-          
-    %br
-    %hr
     #wall_viewport
   .span4
     .well
@@ -47,14 +32,6 @@
         **[vimeo](//vimeo.com)**, 
         **[soundcloud](//soundcloud.com)**, 
         **[picasa](//picasaweb.google.com)**, etc.
-    %ul.posts_list
-      - 4.times do
-        %li.post
-          .avatar
-            %img{ src:"http://placehold.it/40x40", width:40, height:40}
-          .content
-            %p.body 
-              %a.name noticia:
-              loren ipsum dolor sit amet
 
-= app_js_load :posts=> @posts            
+
+= app_js_load :posts=> @posts
